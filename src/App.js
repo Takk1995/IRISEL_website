@@ -1,20 +1,16 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './page/home';
-import About from './page/about';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import './style/App.css';
+import './style/App.css'
+import ShoppingCart from './page/shoppingCart';
+
+
 
 function App() {
   return (
     <Router>
-      <div className='App'>
-        <Header />
+      <div>
         <Routes>
-          <Route path="/about" element={<About />} />
-          <Route path="/" element={<Home />} />
+          <Route path='/cart' element={<ShoppingCart/>} />
         </Routes>
-        <Footer />
       </div>
     </Router>
   );

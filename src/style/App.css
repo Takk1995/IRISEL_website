@@ -1,33 +1,24 @@
-.App {
-    text-align: center;
-  }
-  
-  header {
-    background-color: #282c34;
-    padding: 20px;
-    color: white;
-  }
-  
-  footer {
-    background-color: #282c34;
-    padding: 10px;
-    color: white;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-  }
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  li {
-    display: inline;
-    margin: 0 10px;
-  }
-  
-  a {
-    color: white;
-    text-decoration: none;
-  }
+.horizontally{
+  display: flex;
+}
+
+.vertical{
+  display: flex;
+  flex-direction: column;
+}
+
+.horizontallyCenter{
+  display: flex;
+  justify-content: center;
+}
+
+.horizontallySpaceBetween{
+  display: flex;
+  justify-content: space-between;
+}
+
+.noBullets {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
