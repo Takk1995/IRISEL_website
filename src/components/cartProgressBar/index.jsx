@@ -1,6 +1,8 @@
 import '../../style/Takk.css'
 
 function CartProgressBar() {
+    // 0:Order 1:CheckOut 2:Confirmation
+    
     return (
         <div>
             <div>
@@ -12,10 +14,13 @@ function CartProgressBar() {
             </div>
             <div>
                 <ul className="cartStepper">
+                    {/* 購物車 */}
                     <li className="cartLine"></li>
                     <li className="cartCircle"></li>
+                    {/* 結帳 */}
                     <li className="cartLine"></li>
                     <li className="cartCircle"></li>
+                    {/* 確認 */}
                     <li className="cartLine"></li>
                     <li className="cartCircle"></li>
                     <li className="cartLine"></li>
