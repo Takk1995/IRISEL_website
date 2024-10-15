@@ -2,12 +2,15 @@ import '../../style/Takk.css'
 import img from '../../img/test.png'
 
 function CartDelivery() {
+    // 0:會員登入 1:訪客登入
+
+    // 0:登入 1:配送
 
     return (
         <div className="horizontally cartMargin">
-            <div className="cartRight" style={{ width: '45%' }}>
+            <div className="cartRight deliveryWidth">
                 {/* 登入 */}
-                <div style={{ display: 'none' }}>
+                <div>
                     {/* 會員/訪客 */}
                     <div>
                         <ul className="noBullets horizontallyCenter">
@@ -48,7 +51,7 @@ function CartDelivery() {
                                 </div>
                                 <div className="horizontallyCenter cartLoginMargin">
                                     <input type="checkbox" id="loginRember" />
-                                    <label for="loginRember">記住我(選填)</label>
+                                    <label htmlFor="loginRember">記住我(選填)</label>
                                 </div>
                                 <div className="horizontallyCenter">
                                     <button>登入</button>
@@ -78,7 +81,7 @@ function CartDelivery() {
                     </div>
                 </div>
                 {/* 配送 */}
-                <div>
+                <div style={{ display: 'none' }}>
                     {/* 返回登入 */}
                     <div>
                         <div className="horizontally">
@@ -94,22 +97,65 @@ function CartDelivery() {
                     </div>
                     {/* 配送輸入 */}
                     <div>
-                        <div className="horizontally">
-                            <h2 style={{ marginBottom: '10px' }}>配送</h2>
+                        <div>
+                            <div className="horizontally">
+                                <h2 style={{ marginBottom: '10px' }}>配送</h2>
+                            </div>
+                            <ul className="noBullets">
+                                <li className="orderLine"></li>
+                            </ul>
                         </div>
-                        <ul className="noBullets">
-                            <li className="orderLine"></li>
-                        </ul>
-                    </div>
-                    <div>
+                        {/* 配送資料 */}
+                        <div className='vertical cartMargin deliveryBottom'>
+                            <div className='horizontallySpaceBetween'>
+                                <div className='verticalEnd deliveryWidth'>
+                                    <p>姓氏</p>
+                                    <input type="text" />
+                                </div>
+                                <div className='verticalEnd deliveryWidth'>
+                                    <p>名字</p>
+                                    <input type="text" />
+                                </div>
+                            </div>
+                            <div className='verticalEnd deliveryWidth cartRight'>
+                                <p>電話號碼</p>
+                                <input type="tel" />
+                            </div>
+                            <div className='horizontallySpaceBetween'>
+                                <div className='verticalEnd deliveryWidth'>
+                                    <p>縣市</p>
+                                    <select name="" id="">
 
+                                    </select>
+                                </div>
+                                <div className='verticalEnd deliveryWidth'>
+                                    <p>鄉鎮市區</p>
+                                    <select name="" id="">
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div className='verticalEnd deliveryWidth cartRight'>
+                                <p>郵遞區號</p>
+                                <input type="text"
+                                    readOnly
+                                />
+                            </div>
+                            <div className='verticalEnd deliveryWidth cartRight'>
+                                <p>地址</p>
+                                <input type="text" />
+                            </div>
+                        </div>
+                        <div className='horizontallyCenter cartBottom'>
+                            <button>前往付款</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div className="cartLeft" style={{ width: '45%' }}>
+            <div className="cartLeft deliveryWidth">
                 <div>
                     <div className="horizontally">
-                        <h2 style={{ marginBottom: '10px' }}>訂單摘要</h2>
+                        <h2 className='cardTitle'>訂單摘要</h2>
                         <a href="" className="verticalEnd cartLeft">
                             {/* 回到 Order */}
                             <span>編輯</span>
@@ -156,7 +202,7 @@ function CartDelivery() {
                 </div>
                 <div>
                     <div className="horizontally">
-                        <h2 style={{ marginBottom: '10px' }}>包裝</h2>
+                        <h2 className='cardTitle'>包裝</h2>
                     </div>
                     <ul className="noBullets">
                         <li className="orderLine"></li>
