@@ -1,0 +1,542 @@
+    /* https://fonts.google.com/specimen/Parisienne?preview.size=64&classification=Handwriting */
+    @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+    /* 思源字體 */
+    /* https://fonts.google.com/selection/embed */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+    * {
+      margin: 0px;
+      padding: 0px;
+      font-family: "Noto Sans TC", Arial;
+      font-style: normal;
+      font-size: 18px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* 頁首 */
+    .Header {
+      text-decoration: none;
+      width: 100%;
+      position: relative;
+    }
+
+    .TopNav {
+      text-decoration: none;
+      background-color: rgba(255, 255, 255, 0.8);
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      z-index: 10;
+    }
+
+    .TopNavLogo {
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: static;
+      margin: 0 auto;
+    }
+
+    #Logo {
+      -o-object-fit: contain;
+      width: auto;
+      margin-top: auto;
+      margin-right: auto;
+      margin-bottom: auto;
+      height: 100%;
+    }
+
+    .TopNavBar {
+      padding: 10px;
+      text-align: center;
+    }
+
+    .TopNavBar ul {
+      display: flex;
+      justify-content: center;
+      white-space: nowrap;
+    }
+
+    .TopNavBar ul li {
+      border-right: 1px solid black;
+      padding: 0px 5px;
+      width: 150px;
+      text-align: center;
+      list-style-type: none;
+
+    }
+
+    .TopNavBar ul li:last-child {
+      border-right: none;
+    }
+
+    /* 左右留白 */
+    .LeaveBlank {
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+
+    /* 內距10% */
+    .InnerSpacing {
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+
+    /* main */
+    .TopBanner img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      background-position: bottom;
+    }
+
+    #Bannertext {
+      top: 25%;
+      left: 5%;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      z-index: 5;
+    }
+
+    #Bannertext p {
+      font-size: 36px;
+      font-family: "Parisienne", cursive;
+      color: white;
+    }
+
+
+    #Bannertext button {
+      color: white;
+      padding: 5px 20px;
+      border: none;
+      background: none;
+      margin-top: 30px;
+      border: 1px solid white;
+      width: 350px;
+    }
+
+    .ProductDisplay {
+      /* background-color: aliceblue; */
+      background-position: center;
+      width: 100%;
+      height: 500px;
+      display: flex;
+      align-items: center;
+    }
+
+    .ProductDisplay img {
+      width: 500px;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+
+
+
+    /* 聯絡我們 */
+    .ContactUs {
+      text-decoration: none;
+      background-color: #F8F8F8;
+      position: static;
+      padding: 2% 5%;
+      height: auto;
+    }
+
+    .PageTitle {
+      /*    background-color: #DDCCAA;*/
+      font-size: 36px;
+      text-align: center;
+      padding: 20px;
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid black;
+    }
+
+    .ContactUsNotice {
+      text-align: left;
+      border-bottom: 1px solid black;
+      padding: 20px;
+      line-height: 25px;
+    }
+
+
+    .ContactUsForm {
+      background-color: #F8F8F8;
+      padding-top: 40px;
+      padding-right: 20px;
+      padding-left: 20px;
+      padding-bottom: 40px;
+      margin: 0 auto;
+      line-height: 15px;
+      white-space: nowrap;
+      display: flex;
+      justify-content: center;
+    }
+
+    .InputBox {
+      padding: 2px 10px;
+      border-left: none;
+      border-right: none;
+      border-bottom: 1px solid black;
+      border-top: none;
+
+    }
+
+    #SendButton {
+      color: white;
+      padding: 5px 20px;
+      border: none;
+      background: none;
+      margin-top: 30px;
+      background-color: #E5E5E5;
+    }
+
+
+    /* 小標題 */
+    .subtitle p:first-child {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .subtitle p {
+      line-height: 25px;
+      letter-spacing: 2px;
+      padding-bottom: 20px;
+    }
+
+    #GradientPC {
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(252, 214, 152, 0.2) 100%);
+    }
+
+    /* 客製化 */
+    .Customized {
+      width: 100%;
+      height: auto;
+      background-color: rgba(252, 214, 152, 0.2);
+      padding-top: 20px;
+    }
+
+    .Customizedtext {
+      width: 75%;
+      height: auto;
+      margin-left: 25%;
+      padding-top: 50px;
+      padding-left: 50px;
+      /* white-space: nowrap; */
+      background: linear-gradient(90deg, rgba(252, 214, 152, 0.4) 0%, rgba(245, 192, 220, 0.4) 35%, rgba(154, 170, 230, 0.4) 86%);
+
+    }
+
+    @media(max-width: 1150px) {
+      .Customizedtext p {
+        font-size: 14px;
+      }
+    }
+
+    .Customizeditem {
+      width: 100%;
+      height: auto;
+    }
+
+
+
+    .CustomizedLabel {
+      width: 100%;
+      padding: 50px 20px;
+      /* background-color: aqua; */
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+    }
+
+    .LabelBA {
+      width: 150px;
+      color: white;
+      background-color: rgba(239, 165, 115, 0.3);
+      padding: 3px 1px;
+      text-align: center;
+      /* border: 1px solid black; */
+      margin: 10px;
+    }
+
+    .CustomizedStep {
+      /* background-color: aliceblue; */
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 10px;
+      /* padding: 30px; */
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+
+    .CustomizedStep div:first-child {
+      text-align: end; 
+      border: none; 
+      font-size: 24px;
+    }
+
+    .StepInner {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 20px;
+    }
+
+    .StepTitle {
+      font-weight: bold;
+      border-left: 10px solid orange;
+      white-space: nowrap;
+    }
+
+    .StepDesc {
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.2) 100%);
+    }
+
+    #GradientCN {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(180deg, rgba(252, 214, 152, 0.2) 0%, rgba(129, 234, 220, 0.2) 100%);
+    }
+
+    @media(max-width: 1150px){
+      .CustomizedStep {
+        /* background-color: aliceblue; */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-left: 10%;
+        padding-right: 10%;
+      }
+      .CustomizedStep div:first-child {
+        text-align: start; 
+        border: none; 
+        font-size: 24px;
+        margin: 20px;
+      }
+
+
+    }
+    @media(max-width: 1010px) {
+          /* 左右留白 */
+    .LeaveBlank {
+      margin: 0;
+    }
+    }
+
+
+    /* 最新消息 */
+    .HomeNews {
+      background-color: rgba(129, 234, 220, 0.2);
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .HomeNewsHalf {
+      width: 400px;
+      height: 400px;
+      border-radius: 45% 45% 0 0;
+      margin: 0 10px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+    }
+
+    .HomeNewsHalf img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      display: block;
+
+    }
+
+    .HomeNewstitle {
+      width: 100%;
+      text-align: end;
+      position: relative;
+    }
+
+    .HomeNewstitle img {
+      width: 75%;
+      position: relative;
+    }
+
+    .HomeNewstitle p {
+      width: 75%;
+      writing-mode: vertical-lr;
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 0 30px;
+      padding-top: 10%;
+      white-space: nowrap;
+      letter-spacing: 5px;
+      font-size: 36px;
+      color: white;
+      z-index: 5;
+    }
+
+    .HomeNewsitem {
+      width: 100%;
+      height: auto;
+      padding: 0 10%;
+      padding-top: 20%;
+      padding-bottom: 25%;
+      /* background-color: rgba(250, 235, 215, 0.5); */
+      display: flex;
+      gap: 5%;
+      justify-content: center;
+    }
+
+    .HomeNewsDetail {
+      width: 100%;
+      background-color: rgba(129, 234, 220, 0.2);
+      border: rgba(129, 234, 220, 0.5) 10px solid;
+      display: flex;
+      padding-right: 15px;
+      padding-left: 15px;
+      padding-bottom: 15px;
+      height: auto;
+      flex-direction: column;
+      padding-top: 15px;
+    }
+
+    #GradientNA {
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(180deg, rgba(129, 234, 220, 0.2) 0%, rgba(93, 185, 226, 0.2) 100%);
+    }
+
+    /* 關於我 */
+    .HomeAbout {
+      width: 100%;
+      height: 700px;
+      text-decoration: none;
+      position: relative;
+      /* background-image: url('./image/backgroundpic/color_01_05.png'); */
+      position: relative;
+      display: flex;
+      justify-content: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+    }
+
+    .HomeAbout img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+
+    }
+
+    #HomeAboutpic {
+      color: white;
+      /* line-height: 200%; */
+      text-align: center;
+      white-space: nowrap;
+      width: auto;
+      padding: 3% 5%;
+      margin-top: 10%;
+      background: linear-gradient(90deg, rgba(92, 151, 199, 0.5) 0%, rgba(124, 154, 207, 0.5) 100%);
+      /* background: linear-gradient(90deg, rgba(93, 185, 226, 0.8) 0%, rgba(154, 170, 230, 0.8) 100%); */
+      border: 10px solid #52aad0;
+      position: absolute;
+      z-index: 5;
+
+
+    }
+    @media(max-width: 1180px) {
+      .HomeAbout {
+        height: 600px;
+      }
+      #HomeAboutpic p{
+        font-size: 14px;
+        margin-top: 5px;
+      }
+    }
+
+    /* 頁尾 */
+    .UnderFooter {
+      background-color: #F8F8F8;
+      height: 100%;
+      vertical-align: auto;
+      display: flex;
+      flex-direction: column;
+      padding-top: 30px;
+      padding-right: 30px;
+      padding-left: 30px;
+      padding-bottom: 50px;
+      width: 100%;
+    }
+
+    .UnderLink {
+      display: flex;
+      width: 50%;
+    }
+
+    .UnderLink ul {
+      list-style: none;
+      line-height: 45px;
+      padding: 20px;
+      flex: 1;
+      margin-bottom: 30px;
+      white-space: nowrap;
+    }
+
+    .UnderLink ul li:first-child {
+      font-weight: bold;
+    }
+
+    .UnderText {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      white-space: nowrap;
+    }
+
+    .UnderSubscribe li input {
+      padding: 5px;
+      border: white 3px solid;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .UnderSubscribe li button {
+      padding: 4px 10px;
+      border: white 3px solid;
+      background: #F8F8F8;
+      cursor: pointer;
+      margin: 0;
+      position: absolute;
+    }
+
+    .UnderSubscribe li:last-child {
+      justify-content: flex-end;
+      align-items: flex-end;
+      display: flex;
+    }
+    .abc {
+      background-color: #52aad0;
+    }
