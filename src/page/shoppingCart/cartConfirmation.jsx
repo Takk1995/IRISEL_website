@@ -14,16 +14,17 @@ function CartConfirmation() {
             <div>
                 <ul className="noBullets horizontallyCenter">
                     <li>
-                        <span style="margin-right:40px;">訂單編號:</span>
+                        <span style={{marginRight: '40px'}}>訂單編號:</span>
                     </li>
                     <li>
+                        {/* 往訂單查詢 */}
                         <a href="">
-                            <span>訂單編號:</span>
+                            <span>訂單編號</span>
                         </a>
                     </li>
                 </ul>
             </div>
-            <div>
+            <div className='cartBottom'>
                 <ul className="noBullets">
                     <li className="horizontallyCenter">
                         <p>已完成付款</p>
@@ -37,7 +38,8 @@ function CartConfirmation() {
                 </ul>
             </div>
             <div className="horizontallyCenter">
-                <button className='btnBottom'>返回首頁</button>
+                {/* 往 Home */}
+                <button className='cartBottom'>返回首頁</button>
             </div>
         </div>
     );

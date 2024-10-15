@@ -1,7 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import '../../style/Takk.css'
-import CartProgressBar from '../../components/cartProgressBar'
-import CartFooter from '../../components/cartFooter'
+import '../../style/Takk.css';
+import CartProgressBar from '../../components/cartProgressBar';
+import CartFooter from '../../components/cartFooter';
+import CartOrder from './cartOrder';
+import CartCheckOut from './cartCheckOut';
+import CartConfirmation from './cartConfirmation';
 
 
 function ShoppingCart() {
@@ -9,12 +12,13 @@ function ShoppingCart() {
 
     return (
         <div>
+            
             <div className=''>
                 <CartProgressBar/>
             </div>
-            {
-
-            }
+            <div>
+            <CartCheckOut/>
+            </div>
             <div className=''>
                 <CartFooter/>
             </div>

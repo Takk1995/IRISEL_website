@@ -1,4 +1,5 @@
 import '../../style/Takk.css'
+import img from '../../img/test.png'
 
 function CartUpDate() {
     return (
@@ -19,6 +20,7 @@ function CartUpDate() {
                     </div>
                     <hr />
                     <div>
+                        {/* form */}
                         <form action="">
                             <select name="" id="">
                                 <option required>100ml</option>
@@ -27,11 +29,12 @@ function CartUpDate() {
                         </form>
                     </div>
                     <div calssName="vertical">
-                        <button className='btnBottom'>更新購物車</button>
+                        {/* 往cartOrder */}
+                        <button className='cartBottom'>更新購物車</button>
                     </div>
                 </div>
                 <div calssName="horizontallyCenter">
-                    <img src="../../img/test.png" className="cartImg" />
+                    <img src={img} alt='' className="cartImg" />
                 </div>
             </div>
         </div>

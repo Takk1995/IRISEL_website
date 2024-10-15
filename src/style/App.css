@@ -7,6 +7,12 @@
   flex-direction: column;
 }
 
+.verticalEnd{
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+}
+
 .horizontallyCenter{
   display: flex;
   justify-content: center;

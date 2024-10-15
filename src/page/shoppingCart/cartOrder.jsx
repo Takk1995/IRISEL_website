@@ -1,18 +1,22 @@
 import '../../style/Takk.css'
+import img from '../../img/test.png'
 
 function CartOrder() {
     return (
         <div className='cartMargin'>
-            <h2>訂單摘要</h2>
-            <ul className="noBullets">
-                <li className="orderLine"></li>
-            </ul>
+            <div>
+                <h2>訂單摘要</h2>
+                <ul className="noBullets">
+                    <li className="orderLine"></li>
+                </ul>
+            </div>
+            {/* each所選商品資料 */}
             <div>
                 <div className="horizontally">
                     <div>
-                        <img src="../../img/test.png" className="cartImg" />
+                        <img src={img} alt='' className="cartImg" />
                     </div>
-                    <div style={{ width: '100%'}}>
+                    <div style={{ width: '100%' }}>
                         <div className="horizontally">
                             <div>
                                 <a href="" className="vertical">
@@ -22,23 +26,29 @@ function CartOrder() {
                                 <p>100ml</p>
                             </div>
                             <div className="horizontally cartLeft">
-                                <Form action="" className="orderRight">
+                                {/* form */}
+                                <form action="" className="orderRight">
                                     <label htmlFor="">數量</label>
                                     <select required>
                                         <option>1</option>
                                         <option>2</option>
                                     </select>
-                                </Form>
+                                </form>
                                 <div className="orderRight">NT$</div>
                             </div>
                         </div>
                         <div>
                             <div className="horizontally">
                                 <a href="" className="productRevise">
+                                    {/* 出現 popCart/cartUpDate */}
                                     <span>編輯</span>
                                 </a>
                                 <a href="" className="productRevise">
                                     <span>移除</span>
+                                </a>
+                                <a href="" className="productRevise">
+                                    {/* 收藏/取消收藏 */}
+                                    <span>收藏</span>
                                 </a>
                             </div>
                         </div>
@@ -48,40 +58,52 @@ function CartOrder() {
             <ul className="noBullets">
                 <li className="orderLine"></li>
             </ul>
+            {/* 總金額 */}
             <div className="horizontally">
                 <div>
                     <span>小計</span>
                 </div>
                 <span className="cartLeft">NT$</span>
             </div>
-            <h2>包裝</h2>
-            <ul className="noBullets">
-                <li className="orderLine"></li>
-            </ul>
+            {/* 包裝選擇 */}
+            <div>
+                <h2>包裝</h2>
+                <ul className="noBullets">
+                    <li className="orderLine"></li>
+                </ul>
+            </div>
             <div className="packageBar">
                 <ul className="noBullets">
                     <li className="packageBorder">
                         <input type="radio" name="package" id="simple" />
-                        <img src="../../img/test.png" className="cartImg" />
-                        <label htmlFor="simple" className="packageLable">簡約包裝</label>
+                        <img src={img} alt='' className="cartImg" />
+                        <label htmlFor="simple" className="packageLable">
+                            <p>簡約包裝</p>
+                            <p>使用可回收材質，並內含有機棉收納袋。</p>
+                        </label>
                     </li>
                     <li className="packageBorder">
                         <input type="radio" name="package" id="classic" />
-                        <img src="../../img/test.png" className="cartImg" />
-                        <label htmlFor="classic" className="packageLable">經典包裝</label>
+                        <img src={img} alt='' className="cartImg" />
+                        <label htmlFor="classic" className="packageLable">
+                            <p>經典包裝</p>
+                            <p>經典禮盒或禮袋。</p>
+                        </label>
                     </li>
                 </ul>
             </div>
             <div>
-            <div className="horizontallyCenter">
-                <button className="btnBottom">前往結帳</button>
+                {/* 往cartCheckOut */}
+                <div className="horizontallyCenter">
+                    <button className="cartBottom">前往結帳</button>
+                </div>
+                {/* 返回商品頁 */}
+                <div className="horizontallyCenter cartBottom">
+                    <a href="">
+                        <span>繼續購物</span>
+                    </a>
+                </div>
             </div>
-            <div className="horizontallyCenter">
-                <a href="">
-                    <span>繼續購物</span>
-                </a>
-            </div>
-         </div>
         </div>
     );
 }

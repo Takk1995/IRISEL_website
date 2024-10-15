@@ -1,11 +1,13 @@
 import '../../style/Takk.css'
+import img from '../../img/test.png'
 
 function CartReview() {
     return (
         <div>
+            {/* each所選商品資料 */}
             <div className="horizontally">
                 <div>
-                    <img src="../../img/test.png" className="cartImg" />
+                    <img src={img} alt='' className="cartImg" />
                 </div>
                 <div>
                     <div>
@@ -24,6 +26,7 @@ function CartReview() {
                     </div>
                 </div>
             </div>
+            {/* 總金額 */}
             <div>
                 <div className="horizontallySpaceBetween">
                     <div>
@@ -34,8 +37,10 @@ function CartReview() {
             </div>
             <div>
                 <div className="vertical">
-                    <button className="btnBottom">檢視購物車</button>
-                    <button className="btnBottom">繼續購物</button>
+                    {/* 往cartOrder */}
+                    <button className="cartBottom">檢視購物車</button>
+                    {/* 往商品頁 */}
+                    <button className="cartBottom">繼續購物</button>
                 </div>
             </div>
         </div>

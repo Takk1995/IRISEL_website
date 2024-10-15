@@ -18,7 +18,7 @@ function CartDefault() {
                         </li>
                         <li>
                             <a href="">
-                                <span>測驗</span>
+                                <span>客製化</span>
                             </a>
                         </li>
                         <li>

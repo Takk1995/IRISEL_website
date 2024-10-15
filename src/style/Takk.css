@@ -139,6 +139,10 @@
     margin-bottom: 3%;
 }
 
-.btnBottom{
+.cartBottom{
     margin-bottom: 2%;
+}
+
+.cartFooter{
+    background-color: #f8f8f8;
 }
