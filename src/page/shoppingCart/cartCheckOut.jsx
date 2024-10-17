@@ -1,5 +1,6 @@
 import '../../style/Takk.css'
 import img from '../../img/test.png'
+import CartCheckCards from '../../components/cartCheckCards';
 
 const CartDelivery = () => {
     // 0:會員登入 1:訪客登入
@@ -167,28 +168,7 @@ const CartDelivery = () => {
                 </div>
                 {/* each所選商品資料 */}
                 <div>
-                    <div className="horizontally">
-                        <div>
-                            <img src={img} alt='' className="cartImg" />
-                        </div>
-                        <div style={{ width: '100%' }}>
-                            <div className="vertical">
-                                <div>
-                                    <a href="" className="vertical">
-                                        <span className='cardTitle'>商品名稱</span>
-                                        <span>商品系列</span>
-                                    </a>
-                                    <p>100ml</p>
-                                </div>
-                                <div className="horizontally">
-                                    <div className="cartRight">
-                                        <span>數量</span>
-                                    </div>
-                                    <div className="cartLeft">NT$</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <CartCheckCards/>
                 </div>
                 <ul className="noBullets">
                     <li className="orderLine"></li>
