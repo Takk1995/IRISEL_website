@@ -1,8 +1,11 @@
 import '../../style/Takk.css'
 
-function CartDefault() {
+const CartDefault = () => {
     return (
         <div>
+            <div className="horizontallyCenter">
+                <h2>購物車</h2>
+            </div>
             <div>
                 <div className="horizontallyCenter">
                     <p>您的購物車沒有任何商品</p>

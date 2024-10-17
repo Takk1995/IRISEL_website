@@ -1,7 +1,7 @@
 import '../../style/Takk.css'
 import img from '../../img/test.png'
 
-function CartDelivery() {
+const CartDelivery = () => {
     // 0:會員登入 1:訪客登入
 
     // 0:登入 1:配送

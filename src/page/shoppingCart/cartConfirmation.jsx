@@ -1,6 +1,6 @@
 import '../../style/Takk.css'
 
-function CartConfirmation() {
+const CartConfirmation = () => {
     return (
         <div>
             <div>

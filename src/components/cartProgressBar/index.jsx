@@ -1,6 +1,6 @@
 import '../../style/Takk.css'
 
-function CartProgressBar() {
+const CartProgressBar = () => {
     // 0:Order 1:CheckOut 2:Confirmation
     
     return (

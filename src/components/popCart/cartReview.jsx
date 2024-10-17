@@ -1,34 +1,20 @@
 import '../../style/Takk.css'
-import img from '../../img/test.png'
+import PopCards from '../popCards';
 
-function CartReview() {
+const CartReview = () => {
     return (
         <div>
+            <div className="horizontallyCenter">
+                <h2>購物車</h2>
+            </div>
             {/* each所選商品資料 */}
-            <div className="horizontally">
-                <div>
-                    <img src={img} alt='' className="cartImg" />
-                </div>
-                <div>
-                    <div>
-                        <a href="" className="vertical">
-                            <span className='cartTitle'>商品名稱</span>
-                            <span>商品系列</span>
-                        </a>
-                    </div>
-                    <div>
-                        <div>
-                            <p>數量</p>
-                        </div>
-                        <div>
-                            <p>NT$</p>
-                        </div>
-                    </div>
-                </div>
+            <div>
+                {/* popCards */}
+                <PopCards />
             </div>
             {/* 總金額 */}
-            <div>
-                <div className="horizontallySpaceBetween">
+            <div className='deliveryBottom'>
+                <div className="horizontallySpaceBetween cartFooter">
                     <div>
                         <p>小計</p>
                     </div>
