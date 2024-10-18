@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
-import '../../style/Takk.css';
-import Header from '../../components/header'
+// import React, {useState, useEffect} from 'react';
+// import '../../style/Takk.css';
+// import Header from '../../components/header'
 import CartProgressBar from '../../components/cartProgressBar';
 import CartFooter from '../../components/cartFooter';
 import CartOrder from './cartOrder';
@@ -8,7 +8,7 @@ import CartCheckOut from './cartCheckOut';
 import CartConfirmation from './cartConfirmation';
 
 
-function ShoppingCart() {
+const ShoppingCart = () => {
     // 0:Order 1:CheckOut 2:Confirmation
 
     return (
@@ -18,7 +18,7 @@ function ShoppingCart() {
                 <CartProgressBar/>
             </div>
             <div>
-            <CartOrder/>
+            <CartCheckOut/>
             </div>
             <CartFooter/>
         </div>

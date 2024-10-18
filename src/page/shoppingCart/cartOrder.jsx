@@ -1,5 +1,6 @@
 import '../../style/Takk.css'
 import img from '../../img/test.png'
+import CartEditCards from '../../components/cartEditCards';
 
 function CartOrder() {
     return (
@@ -12,58 +13,8 @@ function CartOrder() {
             </div>
             {/* each所選商品資料 */}
             <div>
-                <div className="horizontally">
-                    <div>
-                        <img src={img} alt='' className="cartImg" />
-                    </div>
-                    <div style={{ width: '100%' }}>
-                        <div className="horizontally">
-                            <div>
-                                <a href="" className="vertical">
-                                    <span className='cardTitle'>商品名稱</span>
-                                    <span>商品系列</span>
-                                </a>
-                                <p>100ml</p>
-                            </div>
-                            <div className="horizontally cartLeft">
-                                {/* form */}
-                                <form action="" className="orderRight">
-                                    <label htmlFor="">數量</label>
-                                    <select required>
-                                        <option>1</option>
-                                        <option>2</option>
-                                    </select>
-                                </form>
-                                <div className="orderRight">NT$</div>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="horizontally">
-                                <a href="" className="productRevise">
-                                    {/* 出現 popCart/cartUpDate */}
-                                    <span>編輯</span>
-                                </a>
-                                <a href="" className="productRevise">
-                                    <span>移除</span>
-                                </a>
-                                <a href="" className="productRevise">
-                                    {/* 收藏/取消收藏 */}
-                                    <span>收藏</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <ul className="noBullets">
-                <li className="orderLine"></li>
-            </ul>
-            {/* 總金額 */}
-            <div className="horizontally">
-                <div>
-                    <span>小計</span>
-                </div>
-                <span className="cartLeft">NT$</span>
+                {/* cartEditCards */}
+                <CartEditCards />
             </div>
             {/* 包裝選擇 */}
             <div>

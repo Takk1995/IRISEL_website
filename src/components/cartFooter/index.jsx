@@ -1,6 +1,6 @@
 import '../../style/Takk.css'
 
-function CartFooter() {
+const CartFooter = () => {
     return (
         <div className="cartFooter">
             <div>
