@@ -3,7 +3,6 @@ import './style/App.css'
 import ShoppingCart from './page/shoppingCart';
 import PopCart from './components/popCart';
 
-
 function App() {
   return (
     <Router>

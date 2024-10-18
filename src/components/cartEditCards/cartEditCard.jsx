@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import '../../style/Takk.css'
 import img from '../../img/test.png'
+import PopUpDate from '../popUpDate';
 
 const CartEditCard =({detail, onDel, onChange}) => {
     const { id, productName, productClass, capacity, productPrice } = detail;
     const [qty, setQty] = useState(1)
+    const [pop, setPop] = useState(false)
 
     // 移除
     const del = () => {
@@ -16,6 +18,11 @@ const CartEditCard =({detail, onDel, onChange}) => {
         const newQty = parseInt(e.target.value, 10);
         setQty(newQty);
         onChange(id, newQty) // 傳回
+    }
+
+    // pop 顯示/隱藏
+    const switchPop = () => {
+        setPop(!pop)
     }
 
     return (
@@ -34,6 +41,7 @@ const CartEditCard =({detail, onDel, onChange}) => {
                             </a>
                             <p>{capacity}</p>
                         </div>
+                        {/* qty select */}
                         <div className="horizontally cartLeft">
                             <div className="orderRight">
                                 <span>數量</span>
@@ -48,8 +56,8 @@ const CartEditCard =({detail, onDel, onChange}) => {
                     </div>
                     <div>
                         <div className="horizontally">
-                            <div className="productRevise">
-                                {/* 出現 popCart/cartUpDate */}
+                            <div className="productRevise" onClick={switchPop}>
+                                {/* 出現 popUpDate */}
                                 <span className='changeLink'>編輯</span>
                             </div>
                             <div className="productRevise" onClick={del}>
@@ -63,6 +71,17 @@ const CartEditCard =({detail, onDel, onChange}) => {
                     </div>
                 </div>
             </div>
+            {/* PopUpDate */}
+            {pop && (
+                <div className='popMask' onClick={switchPop}>
+                    <div className='pop' onClick={(e) => e.stopPropagation()}>
+                        <div>
+                            <div className='popClose' onClick={switchPop}>X</div>
+                        </div>
+                        <PopUpDate/>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }

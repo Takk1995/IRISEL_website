@@ -2,12 +2,9 @@
 import '../../style/Takk.css'
 import CartDefault from './cartDefault'
 import CartReview from './cartReview'
-import CartAdd from './cartAdd'
-import CartUpDate from './cartUpDate'
 
 const PopCart = () => {
-    // let x = [0];
-    // 0:Default 1:Review 2:Add 3:UpDate
+    // 0:Default 1:Review
     // const [status, setStatus] = useState(0);
 
     return (
@@ -16,7 +13,7 @@ const PopCart = () => {
                 <div>
                     <div className="popClose">X</div>
                 </div>
-                <CartUpDate />
+                <CartReview />
             </div>
         </div>
     );
