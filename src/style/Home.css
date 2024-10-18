@@ -16,6 +16,7 @@
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
+      cursor: default;
     }
 
     /* 頁首 */
@@ -27,7 +28,7 @@
 
     .TopNav {
       text-decoration: none;
-      background-color: rgba(255, 255, 255, 0.8);
+      background-color: rgba(255, 255, 255, 1);
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -137,6 +138,89 @@
       height: auto;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    /* 常見問題 */
+    .FAQForm {
+      /* background-color: antiquewhite; */
+      background-color: #F8F8F8;
+      height: auto;
+
+    }
+
+    .FAQFormBlock {
+      display: flex;
+      flex-direction: row;
+      line-height: 50px;
+    }
+
+    .FAQFormTitle {
+      text-align: end;
+      /* background-color: #E5E5E5; */
+      flex: 1;
+      white-space: nowrap;
+      padding-right: 10%;
+      padding-bottom: 10%;
+
+
+
+    }
+
+    .FAQFormTitle li {
+      list-style: none;
+      cursor: pointer;
+    }
+
+    .FAQFormDetail {
+      /* background-color: #F8F8F8; */
+      flex: 3;
+      padding-left: 0;
+      padding-bottom: 10%;
+
+
+    }
+
+    .FAQFormDetail:not(:first) {
+      display: none;
+    }
+
+    /* 問題項目 */
+    .FAQQ {
+      /* background-color: aliceblue; */
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+
+    .FAQA {
+      /* display: none; */
+      animation: fadeEffect 1s;
+    }
+
+    
+    .FQAIcon img {
+      height: 15px;
+      padding-right: 10px;
+    }
+
+    @-webkit-keyframes fadeEffect {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeEffect {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
 
 
@@ -283,8 +367,8 @@
     }
 
     .CustomizedStep div:first-child {
-      text-align: end; 
-      border: none; 
+      text-align: end;
+      border: none;
       font-size: 24px;
     }
 
@@ -313,7 +397,7 @@
       background: linear-gradient(180deg, rgba(252, 214, 152, 0.2) 0%, rgba(129, 234, 220, 0.2) 100%);
     }
 
-    @media(max-width: 1150px){
+    @media(max-width: 1150px) {
       .CustomizedStep {
         /* background-color: aliceblue; */
         width: 100%;
@@ -322,20 +406,23 @@
         padding-left: 10%;
         padding-right: 10%;
       }
+
       .CustomizedStep div:first-child {
-        text-align: start; 
-        border: none; 
+        text-align: start;
+        border: none;
         font-size: 24px;
         margin: 20px;
       }
 
 
     }
+
     @media(max-width: 1010px) {
-          /* 左右留白 */
-    .LeaveBlank {
-      margin: 0;
-    }
+
+      /* 左右留白 */
+      .LeaveBlank {
+        margin: 0;
+      }
     }
 
 
@@ -464,11 +551,13 @@
 
 
     }
+
     @media(max-width: 1180px) {
       .HomeAbout {
         height: 600px;
       }
-      #HomeAboutpic p{
+
+      #HomeAboutpic p {
         font-size: 14px;
         margin-top: 5px;
       }
@@ -491,15 +580,19 @@
     .UnderLink {
       display: flex;
       width: 50%;
+      max-width: 40%;
     }
 
     .UnderLink ul {
       list-style: none;
-      line-height: 45px;
       padding: 20px;
       flex: 1;
       margin-bottom: 30px;
       white-space: nowrap;
+    }
+    .UnderLink ul li {
+      padding-bottom: 5px;
+      margin-bottom: 15px;      
     }
 
     .UnderLink ul li:first-child {
@@ -512,6 +605,10 @@
       align-items: center;
       width: 100%;
       white-space: nowrap;
+    }
+    .UnderText p {
+      padding-left: 20px;
+      padding-right: 10px;
     }
 
     .UnderSubscribe li input {
@@ -537,6 +634,25 @@
       align-items: flex-end;
       display: flex;
     }
-    .abc {
-      background-color: #52aad0;
+    /* hover */
+    .blinehover li {
+      position: relative;
+      padding: 2px 0;
+      display: block;
+      width: fit-content;
+    }
+
+    .blinehover li:not(:first-child)::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      background-color: black;
+      transition: width 0.5s ease-in-out;      
+    }
+
+    .blinehover li:not(:first-child):hover::after {
+      width: 100%;
     }
