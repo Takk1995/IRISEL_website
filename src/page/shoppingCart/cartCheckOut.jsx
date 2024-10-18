@@ -115,10 +115,6 @@ const CartDelivery = () => {
                         <div>
                             <div className="horizontally">
                                 <h2 style={{ marginBottom: '10px' }}>登入</h2>
-                                <div className="verticalEnd cartLeft">
-                                    {/* 返回登入 */}
-                                    <span className='changeLink' onClick={backClick}>編輯</span>
-                                </div>
                             </div>
                             <ul className="noBullets">
                                 <li className="orderLine"></li>
@@ -177,6 +173,9 @@ const CartDelivery = () => {
                             </div>
                             <div className='horizontallyCenter cartBottom'>
                                 <button>前往付款</button>
+                            </div>
+                            <div className='horizontallyCenter cartBottom'>
+                                <button onClick={backClick}>返回</button>
                             </div>
                         </div>
                     </div>
