@@ -21,9 +21,7 @@ const CartEditCard =({detail, onDel, onChange}) => {
     }
 
     // pop 顯示/隱藏
-    const switchPop = () => {
-        setPop(!pop)
-    }
+    const switchPop = () => setPop(!pop)
 
     return (
         <div>
@@ -74,7 +72,7 @@ const CartEditCard =({detail, onDel, onChange}) => {
             {/* PopUpDate */}
             {pop && (
                 <div className='popMask' onClick={switchPop}>
-                    <div className='pop' onClick={(e) => e.stopPropagation()}>
+                    <div className={`pop ${pop ? 'show' : ''}`} onClick={(e) => e.stopPropagation()}>
                         <div>
                             <div className='popClose' onClick={switchPop}>X</div>
                         </div>
