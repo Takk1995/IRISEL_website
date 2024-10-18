@@ -15,10 +15,13 @@ const PopCard = ({detail}) => {
                             <span className='cartTitle'>{productName}</span>
                             <span>{productClass}</span>
                         </a>
+                        <div>
+                            <p>{capacity}</p>
+                        </div>
                     </div>
                     <div className='horizontallySpaceBetween'>
                         <div>
-                            <p>{capacity}</p>
+                            <p>數量:1</p>
                         </div>
                         <div>
                             <p>NT$ {productPrice}</p>

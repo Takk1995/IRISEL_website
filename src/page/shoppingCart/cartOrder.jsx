@@ -16,16 +16,6 @@ function CartOrder() {
                 {/* cartEditCards */}
                 <CartEditCards />
             </div>
-            <ul className="noBullets">
-                <li className="orderLine"></li>
-            </ul>
-            {/* 總金額 */}
-            <div className="horizontally">
-                <div>
-                    <span>小計</span>
-                </div>
-                <span className="cartLeft">NT$</span>
-            </div>
             {/* 包裝選擇 */}
             <div>
                 <h2>包裝</h2>

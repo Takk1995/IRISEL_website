@@ -157,7 +157,7 @@
 }
 
 .deliveryBottom{
-    margin-bottom: 8%;
+    margin-bottom: 7%;
 }
 
 .changeLink{
@@ -170,4 +170,16 @@
     flex-direction: column;
     justify-content: space-between;
     width: 60%;
+}
+
+.popTotal{
+    padding: 10px 4%;
+}
+
+.cartDefaultMain{
+    margin-top: 20%;
+}
+
+.cartDefaultLink{
+    margin-top: 80%;
 }

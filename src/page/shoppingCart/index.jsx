@@ -18,7 +18,7 @@ const ShoppingCart = () => {
                 <CartProgressBar/>
             </div>
             <div>
-            <CartCheckOut/>
+            <CartOrder/>
             </div>
             <CartFooter/>
         </div>

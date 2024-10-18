@@ -1,13 +1,30 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import '../../style/Takk.css'
 import img from '../../img/test.png'
 
 const CartAdd = () => {
     const [addCard] = useState([
-        { id: 1, productName: 'TK-1', productClass: 'Class-1', productPrice: 5200, productNumber: '1010001' }
+        { id: 1, productName: 'TK-1', productClass: 'Class-1', productPrice: 5200, capacity: '100ml', cartProductQty: '', productNumber: '100100' },
+        { id: 4, productName: 'TK-1-2', productClass: 'Class-1', productPrice: 2500, capacity: '50ml', cartProductQty: '', productNumber: '100101' }
     ])
 
-    const { productName, productClass, productPrice, productNumber } = addCard[0]
+    const [select, setSelect] = useState('100ml')
+    const [detail, setDetail] = useState(addCard[0])
+
+    // 選取select時 重新設定值
+    const capacityChange = (e) => {
+        setSelect(e.target.value)
+    };
+
+    // select 改變時 找到容量一樣的資料 並設定detail為該資料
+    useEffect(() => {
+        const refresh = addCard.find(item => item.capacity === select);
+        if (refresh) {
+            setDetail(refresh)
+        } else {
+            setDetail(addCard[0])
+        }
+    }, [select, addCard])
 
     return (
         <div>
@@ -15,26 +32,23 @@ const CartAdd = () => {
                 {/* 商品資料 */}
                 <div>
                     <a href="" className="vertical">
-                        <span className="cartTitle">{productName}</span>
-                        <span>{productClass}</span>
+                        <span className="cartTitle">{detail.productName}</span>
+                        <span>{detail.productClass}</span>
                     </a>
                 </div>
                 <div>
                     <div>
-                        <p>商品編號: {productNumber}</p>
-                        <p>NT$ {productPrice}</p>
+                        <p>商品編號: {detail.productNumber}</p>
+                        <p>NT$ {detail.productPrice}</p>
                     </div>
                 </div>
                 <hr />
                 {/* 容量選擇 */}
                 <div>
-                    {/* form */}
-                    <form action="">
-                        <select name="" id="">
-                            <option required>100ml</option>
-                            <option>50ml</option>
-                        </select>
-                    </form>
+                    <select value={select} onChange={capacityChange}>
+                        <option value='100ml'>100ml</option>
+                        <option value='50ml'>50ml</option>
+                    </select>
                 </div>
                 <div className="vertical cartTop">
                     {/* 購物車加入資料並回到商品頁 */}

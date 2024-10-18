@@ -12,15 +12,6 @@ const CartReview = () => {
                 {/* popCards */}
                 <PopCards />
             </div>
-            {/* 總金額 */}
-            <div className='deliveryBottom'>
-                <div className="horizontallySpaceBetween cartFooter">
-                    <div>
-                        <p>小計</p>
-                    </div>
-                    <p>NT$</p>
-                </div>
-            </div>
             <div>
                 <div className="vertical">
                     {/* 往cartOrder */}

@@ -170,16 +170,6 @@ const CartDelivery = () => {
                 <div>
                     <CartCheckCards/>
                 </div>
-                <ul className="noBullets">
-                    <li className="orderLine"></li>
-                </ul>
-                {/* 總金額 */}
-                <div className="horizontally cartBottom">
-                    <div>
-                        <span>小計</span>
-                    </div>
-                    <span className="cartLeft">NT$</span>
-                </div>
                 <div>
                     <div className="horizontally">
                         <h2 className='cardTitle'>包裝</h2>
