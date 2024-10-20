@@ -37,11 +37,12 @@ function CartOrder({onPackage, onNext}) {
                 <div className="packageBar">
                     <ul className="noBullets">
                         <li className="packageBorder">
-                            <input type     = "radio"
-                                   name     = "package"
-                                   id       = "simple"
-                                   value    = "簡約包裝"
-                                   onChange = {chooseChange}
+                            <input type      = "radio"
+                                   name      = "package"
+                                   id        = "simple"
+                                   className = "packageInp"
+                                   value     = "簡約包裝"
+                                   onChange  = {chooseChange}
                             />
                             <img src={img} alt='' className="cartImg" />
                             <label htmlFor="simple" className="packageLable">
@@ -50,11 +51,12 @@ function CartOrder({onPackage, onNext}) {
                             </label>
                         </li>
                         <li className="packageBorder">
-                            <input type     = "radio"
-                                   name     = "package"
-                                   id       = "classic"
-                                   value    = "經典包裝"
-                                   onChange = {chooseChange}
+                            <input type      = "radio"
+                                   name      = "package"
+                                   id        = "classic"
+                                   className = "packageInp"
+                                   value     = "經典包裝"
+                                   onChange  = {chooseChange}
                             />
                             <img src={img} alt='' className="cartImg" />
                             <label htmlFor="classic" className="packageLable">

@@ -3,6 +3,7 @@ import '../../style/Takk.css'
 import CartDefault from './cartDefault'
 import CartReview from './cartReview'
 
+//  不確定Add是不是要弄進來 還是 切出去
 const PopCart = () => {
     // 0:Default 1:Review
     const [data, setData] = useState(0)
