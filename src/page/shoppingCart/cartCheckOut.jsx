@@ -3,7 +3,7 @@ import '../../style/Takk.css'
 import img from '../../img/test.png'
 import CartCheckCards from '../../components/cartCheckCards';
 
-const CartDelivery = () => {
+const CartCheckOut = ({ selectPackage, onNext, onBack }) => {
     const [status, setStatus] = useState(true) // member:true guest:false
     const memberClick = () => setStatus(true)
     const guestClick = () => setStatus(false)
@@ -20,7 +20,6 @@ const CartDelivery = () => {
         setSecond(false)
         setMoving(false)
     }
-
 
     return (
         <div className="horizontally cartMargin">
@@ -172,7 +171,7 @@ const CartDelivery = () => {
                                 </div>
                             </div>
                             <div className='horizontallyCenter cartBottom'>
-                                <button>前往付款</button>
+                                <button onClick={onNext}>前往付款</button>
                             </div>
                             <div className='horizontallyCenter cartBottom'>
                                 <button onClick={backClick}>返回</button>
@@ -187,7 +186,7 @@ const CartDelivery = () => {
                         <h2 className='cardTitle'>訂單摘要</h2>
                         <a href="" className="verticalEnd cartLeft">
                             {/* 回到 Order */}
-                            <span>編輯</span>
+                            <span onClick={onBack}>編輯</span>
                         </a>
                     </div>
                     <ul className="noBullets">
@@ -210,13 +209,23 @@ const CartDelivery = () => {
                 <div>
                     <div className="packageBar">
                         <ul className="noBullets">
-                            <li className="packageBorder">
-                                <img src={img} alt='' className="cartImg" />
-                                <div className="horizontallyCenter packageLable">
-                                    <p>簡約包裝</p>
-                                    <p>使用可回收材質，並內含有機棉收納袋。</p>
-                                </div>
-                            </li>
+                            {selectPackage ? (
+                                <li className="packageBorder">
+                                    <img src={img} alt='' className="cartImg" />
+                                    <div className="horizontallyCenter packageLable">
+                                        <p>簡約包裝</p>
+                                        <p>使用可回收材質，並內含有機棉收納袋。</p>
+                                    </div>
+                                </li>
+                            ) : (
+                                <li className="packageBorder">
+                                    <img src={img} alt='' className="cartImg" />
+                                    <div className="horizontallyCenter packageLable">
+                                        <p>經典包裝</p>
+                                        <p>經典禮盒或禮袋。</p>
+                                    </div>
+                                </li>
+                            )}
                         </ul>
                     </div>
                 </div>
@@ -225,4 +234,4 @@ const CartDelivery = () => {
     );
 }
 
-export default CartDelivery;
+export default CartCheckOut;
