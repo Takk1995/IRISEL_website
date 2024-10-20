@@ -1,25 +1,33 @@
-import '../../style/Takk.css'
+import { useState } from 'react';
+import '../../style/Takk.css';
+import img from '../../img/check.png';
 
 const CartConfirmation = () => {
+    const [orderData] = useState([
+        { orderNumber: 1205}
+    ])
+
+    const {orderNumber} = orderData[0]
+
     return (
         <div>
             <div>
-                <div className="horizontallyCenter">
-                    <p>Checked</p>
+                <div className="horizontallyCenter checkOrderTop">
+                    <img src={img} alt='' />
                 </div>
-                <div className="horizontallyCenter">
+                <div className="horizontallyCenter checkOrderTop">
                     <p>已經收到您的訂單</p>
                 </div>
             </div>
             <div>
                 <ul className="noBullets horizontallyCenter">
                     <li>
-                        <span style={{marginRight: '40px'}}>訂單編號:</span>
+                        <span style={{marginRight: '5px'}}>訂單編號:</span>
                     </li>
                     <li>
                         {/* 往訂單查詢 */}
                         <a href="">
-                            <span>訂單編號</span>
+                            <span>{orderNumber}</span>
                         </a>
                     </li>
                 </ul>

@@ -215,3 +215,7 @@
 .deliveryMoving{
     animation: slideIn 0.8s ease forwards;
 }
+
+.checkOrderTop{
+    margin-top: 2%;
+}
