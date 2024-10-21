@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Header from '../../components/header'
 import CartProgressBar from '../../components/cartProgressBar';
 import CartFooter from '../../components/cartFooter';
 import CartOrder from './cartOrder';
@@ -29,7 +30,7 @@ const ShoppingCart = () => {
 
     return (
         <div>
-            {/* <Header/> */}
+            <Header/>
             <div>
                 <CartProgressBar cartStep={cartStep}/>
             </div>
