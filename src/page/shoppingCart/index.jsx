@@ -12,19 +12,19 @@ const ShoppingCart = () => {
     const [selectPackage, setSelectPackage] = useState('')
 
     const [cartItem, setCartItem] = useState([
-        {id:1, productName: 'TK-1', productClass: 'Class-1', productPrice: 5200, capacity: '100ml', cartProductQty: '1'},
-        {id:2, productName: 'TK-2', productClass: 'Class-2', productPrice: 5500, capacity: '50ml', cartProductQty: '1'},
-        {id:3, productName: 'TK-3', productClass: 'Class-2', productPrice: 5300, capacity: '100ml', cartProductQty: '1'}
+        {id:1, productName: 'TK-1', productClass: 'Class-1', productPrice: 5200, capacity: '100ml', cartProductQty: '1', productNumber: '100100'},
+        {id:2, productName: 'TK-2', productClass: 'Class-2', productPrice: 5500, capacity: '50ml', cartProductQty: '1', productNumber: '100201'},
+        {id:3, productName: 'TK-3', productClass: 'Class-2', productPrice: 5300, capacity: '100ml', cartProductQty: '1', productNumber: '100300'}
     ])
 
+    // 選了哪個包裝
     const handlePackageChoose = (packageValue) => {
         setSelectPackage(packageValue)
     }
 
+    // 改變進度
     const goToCheckOut = () => setCartStep(1)
-
     const goToConfirmation = () => setCartStep(2)
-
     const backToOrder = () => setCartStep(0)
 
     return (
