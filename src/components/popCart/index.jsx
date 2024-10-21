@@ -4,7 +4,7 @@ import CartDefault from './cartDefault'
 import CartReview from './cartReview'
 
 //  不確定Add 要弄進來 還是 切出去
-const PopCart = () => {
+const PopCart = ({onClose}) => {
     // 0:Default 1:Review
     const [data, setData] = useState(0)
     const [cartItems, setCartItems] = useState([])
@@ -29,11 +29,18 @@ const PopCart = () => {
         }
     },[cartItems])
 
+    // 點到 pop 才不會關閉
+    const handleMaskClick = (e) => {
+        if(e.target.className === 'popMask') {
+            onClose();
+        }
+    }
+
     return (
-        <div className="popMask">
+        <div className="popMask" onClick={handleMaskClick}>
             <div className="pop">
                 <div>
-                    <div className="popClose">X</div>
+                    <div className="popClose" onClick={onClose}>X</div>
                 </div>
                 {data === 0 && (
                     <CartDefault />
