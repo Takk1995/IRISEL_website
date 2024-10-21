@@ -10,10 +10,10 @@ function App() {
     <Router>
       <div>
         <Routes>
-          <Route path ='/' element = {<Home/>} />
+          <Route exact path ='/' element = {<Home/>} />
           <Route path ='/cart' element = {<ShoppingCart/>} />
           <Route path ='/contactusform' element = {<ContactUsForm/>} />
-          <Route path ='/FQA' element = {<FQA/>} />
+          <Route path ='/fqa' element = {<FQA/>} />
         </Routes>
       </div>
     </Router>
