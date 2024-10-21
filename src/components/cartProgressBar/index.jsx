@@ -4,7 +4,7 @@ const CartProgressBar = ({cartStep}) => {
     return (
         <div>
             <div>
-                <ul className="noBullets cartHeader">
+                <ul className="noBullets cartHeader progressBarTop">
                     <li><h2>購物車</h2></li>
                     <li><h2>結帳</h2></li>
                     <li><h2>確認</h2></li>

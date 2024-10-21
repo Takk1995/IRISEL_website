@@ -232,7 +232,7 @@
 }
 
 .checkOrderTop {
-    margin-top: 2%;
+    margin-top: 4%;
 }
 
 .packageInp {
@@ -242,4 +242,8 @@
 .orderNone {
     margin-top: 8%;
     margin-bottom: 15%;
+}
+
+.progressBarTop {
+    margin-top: 83px;
 }
