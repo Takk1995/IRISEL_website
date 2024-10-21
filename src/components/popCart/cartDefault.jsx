@@ -16,19 +16,19 @@ const CartDefault = () => {
                     <div className="horizontallyCenter">
                         <ul className="noBullets">
                             <li>
-                                <a href="">
+                                <div>
                                     <p>香氛</p>
-                                </a>
+                                </div>
                             </li>
                             <li>
-                                <a href="">
+                                <div>
                                     <p>客製化</p>
-                                </a>
+                                </div>
                             </li>
                             <li>
-                                <a href="">
+                                <div>
                                     <p>會員</p>
-                                </a>
+                                </div>
                             </li>
                         </ul>
                     </div>
