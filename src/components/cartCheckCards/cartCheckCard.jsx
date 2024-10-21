@@ -2,7 +2,7 @@ import '../../style/Takk.css'
 import img from '../../img/test.png'
 
 const CartCheckCard = ({detail}) => {
-    const {productName, productClass, productPrice, capacity, cartProductQty, productPackage} = detail;
+    const {productName, productClass, productPrice, capacity, cartProductQty} = detail;
     
     return (
         <div className="horizontally">

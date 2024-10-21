@@ -1,8 +1,6 @@
 import '../../style/Takk.css'
 
-const CartProgressBar = () => {
-    // 0:Order 1:CheckOut 2:Confirmation
-    
+const CartProgressBar = ({cartStep}) => {
     return (
         <div>
             <div>
@@ -14,16 +12,16 @@ const CartProgressBar = () => {
             </div>
             <div>
                 <ul className="cartStepper">
-                    {/* 購物車 */}
-                    <li className="cartLine"></li>
-                    <li className="cartCircle"></li>
-                    {/* 結帳 */}
-                    <li className="cartLine"></li>
-                    <li className="cartCircle"></li>
-                    {/* 確認 */}
-                    <li className="cartLine"></li>
-                    <li className="cartCircle"></li>
-                    <li className="cartLine"></li>
+                    {/* 0 */}
+                    <li className={ cartStep >= 0 ? 'cartLineB' : 'cartLine'}></li>
+                    <li className={ cartStep >= 0 ? 'cartCircleB' : 'cartCircle'}></li>
+                    {/* 1 */}
+                    <li className={ cartStep >= 1 ? 'cartLineB' : 'cartLine'}></li>
+                    <li className={ cartStep >= 1 ? 'cartCircleB' : 'cartCircle'}></li>
+                    {/* 2 */}
+                    <li className={ cartStep === 2 ? 'cartLineB' : 'cartLine'}></li>
+                    <li className={ cartStep === 2 ? 'cartCircleB' : 'cartCircle'}></li>
+                    <li className={ cartStep === 2 ? 'cartLineB' : 'cartLine'}></li>
                 </ul>
             </div>
         </div>

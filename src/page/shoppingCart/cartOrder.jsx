@@ -3,7 +3,7 @@ import img from '../../img/test.png'
 import CartEditCards from '../../components/cartEditCards';
 import { useState } from 'react';
 
-function CartOrder({onPackage, onNext}) {
+function CartOrder({cartItem, setCartItem, onPackage, onNext}) {
     const [choose, setChoose] = useState(null)
 
     // 把選擇哪個包裝傳遞到父元件
@@ -24,10 +24,11 @@ function CartOrder({onPackage, onNext}) {
             {/* each所選商品資料 */}
             <div>
                 {/* cartEditCards */}
-                <CartEditCards />
+                <CartEditCards cartItem={cartItem} setCartItem={setCartItem} />
             </div>
             {/* 包裝選擇 */}
-            <div>
+            {cartItem.length > 0 && (
+                <div>
                 <div>
                     <h2>包裝</h2>
                     <ul className="noBullets">
@@ -67,10 +68,11 @@ function CartOrder({onPackage, onNext}) {
                     </ul>
                 </div>
             </div>
+            )}
             <div>
                 {/* 往cartCheckOut */}
                 <div className="horizontallyCenter">
-                    <button className="cartBottom" onClick={onNext} disabled={!choose}>前往結帳</button>
+                    <button className="cartBottom" onClick={onNext} disabled={!choose || cartItem.length === 0}>前往結帳</button>
                 </div>
                 {/* 返回商品頁 */}
                 <div className="horizontallyCenter cartBottom">

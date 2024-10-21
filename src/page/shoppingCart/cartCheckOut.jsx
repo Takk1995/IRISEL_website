@@ -3,7 +3,7 @@ import '../../style/Takk.css'
 import img from '../../img/test.png'
 import CartCheckCards from '../../components/cartCheckCards';
 
-const CartCheckOut = ({ selectPackage, onNext, onBack }) => {
+const CartCheckOut = ({cartItem, selectPackage, onNext, onBack }) => {
     const [status, setStatus] = useState(true) // member:true guest:false
     const memberClick = () => setStatus(true)
     const guestClick = () => setStatus(false)
@@ -195,7 +195,7 @@ const CartCheckOut = ({ selectPackage, onNext, onBack }) => {
                 </div>
                 {/* each所選商品資料 */}
                 <div>
-                    <CartCheckCards />
+                    <CartCheckCards cartItem = {cartItem} />
                 </div>
                 <div>
                     <div className="horizontally">

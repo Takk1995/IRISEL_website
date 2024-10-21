@@ -2,49 +2,55 @@ import { useState, useEffect } from 'react';
 import '../../style/Takk.css'
 import CartEditCard from './cartEditCard';
 
-const CartEditCards = () => {
-    const [cartEditCards, setCartEditCards] = useState([
-        {id:1, productName: 'TK-1', productClass: 'Class-1', productPrice: 5200, capacity: '100ml'},
-        {id:2, productName: 'TK-2', productClass: 'Class-2', productPrice: 5500, capacity: '50ml'},
-        {id:3, productName: 'TK-3', productClass: 'Class-2', productPrice: 5300, capacity: '100ml'}
-    ])
-
+const CartEditCards = ({cartItem, setCartItem}) => {
     // 總和參數與設定總和的函式
     const [total, setTotal] = useState(0)
 
     // 依照ID 移除卡片
     const delCard = (id) => {
-        setCartEditCards(cartEditCards.filter(c => c.id !== id))
+        setCartItem(cartItem.filter(c => c.id !== id))
     }
 
     // 更新數量時重新設定數量
     const upDateQty = (id, qty) => {
-        const refresh = cartEditCards.map(card => {
+        const refresh = cartItem.map(card => {
             if (card.id === id) {
-                return {...card, qty}
+                return {...card, cartProductQty: qty}
             }
             return card
         });
-        setCartEditCards(refresh);
+        setCartItem(refresh);
         calculatedTotal(refresh)
     }
 
     // 計算總金額
     const calculatedTotal = (cards) => {
+        if (!Array.isArray(cards)) {
+            console.error('ERROR');
+            return
+        }
         const newTotal = cards.reduce((total, item) => {
-            return total + (item.productPrice * (item.qty || 1))
+            return total + (item.productPrice * (item.cartProductQty || 1))
         }, 0);
         setTotal(newTotal)
     }
 
     // 編輯卡片有變動時 重新計算總金額
     useEffect(() => {
-        calculatedTotal(cartEditCards)
-    }, [cartEditCards])
+        if (Array.isArray(cartItem)) {
+            calculatedTotal(cartItem)
+        } else {
+            console.error('ERROR')
+        }
+    }, [cartItem])
+
+    if (!Array.isArray(cartItem) || cartItem.length === 0) {
+        return <h2 className='horizontallyCenter orderNone'>您的購物車沒有任何商品</h2>
+    }
 
     return (
         <div>
-            {cartEditCards.map((c, index) => (
+            {cartItem.map((c, index) => (
                 <div key={c.id}>                    
                     <CartEditCard
                         key      = {c.id}
@@ -52,7 +58,7 @@ const CartEditCards = () => {
                         onDel    = {() => delCard(c.id)}
                         onChange = {upDateQty}
                     />
-                    {index < cartEditCards.length - 1 && <hr/>}
+                    {index < cartItem.length - 1 && <hr/>}
                 </div>
             ))}
             <ul className="noBullets">

@@ -3,7 +3,7 @@ import '../../style/Takk.css'
 import CartDefault from './cartDefault'
 import CartReview from './cartReview'
 
-//  不確定Add是不是要弄進來 還是 切出去
+//  不確定Add 要弄進來 還是 切出去
 const PopCart = () => {
     // 0:Default 1:Review
     const [data, setData] = useState(0)
@@ -20,6 +20,7 @@ const PopCart = () => {
         fetchCartItems()
     }, [])
 
+    // 0:沒資料 1:有資料
     useEffect(() => {
         if(cartItems.length === 0) {
             setData(0)
