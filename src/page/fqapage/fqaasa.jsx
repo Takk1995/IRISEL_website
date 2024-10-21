@@ -9,7 +9,7 @@ function FQAasa() {
     // actID顯示, setID隱藏
     const [actID, setID] = useState(null);
     const dotans = (id) => {
-        if (actID == id) {
+        if (actID === id) {
             setID(null);
         } else {
             setID(id);
