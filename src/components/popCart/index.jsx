@@ -23,9 +23,9 @@ const PopCart = ({onClose}) => {
     // 0:沒資料 1:有資料
     useEffect(() => {
         if(cartItems.length === 0) {
-            setData(1)
-        } else {
             setData(0)
+        } else {
+            setData(1)
         }
     },[cartItems])
 
