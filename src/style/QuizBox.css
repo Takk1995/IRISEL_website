@@ -1,0 +1,20 @@
+.QuizBoxWord{
+    text-align:center;
+    font-size:40px;
+    font-weight: 900;
+    color:black;
+}
+.QuizTextBox{
+    font-size: 20px;
+    color: #000;
+    margin-bottom: 10px;
+    width: 120vh;
+    height: 30vh;
+    background-color: rgba(129, 125, 123, 0.575);
+    border-radius: 10px;
+    border: #cc5195 solid 3px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

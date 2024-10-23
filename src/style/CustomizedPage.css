@@ -1,0 +1,19 @@
+.CustomizedLeft {
+    background-color: #f0f0f0;
+    border-right: 1px solid #e0e0e0;
+    padding: 10px;
+    width: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* 卡片之間的間距 */
+}
+
+.CustomizedLeft .CustomizedCard {
+    flex: 1 1 calc(25% - 20px); /* 每個卡片佔 25% 減去間距 */
+    box-sizing: border-box; /* 包含內邊距和邊框 */
+}
+.CustomizedBackground{
+    background-color: rgb(100, 147, 189);
+    height: 100vh;
+    display: flex;
+}
