@@ -1,4 +1,3 @@
-// import React from 'react';
 import React, { useState } from 'react';
 import '../../style/homepage.css';
 import add from '../../img/Homeadd.png';

@@ -34,13 +34,13 @@ function HomeMain() {
                         <div className="imgovers">
                             <img className="imgoverstyle img54 imgset imgw500" src={Ppic01} alt="推薦商品" />
                             <div className="imgoverlay">
-                                <button className="imgoverbtn btnhover imgstore">網路商店</button>
+                                <button className="imgoverbtn bttnr btnhover imgstore">網路商店</button>
                             </div>
                         </div>
                         <div className="imgovers">
                             <img className="imgoverstyle img54 imgset imgw500" src={Ppic02} alt="客製化商品" />
                             <div className="imgoverlay">
-                                <button className="imgoverbtn btnhover imgstore">客製化商品</button>
+                                <button className="imgoverbtn bttnr btnhover imgstore">客製化商品</button>
                             </div>
                         </div>
 
@@ -59,25 +59,25 @@ function HomeMain() {
                             <div className="imgovers">
                                 <img className="imgoverstyle imgset imgPr imgpa" src={Ppic03} alt="pic01" />
                                 <div className="imgoverlay">
-                                    <button className="imgoverbtn btnhover">開始選購</button>
+                                    <button className="imgoverbtn bttnr btnhover">開始選購</button>
                                 </div>
                             </div>
                             <div className="imgovers">
                                 <img className="imgoverstyle imgset imgPr imgpa" src={Ppic04} alt="pic02" />
                                 <div className="imgoverlay">
-                                    <button className="imgoverbtn btnhover">開始選購</button>
+                                    <button className="imgoverbtn bttnr btnhover">開始選購</button>
                                 </div>
                             </div>
                             <div className="imgovers">
                                 <img className="imgoverstyle imgset imgPr imgpa" src={Ppic05} alt="pic03" />
                                 <div className="imgoverlay">
-                                    <button className="imgoverbtn btnhover">開始選購</button>
+                                    <button className="imgoverbtn bttnr btnhover">開始選購</button>
                                 </div>
                             </div>
                             <div className="imgovers">
                                 <img className="imgoverstyle imgset imgPr imgpa" src={Ppic06} alt="pic04" />
                                 <div className="imgoverlay">
-                                    <button className="imgoverbtn btnhover">開始選購</button>
+                                    <button className="imgoverbtn bttnr btnhover">開始選購</button>
                                 </div>
                             </div>
 
@@ -103,10 +103,7 @@ function HomeMain() {
                         <p className="contentText">Irisel 採用天然高品質原料，結合頂尖調香師的藝術創作，</p>
                         <p className="contentText">讓香氣與情感交織，帶領您進入一個夢幻而奢華的香氛國度。</p>
                     </div>
-                    <div className="subNews titleset subNewsbg">
-                        {/* <p className="titlep">訂閱消息</p>
-                        <input className="subNewsinput" type="email" placeholder="請輸入Email" />
-                        <button className="btnhover subNewsbutton">送出</button> */}
+                    <div className="absepar abseparbg">
 
                     </div>
                 </div>
