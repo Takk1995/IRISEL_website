@@ -39,7 +39,7 @@ function FQApage() {
                 <div className="PageTitle titlep borbottom">常見問題</div>
                 <div className="arrHor">
                     <div className="FAQFormTitle">
-                        <ul>
+                        <ul className='abc'>
                             <li
           className={`FAQFormTitleli font18 texthover ${act === 'tab1' ? 'active' : ''}`}
           onClick={() => set('tab1')}>會員問題</li>

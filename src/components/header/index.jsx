@@ -9,31 +9,39 @@ function HomeHeader() {
     const [popSwitch, setPopSwitch] = useState(false)
     const switchPop = () => setPopSwitch(!popSwitch)
 
+    // 開啟actop 關閉actcl
+    const [actop, actcl] = useState(false);
+    const dotmenu = () => {
+        actcl(!actop);
+      };
+
     return (
         <div>
-            <div className="ptabh gennavBar removeborder cenVer">
+            <div className="ptabh gennavBar cenVer">
                 {/* <!-- 底線陰影 --> */}
-                <div className="fixedspace paLR20 cenVer arrHor horizontallySpaceBetween">
-                    <img className="h45" src={LOGO} alt="LOGO" />
-                    <ul className="noBullets arrHor noBreaks titleText">
-                        <li className="texthover rightline padLR35">首頁</li>
-                        <li className="texthover rightline padLR35">網路商店</li>
-                        <li className="texthover rightline padLR35">客製化商品</li>
-                        <li className="texthover rightline padLR35">會員中心</li>
-                        <li className="texthover padLR35">常見問題</li>
+                <div className="img576 posrela fixedspace paLR20 cenVer arrHor horizontallySpaceBetween">
+                    <img className="h45 LOGO" src={LOGO} alt="LOGO" />
+                    <button className="texthover hammenu" onClick={dotmenu}>&#9776;</button>
+                    <ul className={`barlist noBullets arrHor noBreaks titleText  ${actop ? 'active' : ''}`}>
+                        <li className="barlistli texthover rightline padLR35">首頁</li>
+                        <li className="barlistli texthover rightline padLR35">網路商店</li>
+                        <li className="barlistli texthover rightline padLR35">客製化商品</li>
+                        <li className="barlistli texthover rightline padLR35">會員中心</li>
+                        <li className="barlistli texthover padLR35">常見問題</li>
                     </ul>
-                    <img className="h45 leanRight290"
+                    <img className="icancar h45 leanRight290"
                         src={ICONcat}
                         alt="iconCAR"
                         onClick={switchPop}
                     />
-                    {/* <!-- <div style="background-color: blue;">3</div> --> */}
                 </div>
             </div>
             {popSwitch && (<PopCart onClose={switchPop} />)}
         </div>
 
     );
+
+
 }
 
 export default HomeHeader;
