@@ -1,32 +1,37 @@
 import '../../style/Takk.css'
 
-function CartDefault() {
+const CartDefault = () => {
     return (
         <div>
-            <div>
-                <div className="horizontallyCenter">
-                    <p>您的購物車沒有任何商品</p>
-                </div>
+            <div className="horizontallyCenter">
+                <h2>購物車</h2>
             </div>
-            <div>
-                <div className="horizontallyCenter">
-                    <ul className="noBullets">
-                        <li>
-                            <a href="">
-                                <span>香氛</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span>客製化</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                <span>會員</span>
-                            </a>
-                        </li>
-                    </ul>
+            <div className='vertical'>
+                <div className='cartDefaultMain'>
+                    <div className="horizontallyCenter">
+                        <p>您的購物車沒有任何商品</p>
+                    </div>
+                </div>
+                <div className='cartDefaultLink'>
+                    <div className="horizontallyCenter">
+                        <ul className="noBullets">
+                            <li>
+                                <div>
+                                    <p>香氛</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <p>客製化</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <p>會員</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

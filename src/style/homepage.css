@@ -1,0 +1,432 @@
+/* *************** */
+/* 測試背景顏色 */
+.testbgc {
+    background-color: antiquewhite;
+    border: 1px solid black;
+    /* width: 500px; */
+    /* height: 500px; */
+}
+
+/* 寬固定1140px，左右自動留白 */
+.fixedspace {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/* 水平對齊 */
+.arrHor {
+    display: flex;
+    flex-direction: row;
+}
+
+/* 內距20px */
+.paLR20 {
+    padding: 0 20px;
+}
+
+/* 垂直置中 */
+.cenVer {
+    display: flex;
+    align-items: center;
+}
+
+/* 不換行 */
+.noBreaks {
+    white-space: nowrap;
+}
+
+/* 行高 */
+.lineHeight50 {
+    line-height: 50px;
+}
+
+.lineHeight30 {
+    line-height: 30px;
+}
+
+/* 內容顏色 */
+.contentText {
+    color: #727272;
+}
+
+/* 標題顏色 */
+.titleText {
+    color: #343434;
+}
+
+/* 邊框項目顏色 */
+.titlebaColor {
+    background-color: #E8E8E8;
+}
+
+.contentboColor {
+    border: none;
+    border-bottom: #E8E8E8 1px solid;
+}
+
+/* 頁首尾高 */
+.ptabh {
+    width: 100%;
+    height: 65px;
+}
+
+/* 分散對齊 */
+.disAlig {
+    display: inline-block;
+    text-align: justify;
+}
+
+
+/* ************************* */
+/* 導覽列 */
+.gennavBar {
+    background-color: white;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.2);
+    display: flex;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 2;
+}
+
+/* bar邊線 */
+.rightline {
+    border-right: 1px solid #727272;
+}
+
+/* 圖片高度45px */
+.h45 {
+    height: 40px;
+}
+
+.padLR35 {
+    padding: 0 35px;
+}
+
+.padR35 {
+    padding-right: 35px;
+}
+
+.padL35 {
+    padding-left: 35px;
+}
+
+.padTB {
+    padding: 35px 0;
+}
+
+/* 靠右 */
+.leanRight290 {
+    margin-left: 290px;
+}
+
+.leanRight135 {
+    margin-left: 135px;
+}
+
+
+
+/* Main */
+.imgset {
+    height: auto;
+    object-fit: cover;
+}
+
+/* w500 */
+.imgw500 {
+    width: 500px;
+    margin: 0 35px;
+}
+
+.imgw300 {
+    width: 100px;
+    margin: 0 20px;
+}
+
+/* 標題文字 */
+.titleset {
+    width: 800px;
+    text-align: center;
+    line-height: 25px;
+    padding: 50px 0;
+}
+
+.titlep {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+/* 其他頁標題 */
+.PageTitle {
+    text-align: center;
+    padding: 40px;
+    margin-bottom: 30px;
+}
+
+/* 底線 */
+.borbottom {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #343434;
+}
+
+/* 商品圖片 */
+.imgPr {
+    width: 255px;
+}
+
+.imgpa {
+    padding: 40px 15px;
+}
+
+
+.imgovers {
+    position: relative;
+    display: inline-block;
+}
+
+/* 圖片樣式 */
+.imgoverstyle {
+    display: block;
+}
+
+/* 覆蓋層樣式 */
+.imgovers .imgoverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.5s ease;
+    pointer-events: none;
+    /* 防止遮罩層干擾按鈕點擊 */
+}
+
+/* 當鼠標滑過圖片時顯示 50% 白色透明背景 */
+.imgovers:hover .imgoverlay {
+    background-color: rgba(255, 255, 255, 0.5);
+    pointer-events: all;
+    /* 開啟鼠標交互 */
+}
+
+/* 按鈕樣式 */
+.imgoverbtn {
+    background-color: #a40000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    /* font-size: 16px; */
+    cursor: pointer;
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.imgstore {
+    font-size: 20px;
+    padding: 10px 50px;
+
+}
+
+/* 滑過圖片時顯示按鈕 */
+.imgovers:hover .btnhover {
+    opacity: 1;
+}
+
+/* 訂閱消息 */
+.subNews {
+    width: 100%;
+    height: 30px;
+
+}
+
+
+.subNewsbg {
+    background-image: url('../img/pic114003.png');
+}
+
+.subNewsinput {
+    width: 400px;
+    height: 40px;
+    padding: 5px;
+    border: white 3px solid;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.subNewsbutton {
+    width: 80px;
+    height: 30px;
+    padding: 4px 10px;
+    /* border: white 3px solid; */
+    border: none;
+    background: #a40000;
+    color: white;
+    cursor: pointer;
+    margin: 0;
+    position: absolute;
+    /* border-radius:20px */
+}
+
+.texthover:hover {
+    color: #a40000;
+}
+
+.btnhover:hover {
+    color: white;
+    /* border: 2px solid #a40000; */
+    background-color: #6e0000;
+}
+
+/* 聯絡我們 */
+.ContactUs {
+    width: 1020px;
+    padding: 0 60px;
+    text-decoration: none;
+    /* background-color: #F8F8F8; */
+    height: auto;
+}
+
+
+.ContactUsForm {
+    width: 1140px;
+    /* background-color: #F8F8F8; */
+    padding-top: 50px;
+    padding-bottom: 100px;
+    margin: 0 auto;
+    line-height: 15px;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+}
+
+.InputBox {
+    padding: 2px 10px;
+    border: #727272 2px solid;
+
+}
+
+/* 常見問題 */
+.FAQForm {
+    /* background-color: antiquewhite; */
+    background-color: #F8F8F8;
+    height: auto;
+}
+
+.FAQFormTitle {
+    text-align: end;
+    /* background-color: #E5E5E5; */
+    flex: 1;
+    white-space: nowrap;
+    padding-right: 10%;
+    padding-bottom: 10%;
+}
+
+.FAQFormTitleli {
+    list-style: none;
+    cursor: pointer;
+}
+
+.font18 {
+    font-size: 18px;
+    padding: 20px 0;
+}
+
+.FAQFormDetail {
+    /* background-color: #F8F8F8; */
+    flex: 3;
+    padding-left: 0;
+    padding-right: 30px;
+    padding-bottom: 10%;
+}
+
+.FAQFormDetailNF {
+    display: none;
+}
+
+/* 問題項目 */
+.FAQQ {
+    /* background-color: aliceblue; */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.FQAIconimg {
+    height: 15px;
+    padding-right: 10px;
+}
+
+.FAQA {
+    /* display: none; */
+    animation: fadeEffect 1s;
+}
+
+/* RWD */
+@media(max-width: 1180px) {
+    .fixedspace {
+        max-width: 576px;
+        margin: 0 auto;
+        
+    }
+
+    .img576 {
+        width: 576px;
+        height: auto;
+    }
+
+    .img54 {
+        width: 576px;
+        height: 410px;
+        padding-top: 20px;
+    }
+
+    .Rwdvertical {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .padLR35 {
+        padding: 0 5px;
+    }
+
+    .titleset {
+        width: 480px;
+        text-align: center;
+        line-height: 25px;
+        padding: 50px 0;
+    }
+    .imgwrap {
+        width: 50%; /* 根據需要調整寬度 */
+        /* margin: 10px; */
+        object-fit: cover;
+    }
+    .arrHorwrap {        
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    }
+    .imgpa {
+        padding: 10px 5px;
+    }
+    .padL35 {
+        padding-left: 5px;
+    }
+    .padR35 {
+        padding-right: 5px;
+    }
+    .leanRight135 {
+        display: none;
+    }
+    .h45 {
+        display: none;
+    }
+    .paLR20 {
+        padding: 0;
+    }
+
+}
