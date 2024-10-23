@@ -12,7 +12,7 @@ const CartCheckCard = ({detail}) => {
             <div style={{ width: '100%' }}>
                 <div className="vertical">
                     <div>
-                        <a href="" className="vertical">
+                        <a href="#" className="vertical">
                             <span className='cardTitle'>{productName}</span>
                             <span>{productClass}</span>
                         </a>

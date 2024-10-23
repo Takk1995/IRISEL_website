@@ -33,7 +33,7 @@ const CartEditCard =({detail, onDel, onChange}) => {
                     <div className="horizontally">
                         <div>
                             {/* link to productid */}
-                            <a href="" className="vertical">
+                            <a href="#" className="vertical">
                                 <span className='cardTitle'>{productName}</span>
                                 <span>{productClass}</span>
                             </a>

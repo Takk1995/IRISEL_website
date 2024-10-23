@@ -31,7 +31,7 @@ const PopUpDate = () => {
             <div className='cartTop'>
                 {/* 商品資料 */}
                 <div>
-                    <a href="" className="vertical">
+                    <a href="#" className="vertical">
                         <span className="cartTitle">{detail.productName}</span>
                         <span>{detail.productClass}</span>
                     </a>

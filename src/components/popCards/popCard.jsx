@@ -11,7 +11,7 @@ const PopCard = ({detail}) => {
                 </div>
                 <div className='popCardMain'>
                     <div style={{paddingTop:'15px'}}>
-                        <a href="" className="vertical">
+                        <a href="#" className="vertical">
                             <span className='cartTitle'>{productName}</span>
                             <span>{productClass}</span>
                         </a>
