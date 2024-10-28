@@ -137,7 +137,7 @@
         position: absolute;
         background-color: white;
         border: #E8E8E8 1px solid;
-        top: 65px;
+        top: 52px;
         /* left: 0; */
         padding: 0 5%;
         width: 100px;
@@ -175,7 +175,7 @@
     position: absolute;
     width: 100%;
     opacity: 0;
-    transition: opacity 1s ease-in-out; /* 实现淡入淡出效果 */
+    transition: opacity 1s ease-in-out; 
   }
   
   .imgcarousel.active {
@@ -282,9 +282,10 @@
   }
   
   .scrbar {
-    margin-top: 20px; /* 卷轴与图片之间的间距 */
-    width: 100px; /* 卷轴宽度 */
-    -webkit-appearance: none; /* 去掉默认样式 */
+    margin-top: 20px; 
+    width: 100px; 
+    /* 捨棄預設卷軸樣式 */
+    -webkit-appearance: none; 
     appearance: none;
     height: 10px;
     background: #E8E8E8;
@@ -292,7 +293,7 @@
     outline: none;
   }
   
-  /* 控制块样式 */
+  /* 拉軸樣式 */
   .scrbar::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -302,22 +303,6 @@
     background: #a40000;
     cursor: pointer;
   }
-/*   
-  .scrbar::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #555;
-    cursor: pointer;
-  }
-  
-  .scrbar::-ms-thumb {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #555;
-    cursor: pointer;
-  } */
 
 /* 商品圖片 */
 .imgPr {
