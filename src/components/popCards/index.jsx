@@ -4,9 +4,15 @@ import PopCard from './popCard';
 
 const PopCards = () => {
     const [popCards] = useState([
-        {id:1, productName: 'TK-1', productClass: 'Class-1', productPrice: 5200, capacity: '100ml', cartProductQty: '1', productNumber: '100100'},
-        {id:2, productName: 'TK-2', productClass: 'Class-2', productPrice: 5500, capacity: '50ml', cartProductQty: '1', productNumber: '100201'},
-        {id:3, productName: 'TK-3', productClass: 'Class-2', productPrice: 5300, capacity: '100ml', cartProductQty: '1', productNumber: '100300'}
+        {
+            product_id:'',
+            product_name:'',
+            main_type_Chinese:'',
+            img_url:'',
+            product_code:'',
+            capacity: '',
+            price: ''
+        }
     ])
 
     const [total, setTotal] = useState(0)
@@ -14,7 +20,7 @@ const PopCards = () => {
     // 計算總金額
     useEffect(() => {
         const calculatedTotal = popCards.reduce((total, item) => {
-            return total + item.productPrice
+            return total + item.price
         }, 0);
         setTotal(calculatedTotal);
     }, [popCards])

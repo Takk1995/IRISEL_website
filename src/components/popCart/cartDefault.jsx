@@ -1,4 +1,5 @@
 import '../../style/Takk.css'
+import { Link } from 'react-router-dom';
 
 const CartDefault = () => {
     return (
@@ -17,17 +18,23 @@ const CartDefault = () => {
                         <ul className="noBullets">
                             <li>
                                 <div>
-                                    <p>香氛</p>
+                                    <Link to='/product'>
+                                        <p>香氛</p>
+                                    </Link>
                                 </div>
                             </li>
                             <li>
                                 <div>
-                                    <p>客製化</p>
+                                    <Link to='/'>
+                                        <p>測驗</p>
+                                    </Link>
                                 </div>
                             </li>
                             <li>
                                 <div>
-                                    <p>會員</p>
+                                    <Link to = '/'>
+                                        <p>會員</p>
+                                    </Link>
                                 </div>
                             </li>
                         </ul>

@@ -1,4 +1,5 @@
 import '../../style/Takk.css'
+import { Link } from 'react-router-dom';
 import PopCards from '../popCards';
 
 const CartReview = () => {
@@ -15,9 +16,13 @@ const CartReview = () => {
             <div>
                 <div className="vertical">
                     {/* 往cartOrder */}
-                    <button className="cartBottom">檢視購物車</button>
+                    <Link to = '/cart'>
+                        <button className="cartBottom">檢視購物車</button>
+                    </Link>
                     {/* 往商品頁 */}
-                    <button className="cartBottom">繼續購物</button>
+                    <Link to = '/product'>
+                        <button className="cartBottom">繼續購物</button>
+                    </Link>
                 </div>
             </div>
         </div>

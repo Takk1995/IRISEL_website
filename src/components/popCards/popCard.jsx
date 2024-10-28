@@ -1,19 +1,18 @@
 import '../../style/Takk.css'
-import img from '../../img/test.png'
 
 const PopCard = ({detail}) => {
-    const {productName, productClass, productPrice, capacity} = detail;
+    const {product_name, main_type_Chinese, img_url, price, capacity} = detail;
 
     return (
             <div className="horizontally">
                 <div>
-                    <img src={img} alt='' className="cartImg" />
+                    <img src={img_url} alt='' className="cartImg" />
                 </div>
                 <div className='popCardMain'>
                     <div style={{paddingTop:'15px'}}>
                         <a href="#" className="vertical">
-                            <span className='cartTitle'>{productName}</span>
-                            <span>{productClass}</span>
+                            <span className='cartTitle'>{product_name}</span>
+                            <span>{main_type_Chinese}</span>
                         </a>
                         <div>
                             <p>{capacity}</p>
@@ -24,7 +23,7 @@ const PopCard = ({detail}) => {
                             <p>數量:1</p>
                         </div>
                         <div>
-                            <p>NT$ {productPrice}</p>
+                            <p>NT$ {price}</p>
                         </div>
                     </div>
                 </div>
