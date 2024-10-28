@@ -53,6 +53,10 @@
     margin: 0;
     line-height: 25px;
 }
+.cleartext {
+    text-decoration: none;
+    color: #343434;
+}
 
 /* 標題顏色 */
 .titleText {

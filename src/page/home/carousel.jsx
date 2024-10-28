@@ -13,6 +13,7 @@ const Carousel = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
+                // 當前圖片索引，自動更新+1
       trantime((prepic) => (prepic + 1) % images.length);
     }, 5000); //五秒變換一次
 

@@ -13,7 +13,7 @@ function HomeFooter() {
                     <li className="texthover rightline padLR35">隱私條款</li>
                     <li className="texthover rightline padLR35">服務條款</li>
                     <li className="texthover rightline padLR35">COOKIES政策</li>
-                    <li className="texthover padL35">常見問題</li>
+                    <li className="texthover padL35"> <a className='cleartext' href='/contactusform'>聯絡我們</a></li>
                 </ul>
                 <p className="leanRight135">2024-Iriselperfume.com.tw.All rights reserved.</p>
             </div>

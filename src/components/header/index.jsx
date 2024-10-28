@@ -13,21 +13,23 @@ function HomeHeader() {
     const [actop, actcl] = useState(false);
     const dotmenu = () => {
         actcl(!actop);
-      };
+    };
 
     return (
         <div>
             <div className="ptabh gennavBar cenVer">
                 {/* <!-- 底線陰影 --> */}
                 <div className="img576 posrela fixedspace paLR20 cenVer arrHor horizontallySpaceBetween">
-                    <img className="h45 LOGO" src={LOGO} alt="LOGO" />
+                    <a className='LOGO' href="/">
+                        <img className="h45" src={LOGO} alt="LOGO" />
+                    </a>
                     <button className="texthover hammenu" onClick={dotmenu}>&#9776;</button>
                     <ul className={`barlist noBullets arrHor noBreaks titleText  ${actop ? 'active' : ''}`}>
-                        <li className="barlistli texthover rightline padLR35">首頁</li>
+                        <li className="barlistli texthover rightline padLR35"><a className='cleartext' href="/">首頁</a></li>
                         <li className="barlistli texthover rightline padLR35">網路商店</li>
                         <li className="barlistli texthover rightline padLR35">客製化商品</li>
                         <li className="barlistli texthover rightline padLR35">會員中心</li>
-                        <li className="barlistli texthover padLR35">常見問題</li>
+                        <li className="barlistli texthover padLR35"><a className='cleartext' href="/FQA">常見問題</a></li>
                     </ul>
                     <img className="h45 leanRight290"
                         src={ICONcat}

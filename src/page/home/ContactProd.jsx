@@ -44,13 +44,13 @@ const Carousel = () => {
   }, [isDragging]);
 
   const handleScrollChange = (event) => {
-    setIsDragging(true);
-    const value = Number(event.target.value);
-    setCurrentIndex(value);
+    setIsDragging(true); //true拖曳
+    const value = Number(event.target.value); //當前索引值轉換數字
+    setCurrentIndex(value); //接收當前索引顯示目前圖片
   };
 
   const handleMouseUp = () => {
-    setIsDragging(false);
+    setIsDragging(false); //false不拖曳
   };
 
   return (
@@ -58,9 +58,11 @@ const Carousel = () => {
       <div
         className="carimages"
         style={{
+          // 圖片寬度做長度的變換
           transform: `translateX(calc(-${(currentIndex * 295) + 9}px))`
         }}
       >
+              {/* 倒數第四張開始，並開始前四張置於尾端 */}
         {[...images.slice(-4), ...images, ...images.slice(0, 4)].map((image, index) => (
           <div key={index} className="imgovers">
           <img src={image} alt={`carousel-${index}`} className="carimg imgset imgPr imgpa" />
