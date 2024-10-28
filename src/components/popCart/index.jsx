@@ -3,7 +3,6 @@ import '../../style/Takk.css'
 import CartDefault from './cartDefault'
 import CartReview from './cartReview'
 
-//  不確定Add 要弄進來 還是 切出去
 const PopCart = ({onClose}) => {
     // 0:Default 1:Review
     const [data, setData] = useState(0)
@@ -11,14 +10,12 @@ const PopCart = ({onClose}) => {
 
     useEffect(() => {
         const fetchCartItems = () => {
-            // 這裡是 API 拿資料
-            // API....
-
-            const items = [] // 假設這是從 API 獲取的資料
+            const key = isMember ? 'memberCart' : 'guestCart'
+            const items = JSON.parse(localStorage.getItem(key)) || []
             setCartItems(items)
         }
         fetchCartItems()
-    }, [])
+    }, [isMember])
 
     // 0:沒資料 1:有資料
     useEffect(() => {
