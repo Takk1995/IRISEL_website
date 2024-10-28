@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../../style/homepage.css';
-import add from '../../img/Homeadd.png';
-import close from '../../img/Homeclose.png';
+import add from '../../img/home/Homeadd.png';
+import close from '../../img/home/Homeclose.png';
 
 // 會員問題
 function FQAmember() {
@@ -29,7 +29,7 @@ function FQAmember() {
                         如何註冊成為 Irisel 的會員？</div>
                     {/* 放置開合答案 */}
                     {actID === 'answer1' && (
-                        <div id="answer1" className="FAQA contentText lineHeight30">註冊成為會員非常簡單！只需點擊我們官網右上角的「註冊」按鈕，填寫您的個人資料和聯絡方式，即可成為會員，享受專屬優惠和最新消息。</div>
+                        <div id="answer1" className="FAQA contentText lineHeight30">註冊成為會員非常簡單！只需點擊我們進入會員中心下方的「註冊」按鈕，填寫您的個人資料和聯絡方式，即可成為會員，享受專屬優惠和最新消息。</div>
                     )}
                 </div>
                 <div>

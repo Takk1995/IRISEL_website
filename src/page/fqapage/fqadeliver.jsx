@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../../style/homepage.css';
-import add from '../../img/Homeadd.png';
-import close from '../../img/Homeclose.png';
+import add from '../../img/home/Homeadd.png';
+import close from '../../img/home/Homeclose.png';
 
 // 配送問題
 function FQAdeliver() {

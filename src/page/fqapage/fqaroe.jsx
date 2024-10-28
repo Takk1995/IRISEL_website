@@ -1,8 +1,8 @@
 // import React from 'react';
 import React, { useState } from 'react';
 import '../../style/homepage.css';
-import add from '../../img/Homeadd.png';
-import close from '../../img/Homeclose.png';
+import add from '../../img/home/Homeadd.png';
+import close from '../../img/home/Homeclose.png';
 
 // 退換貨問題
 function FQAroe() {

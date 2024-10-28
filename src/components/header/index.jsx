@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import '../../style/homepage.css';
-import LOGO from '../../img/picLOGO01.png';
-import ICONcat from '../../img/piciconCAR.png';
+import LOGO from '../../img/home/picLOGO01.png';
+import ICONcat from '../../img/home/piciconCAR.png';
 import PopCart from '../popCart'
 
 

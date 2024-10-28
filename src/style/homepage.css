@@ -122,7 +122,7 @@
         border: none;
         cursor: pointer;
         position: absolute;
-        top: 15px;
+        top: 5px;
         padding-left: 10px;
         /* left: 20px;  */
     }
@@ -157,6 +157,30 @@
     }
 
 }
+
+.posrela {
+    position: relative;
+}
+.imgwh {
+    width: 1140px;
+    height: 642px;
+}
+
+
+.imgdivcarouse {    
+    width: 100%;
+  }
+  
+  .imgcarousel {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* 实现淡入淡出效果 */
+  }
+  
+  .imgcarousel.active {
+    opacity: 1;
+  }
 
 /* 圖片高度45px */
 .h45 {
@@ -235,13 +259,73 @@
     border-bottom: 1px solid #343434;
 }
 
+/* 商品輪播 */
+.carouselProd {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    width: 1140px;
+    /* border: 1px solid black; */
+  }
+  
+  .carimages {
+    display: flex;
+    transition: transform 0.5s ease;
+    padding-left: 20px;
+  }
+  
+  .carimg {
+    height: auto; 
+  }
+  
+  .scrbar {
+    margin-top: 20px; /* 卷轴与图片之间的间距 */
+    width: 100px; /* 卷轴宽度 */
+    -webkit-appearance: none; /* 去掉默认样式 */
+    appearance: none;
+    height: 10px;
+    background: #E8E8E8;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  /* 控制块样式 */
+  .scrbar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 10px;
+    border-radius: 5px;
+    background: #a40000;
+    cursor: pointer;
+  }
+/*   
+  .scrbar::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #555;
+    cursor: pointer;
+  }
+  
+  .scrbar::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #555;
+    cursor: pointer;
+  } */
+
 /* 商品圖片 */
 .imgPr {
     width: 255px;
 }
 
 .imgpa {
-    padding: 40px 15px;
+    padding: 20px 20px;
 }
 
 
@@ -312,7 +396,7 @@
 }
 
 .abseparbg {
-    background-image: url('../img/pic114003.png');
+    background-image: url('../img/home/pic114003.png');
 }
 
 .abseparinput {
@@ -412,6 +496,10 @@
         padding-top: 50px;
         padding-bottom: 100px;
     }
+    .carouselProd {
+        width: 576px;
+    }
+
 }
 
 @media(max-width: 576px) {
@@ -431,6 +519,9 @@
     .textareaBox {
         width: 300px;
         height: 200px;
+    }
+    .carouselProd {
+        width: 450px;
     }
 }
 
@@ -548,7 +639,7 @@
     }
 
     .imgpa {
-        padding: 10px 5px;
+        padding: 20px 20px;
     }
 
     .padL35 {
@@ -566,7 +657,10 @@
     .paLR20 {
         padding: 0;
     }
-
+    .imgwh {
+        width: 576px;
+        height: 342px;
+    }
 }
 
 @media(max-width: 576px) {
@@ -591,9 +685,18 @@
         text-align: center;
         line-height: 20px;
         font-size: 14px;
+        padding-bottom: 20px;
     }
 
     .imgPr {
         width: 200px;
     }
+    .imgwh {
+        width: 450px;
+        height: 253px;
+    }
+    .imgpa {
+        padding: 20px 18px;
+    }
+
 }

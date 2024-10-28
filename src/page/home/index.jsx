@@ -1,15 +1,12 @@
 import React from 'react';
 import '../../style/homepage.css';
-import Banner from '../../img/pic114001.png';
-import Ppic01 from '../../img/pic700-3.png';
-import Ppic02 from '../../img/pic700-1.png';
-import Ppic03 from '../../img/pic01.jpg';
-import Ppic04 from '../../img/pic02.jpg';
-import Ppic05 from '../../img/pic03.jpg';
-import Ppic06 from '../../img/pic04.jpg';
-import Ppic07 from '../../img/pic114002.png';
+import Ppic01 from '../../img/home/pic700-3.png';
+import Ppic02 from '../../img/home/pic700-1.png';
+import Ppic07 from '../../img/home/pic114002.png';
 import HomeFooter from '../../components/footer';
 import HomeHeader from '../../components/header';
+import Carousel from './carousel';
+import CarouselPord from './ContactProd';
 
 
 
@@ -22,7 +19,10 @@ function HomeMain() {
                 {/* <!-- top distance --> */}
                 <div style={{ height: '65px' }}></div>
                 {/* <!-- 首圖 --> */}
-                <img className="img576" src={Banner} alt="Banner" />
+                {/* <img className="img576" src={Banner} alt="Banner" /> */}
+                <Carousel />
+                {/* 輪播圖高度 */}
+                <div className='imgwh'></div>
                 {/* <!-- 商品 --> */}
                 <div className="vertical cenVer">
                     <div className="titleset">
@@ -55,41 +55,7 @@ function HomeMain() {
                     <img className="img576" src={Ppic07} alt="commodity" />
                     {/* <!-- 商品 --> */}
                     <div>
-                        <div className="arrHorwrap">
-                            <div className="imgovers">
-                                <img className="imgoverstyle imgset imgPr imgpa" src={Ppic03} alt="pic01" />
-                                <div className="imgoverlay">
-                                    <button className="imgoverbtn bttnr btnhover">開始選購</button>
-                                </div>
-                            </div>
-                            <div className="imgovers">
-                                <img className="imgoverstyle imgset imgPr imgpa" src={Ppic04} alt="pic02" />
-                                <div className="imgoverlay">
-                                    <button className="imgoverbtn bttnr btnhover">開始選購</button>
-                                </div>
-                            </div>
-                            <div className="imgovers">
-                                <img className="imgoverstyle imgset imgPr imgpa" src={Ppic05} alt="pic03" />
-                                <div className="imgoverlay">
-                                    <button className="imgoverbtn bttnr btnhover">開始選購</button>
-                                </div>
-                            </div>
-                            <div className="imgovers">
-                                <img className="imgoverstyle imgset imgPr imgpa" src={Ppic06} alt="pic04" />
-                                <div className="imgoverlay">
-                                    <button className="imgoverbtn bttnr btnhover">開始選購</button>
-                                </div>
-                            </div>
-
-
-
-
-
-
-
-                        </div>
-
-
+                        <CarouselPord/>
                     </div>
                 </div>
                 {/* <!-- 關於 --> */}

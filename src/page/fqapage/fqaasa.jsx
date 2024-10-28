@@ -1,8 +1,8 @@
 // import React from 'react';
 import React, { useState } from 'react';
 import '../../style/homepage.css';
-import add from '../../img/Homeadd.png';
-import close from '../../img/Homeclose.png';
+import add from '../../img/home/Homeadd.png';
+import close from '../../img/home/Homeclose.png';
 
 // 售後服務問題
 function FQAasa() {
@@ -59,7 +59,8 @@ function FQAasa() {
                         </span>
                         Irisel 提供香水的售後保養建議嗎？</div>
                     {actID === 'answer3' && (
-                        <div id="answer3" className="FAQA contentText lineHeight30">如果您收到的香水瓶有破損情況，請在收到包裹後的48小時內聯繫我們的客服團隊，並提供破損的照片。我們將免費為您更換新的商品，並承擔所有相關費用。</div>
+                        <div id="answer3" className="FAQA contentText lineHeight30">是的，我們提供香水的保養建議，包括如何保存香水以保持香氣的持久性和瓶身的完好。如果您有任何保養問題，隨時可以聯繫我們的客服團隊，我們將提供專業建議。
+                        </div>
                     )}
 
                 </div>

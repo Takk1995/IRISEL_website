@@ -1,8 +1,8 @@
 // import React from 'react';
 import React, { useState } from 'react';
 import '../../style/homepage.css';
-import add from '../../img/Homeadd.png';
-import close from '../../img/Homeclose.png';
+import add from '../../img/home/Homeadd.png';
+import close from '../../img/home/Homeclose.png';
 
 // 客製化問題
 function FQAcuf() {
@@ -44,7 +44,7 @@ function FQAcuf() {
                         </span>
                         如何申請客製化香水？</div>
                     {actID === 'answer2' && (
-                        <div id="answer2" className="FAQA contentText lineHeight30">您可以通過我們的官網或親臨指定門市，與我們的調香師進行諮詢，告知您的香氣偏好。我們會根據您的需求設計獨特的配方，並為您提供樣品進行確認。</div>
+                        <div id="answer2" className="FAQA contentText lineHeight30">您可以通過我們的官網客製化葉面，進行測驗，告知您的香氣偏好。我們會根據您的需求設計獨特的配方。</div>
                     )}
                 </div>
                 <div className="FAQItem">
