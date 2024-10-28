@@ -40,19 +40,19 @@ const Catalog = () => {
             description: '融合海洋的清新與自由，讓人感受到海風的輕撫，帶來無限的想像與遙遠的旅行感。',
         },
         {
-            image: require('../../img/products/test4.jpg'), // 新商品 1
+            image: require('../../img/products/test4.jpg'), 
             title: '晨曦微光香水',
             description: '這款香水充滿了清新的氣息，讓您感受到晨曦的魅力。',
             alt: '香水 7',
           },
           {
-            image: require('../../img/products/test5.jpg'), // 新商品 2
+            image: require('../../img/products/test5.jpg'), 
             title: '悠然秋歌香水',
             description: '這款香水讓您感受到優雅與寧靜。',
             alt: '香水 8',
           },
           {
-            image: require('../../img/products/test6.jpg'), // 新商品 3
+            image: require('../../img/products/test6.jpg'), 
             title: '夜晚魅影香水',
             description: '這款香水為夜晚帶來神秘與魅力。',
             alt: '香水 9',
@@ -74,14 +74,14 @@ const Catalog = () => {
                         <button className="filter-button small-category small-category-group">清新調</button>
                     </div>
 
-                    <div className="divider"></div>
+                    {/* <div className="divider"></div>
 
                     <div className="filter-row">
                         <button className="filter-button big-category">適合對象</button>
                         <button className="filter-button small-category small-category-group">女性香氛</button>
                         <button className="filter-button small-category small-category-group">男性香氛</button>
                         <button className="filter-button small-category small-category-group">中性香氛</button>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 
