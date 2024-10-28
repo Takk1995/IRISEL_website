@@ -29,7 +29,7 @@ function HomeHeader() {
                         <li className="barlistli texthover rightline padLR35">會員中心</li>
                         <li className="barlistli texthover padLR35">常見問題</li>
                     </ul>
-                    <img className="icancar h45 leanRight290"
+                    <img className="h45 leanRight290"
                         src={ICONcat}
                         alt="iconCAR"
                         onClick={switchPop}
