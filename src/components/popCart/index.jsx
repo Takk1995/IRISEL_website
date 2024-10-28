@@ -7,6 +7,7 @@ const PopCart = ({onClose}) => {
     // 0:Default 1:Review
     const [data, setData] = useState(0)
     const [cartItems, setCartItems] = useState([])
+    const [isMember, setIsMember] = useState(false)
 
     useEffect(() => {
         const fetchCartItems = () => {
