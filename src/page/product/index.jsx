@@ -2,36 +2,71 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import Header from '../../components/header';
+import Footer from '../../components/footer';
 import Recommend from '../../components/recommend';
 import '../../style/product.css';
 
 
 function Product() {
 
-  const { id } = useParams(); // 從路由參數中取得商品 ID
+  const { code } = useParams(); // 從路由參數中取得商品 code
   const [product, setProduct] = useState(null);  // 初始化 product 為 null
-  // const productId = 1; // 這裡可以根據路由動態設定產品 ID
+  // const productId = 1; // 這裡可以根據路由動態設定產品 code
+  const [price, setPrice] = useState(0); // 初始化價格狀態
 
   useEffect(() => {
-    console.log('獲取的 id:', id); // 確認 id 是否正確
-    const fetchProduct = async () => {
+    console.log('獲取的 code:', code); // 確認 code 是否正確
+    const fetchProduct = async (productCode) => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/products/${id}`);
+        const response = await axios.get(`http://localhost:8000/api/product/${code}`);
         console.log('Fetched Product:', response.data);
-        setProduct(response.data);
+        setProduct(response.data[0]);
+        setPrice(response.data[0].price); // 設定初始價格
+        console.log('Product State after fetch:', response.data); // 確認狀態更新
       } catch (error) {
         console.error('無法獲取商品資料:', error.response ? error.response.data : error.message);
       }
     };
 
-    if (id) {
-      fetchProduct(); // 當 id 存在時，呼叫函數獲取資料
+    if (code) {
+      fetchProduct(code); // 當 code 存在時，呼叫函數獲取資料
     }
-  }, [id]);
+  }, [code]);
 
-    if (!id) {
-      return <div>無效的商品 ID，請確認網址是否正確。</div>;
+    if (!code) {
+      return <div>無效的商品編號，請確認網址是否正確。</div>;
     }
+
+  // 觀察 product 狀態每次重新渲染時的值
+  console.log('Product State:', product);
+
+  const handleCapacityChange = async (capacity) => {
+    // 提取出類別和商品號碼
+    const category = code.charAt(2); // 第3位類別
+    const productNum = code.slice(5, 7); // 取出類別內商品號碼 (最後兩位)
+
+    // 根據容量設置新的 product_code
+    // 定義 productCode 變數
+    let productCode; 
+    if (capacity === 30) {
+      productCode = `10${category}10${productNum}`; // 30ml
+    } else if (capacity === 50) {
+      productCode = `10${category}20${productNum}`; // 50ml
+    } else if (capacity === 100) {
+      productCode = `10${category}30${productNum}`; // 100ml
+    }
+
+    console.log(`Fetching price for product code: ${productCode}`);
+
+    // 根據新的 product_code 獲取價格
+    try {
+      const response = await axios.get(`http://localhost:8000/api/product/${productCode}`);
+      setPrice(response.data[0].price); // 更新價格
+      console.log('Updated Price:', response.data[0].price);
+    } catch (error) {
+      console.error('無法獲取商品資料:', error.response ? error.response.data : error.message);
+    }
+  };
 
   // 檢查 product 是否已加載
   if (!product) {
@@ -39,9 +74,9 @@ function Product() {
   }
 
   return (
-    <div>
+    <div className='main-content'>
       {/* <h1>測試</h1> */}
-      {/* <Header /> */}
+      <Header />
       <main className="product_container">
         <div className="product-image">
           <img src={product.img_url || require('../../img/products/test1.jpg')} alt="Product Image" />
@@ -53,9 +88,9 @@ function Product() {
           <div id="ml">
             <p>容量選擇</p>
             <div id="btn_group">
-              <button>30ml</button>
-              <button>50ml</button>
-              <button>100ml</button>
+              <button onClick={() => handleCapacityChange(30)}>30ml</button>
+              <button onClick={() => handleCapacityChange(50)}>50ml</button>
+              <button onClick={() => handleCapacityChange(100)}>100ml</button>
             </div>
             <br />
             <div className="price">
@@ -65,7 +100,7 @@ function Product() {
               <div className="price_R">
                 <span>NT&emsp;</span>
                 {/* <span>5000</span> */}
-                <span>{product.price || '價格'}</span>
+                <span>{price || '價格'}</span>
                 <span>&ensp;元</span>
               </div>
             </div>
@@ -97,11 +132,15 @@ function Product() {
       <div>
         <div>
           <div class="middle-area">
+            {/* <div>
+              <span> 商品編號: </span>&ensp;
+              <span> {product.product_code || '類別名稱'} </span>
+            </div> */}
             <div class="category_text">
               <span> 分類: </span>&ensp;
-              <span> 男香 </span>&ensp;
-              <span> / </span>
-              <span> 清新木質調 </span>
+              {/* <span> 男香 </span>&ensp; */}
+              {/* <span> / </span> */}
+              <span> {product.main_type_Chinese || '類別名稱'} </span>
             </div>
             <div class="cart">
               {/* 下拉選單 */}
@@ -118,11 +157,7 @@ function Product() {
       </div>
 
       <Recommend /> {/* 推薦區域 */}
-      <footer>
-        <div>
-          <p>頁尾</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

@@ -1,40 +1,11 @@
-header {
-    width: 100%;
-    height: 150px;
-    margin: auto;
-    background-color: #5DB9E2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    /* 讓子元素可以相對於 header 定位 */
+/* 調整主內容區域，避免被 header 擋住 */
+.main-content {
+    margin-top: 65px; /* 確保內容在 header 下方開始 */
 }
 
-header>img {
-    width: 230px;
-    margin: auto;
-}
-
-.icons_R {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    display: flex;
-    gap: 10px;
-}
-
-.icons_L {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    display: flex;
-    gap: 10px;
-}
-
-.icons_L,
-.icons_R i {
-    font-size: 28px;
-    /* 調整 icon 的尺寸 */
+/* 調整主內容區域，避免被 header 擋住 */
+.catalog-content {
+    margin-top: 85px; /* 確保內容在 header 下方開始 */
 }
 
 .product-image img {

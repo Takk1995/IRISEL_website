@@ -17,7 +17,7 @@ function App() {
           <Route path ='/contactusform' element = {<ContactUsForm/>} />
           <Route path ='/fqa' element = {<FQA/>} />
           <Route path='/product' element={<Product />} />
-          <Route path='/product/:id' element={<Product />} />
+          <Route path='/product/:code' element={<Product />} />
           <Route path='/catalog' element={<Catalog/>} />
         </Routes>
       </div>

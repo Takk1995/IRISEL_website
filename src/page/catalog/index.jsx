@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Header from '../../components/header';
 import ProductCard from '../../components/productList/index';
+import Footer from '../../components/footer';
 import '../../style/product.css';
 
 
@@ -59,18 +60,18 @@ const Catalog = () => {
     ];
 
     return (
-        <div>
-            {/* <Header /> */}
+        <div className='catalog-content'>
+            <Header />
 
             <div className="filter-container">
                 <p className="category-label">分類</p>
                 <div className="filter-buttons">
                     <div className="filter-row">
                         <button className="filter-button big-category">香氛調性</button>
-                        <button className="filter-button small-category small-category-group">木質調</button>
                         <button className="filter-button small-category small-category-group">花香調</button>
-                        <button className="filter-button small-category small-category-group">果香調</button>
+                        <button className="filter-button small-category small-category-group">木質調</button>
                         <button className="filter-button small-category small-category-group">東方香調</button>
+                        <button className="filter-button small-category small-category-group">清新調</button>
                     </div>
 
                     <div className="divider"></div>
@@ -100,11 +101,7 @@ const Catalog = () => {
                 </div>
             </div>
 
-            <footer>
-                <div>
-                    <p>頁尾</p>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 };
