@@ -4,8 +4,8 @@ import { useParams } from 'react-router-dom';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import Recommend from '../../components/recommend';
+import PopCart from '../../components/popCart';
 import '../../style/product.css';
-
 
 function Product() {
 
@@ -13,6 +13,8 @@ function Product() {
   const [product, setProduct] = useState(null);  // 初始化 product 為 null
   // const productId = 1; // 這裡可以根據路由動態設定產品 code
   const [price, setPrice] = useState(0); // 初始化價格狀態
+  const [showPopCart, setShowPopCart] = useState(false); // 控制 PopCart 顯示，預設為 false
+  const isMember = JSON.parse(localStorage.getItem('isMember')) || false;
 
   useEffect(() => {
     console.log('獲取的 code:', code); // 確認 code 是否正確
@@ -73,9 +75,26 @@ function Product() {
     return <div>載入中...</div>; // 加載時的提示
   }
 
+    // 在 handleAddToCart 中將選擇的商品加入購物車
+    const handleAddToCart = () => {
+      console.log('Adding to cart'); // 調試用
+      const cartKey = isMember ? 'memberCart' : 'guestCart';
+      const cartItems = JSON.parse(localStorage.getItem(cartKey)) || [];
+  
+      const newItem = { productCode: code, capacity: product.capacity, price };
+      cartItems.push(newItem);
+      localStorage.setItem(cartKey, JSON.stringify(cartItems));
+  
+      setShowPopCart(true); // 顯示彈跳購物車
+    };
+  
+    const handlePopCartClose = () => {
+      console.log('Closing PopCart'); // 調試用
+      setShowPopCart(false);
+    };
+
   return (
     <div className='main-content'>
-      {/* <h1>測試</h1> */}
       <Header />
       <main className="product_container">
         <div className="product-image">
@@ -132,10 +151,6 @@ function Product() {
       <div>
         <div>
           <div class="middle-area">
-            {/* <div>
-              <span> 商品編號: </span>&ensp;
-              <span> {product.product_code || '類別名稱'} </span>
-            </div> */}
             <div class="category_text">
               <span> 分類: </span>&ensp;
               {/* <span> 男香 </span>&ensp; */}
@@ -144,17 +159,20 @@ function Product() {
             </div>
             <div class="cart">
               {/* 下拉選單 */}
-              數量:
+              {/* 數量:
               <select id="quantity" name="quantity" class="quantity-select">
                 {[...Array(10)].map((_, index) => (
                   <option key={index + 1} value={index + 1}>{index + 1}</option>
                 ))}
-              </select>
-              <button class="product-button">加入購物車</button>
+              </select> */}
+              <button className="product-button" onClick={handleAddToCart}>加入購物車</button>
             </div>
           </div>
         </div>
       </div>
+
+       {/* 放置 PopCart 組件 */}
+      {/* <PopCart isOpen={showPopCart} onClose={handlePopCartClose} /> */}
 
       <Recommend /> {/* 推薦區域 */}
       <Footer />

@@ -230,7 +230,7 @@ footer > div {
 .filter-row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     margin-bottom: 10px;
     /* 兩個主類別按鈕之間的距離 */
@@ -262,7 +262,7 @@ footer > div {
     /* 隔線上下的距離 */
 }
 
-.big-category {
+.category-basis {
     background-color: #5DB9E2;
     color: white;
     font-weight: bold;
@@ -351,4 +351,11 @@ footer > div {
 
 .fixed-right {
     right: 10px;
+}
+
+.centered-text {
+    display: flex;
+    justify-content: center; /* 水平置中 */
+    align-items: center; /* 垂直置中（如果需要） */
+    margin: 20px 0; /* 可選：增加上下的間距 */
 }
