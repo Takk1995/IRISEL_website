@@ -145,10 +145,10 @@ const Catalog = () => {
                         <div key={index}>
                             <ProductCard
                                 key={product.product_id}
-                                // key={index}
                                 image={product.img_url}
                                 title={product.product_name}
                                 description={product.summary}
+                                productCode={product.product_code} 
                             />
                         </div>
                     ))}

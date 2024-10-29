@@ -167,8 +167,6 @@ function Product() {
         </div>
       </div>
 
-       {/* 放置 PopCart 組件 */}
-      {/* <PopCart isOpen={showPopCart} onClose={handlePopCartClose} /> */}
       {popSwitch && (<PopCart onClose={switchPop} />)}
       <Recommend /> {/* 推薦區域 */}
       <Footer />
