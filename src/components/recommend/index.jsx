@@ -54,6 +54,7 @@ function Recommend() {
               title={product.product_name}
               description={product.summary}
               alt={product.product_name}
+              productCode={product.product_code}
               className="pro_card"
             />
           ))}
