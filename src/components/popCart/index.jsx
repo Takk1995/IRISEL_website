@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import axios from 'axios'
 import '../../style/Takk.css'
 import CartDefault from './cartDefault'
 import CartReview from './cartReview'
@@ -7,8 +8,10 @@ const PopCart = ({onClose}) => {
     // 0:Default 1:Review
     const [data, setData] = useState(0)
     const [cartItems, setCartItems] = useState([])
-    const [isMember, setIsMember] = useState(false)
+    const [isMember] = useState(false)
+    const [fetchedItems, setFetchedItems] = useState([])
 
+    // 會員/訪客
     useEffect(() => {
         const fetchCartItems = () => {
             const key = isMember ? 'memberCart' : 'guestCart'
@@ -24,8 +27,24 @@ const PopCart = ({onClose}) => {
             setData(0)
         } else {
             setData(1)
+            fetchItemsData(cartItems)
         }
     },[cartItems])
+
+    // 購物車中商品的資料
+    const fetchItemsData = async(items) => {   
+        if (items.length === 0) {
+            return
+        }
+        try {
+            const response = await axios.post('http://localhost:8000/api/cartItem', {itemIds: items.map(cartItem => cartItem.product_id)})
+            setFetchedItems(response.data)
+            console.log(response.data);
+            
+        } catch (error) {
+            console.error(error)
+        }
+    }
 
     // 點到 pop 才不會關閉
     const handleMaskClick = (e) => {
@@ -44,7 +63,7 @@ const PopCart = ({onClose}) => {
                     <CartDefault />
                 )}
                 {data === 1 && (
-                    <CartReview />
+                    <CartReview cartItems={fetchedItems} />
                 )}
             </div>
         </div>

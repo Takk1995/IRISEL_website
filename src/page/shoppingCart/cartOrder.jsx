@@ -1,10 +1,14 @@
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import '../../style/Takk.css'
 import img from '../../img/test.png'
-import CartEditCards from '../../components/cartEditCards';
-import { useState } from 'react';
+import CartEditCards from '../../components/cartEditCards'
 
-function CartOrder({cartItem, setCartItem, onPackage, onNext}) {
+function CartOrder({cartItems, setCartItems, onPackage, onNext}) {
     const [choose, setChoose] = useState(null)
+    const [qty, setQty] = useState({})
+
+    
 
     // 把選擇哪個包裝傳遞到父元件
     const chooseChange = (e) => {
@@ -24,10 +28,10 @@ function CartOrder({cartItem, setCartItem, onPackage, onNext}) {
             {/* each所選商品資料 */}
             <div>
                 {/* cartEditCards */}
-                <CartEditCards cartItem={cartItem} setCartItem={setCartItem} />
+                <CartEditCards cartItems={cartItems} setCartItems={setCartItems} qty={qty} setQty={setQty}/>
             </div>
             {/* 包裝選擇 */}
-            {cartItem.length > 0 && (
+            {cartItems.length > 0 && (
                 <div>
                 <div>
                     <h2>包裝</h2>
@@ -72,13 +76,13 @@ function CartOrder({cartItem, setCartItem, onPackage, onNext}) {
             <div>
                 {/* 往cartCheckOut */}
                 <div className="horizontallyCenter">
-                    <button className="cartBottom" onClick={onNext} disabled={!choose || cartItem.length === 0}>前往結帳</button>
+                    <button className="cartBottom" onClick={onNext} disabled={!choose || cartItems.length === 0}>前往結帳</button>
                 </div>
                 {/* 返回商品頁 */}
                 <div className="horizontallyCenter cartBottom">
-                    <a href="">
+                    <Link to = '/product'>
                         <span>繼續購物</span>
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>

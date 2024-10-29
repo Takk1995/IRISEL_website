@@ -2,39 +2,31 @@ import { useState, useEffect } from 'react';
 import '../../style/Takk.css';
 import PopCard from './popCard';
 
-const PopCards = () => {
-    const [popCards] = useState([
-        {
-            product_id:'',
-            product_name:'',
-            main_type_Chinese:'',
-            img_url:'',
-            product_code:'',
-            capacity: '',
-            price: ''
-        }
-    ])
-
+const PopCards = ({items}) => {
     const [total, setTotal] = useState(0)
 
     // 計算總金額
     useEffect(() => {
-        const calculatedTotal = popCards.reduce((total, item) => {
-            return total + item.price
-        }, 0);
-        setTotal(calculatedTotal);
-    }, [popCards])
+        if (items && items.length > 0) {
+            const calculatedTotal = items.reduce((total, item) => {
+                return total + item.price
+            }, 0);
+            setTotal(calculatedTotal);
+        } else {
+            setTotal(0)
+        }
+    }, [items])
     
     return (
         <div>
-            {popCards.map((c, index) => (
-                <div key={c.id}>
+            {items.map((item, index) => (
+                <div key={item.product_id}>                    
                     <PopCard
-                        key    = {c.id}
-                        detail = {c}
+                        key    = {item.product_id}
+                        detail = {item}
                         order  = {index + 1 }
                     />
-                    {index < popCards.length -1 && <hr/>}
+                    {index < items.length -1 && <hr/>}
                 </div>
             ))}
             {/* 總金額 */}

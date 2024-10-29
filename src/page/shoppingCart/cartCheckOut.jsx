@@ -3,7 +3,7 @@ import '../../style/Takk.css'
 import img from '../../img/test.png'
 import CartCheckCards from '../../components/cartCheckCards';
 
-const CartCheckOut = ({cartItem, selectPackage, onNext, onBack }) => {
+const CartCheckOut = ({cartItems, selectPackage, onNext, onBack, qty}) => {
     const [status, setStatus] = useState(true) // member:true guest:false
     const memberClick = () => setStatus(true)
     const guestClick = () => setStatus(false)
@@ -69,9 +69,9 @@ const CartCheckOut = ({cartItem, selectPackage, onNext, onBack }) => {
                                             <input type="password" placeholder="密碼" />
                                         </div>
                                         <div className="horizontallyCenter cartLoginMargin">
-                                            <a href="">
+                                            <div>
                                                 <span>忘記密碼?</span>
-                                            </a>
+                                            </div>
                                         </div>
                                         <div className="horizontallyCenter cartLoginMargin">
                                             <input type="checkbox" id="loginRember" />
@@ -184,10 +184,10 @@ const CartCheckOut = ({cartItem, selectPackage, onNext, onBack }) => {
                 <div>
                     <div className="horizontally">
                         <h2 className='cardTitle'>訂單摘要</h2>
-                        <a href="" className="verticalEnd cartLeft">
+                        <div className="verticalEnd cartLeft">
                             {/* 回到 Order */}
                             <span onClick={onBack}>編輯</span>
-                        </a>
+                        </div>
                     </div>
                     <ul className="noBullets">
                         <li className="orderLine"></li>
@@ -195,7 +195,7 @@ const CartCheckOut = ({cartItem, selectPackage, onNext, onBack }) => {
                 </div>
                 {/* each所選商品資料 */}
                 <div>
-                    <CartCheckCards cartItem = {cartItem} />
+                    <CartCheckCards cartItems = {cartItems} qty = {qty} />
                 </div>
                 <div>
                     <div className="horizontally">

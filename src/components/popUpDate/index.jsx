@@ -1,62 +1,88 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import axios from 'axios'
 import '../../style/Takk.css'
-import img from '../../img/test.png'
 
-const PopUpDate = () => {
-    const [upDateCard] = useState([
-        { id: 1, productName: 'TK-1', productClass: 'Class-1', productPrice: 5200, capacity: '100ml', cartProductQty: '', productNumber: '100100' },
-        { id: 4, productName: 'TK-1-2', productClass: 'Class-1', productPrice: 2500, capacity: '50ml', cartProductQty: '', productNumber: '100101' }
-    ])
+const PopUpDate = ({product, onUpdate}) => {
+    const [newProduct, setNewProduct] = useState(product)
+    const [select, setSelect] = useState(product.capacity || '100ml')
+    const [current, setCurrent] = useState(product.product_code)
 
-    const [select, setSelect] = useState('100ml')
-    const [detail, setDetail] = useState(upDateCard[0])
+    const capacityToY = {
+        '100': '1',
+        '50': '2',
+        '30': '3'
+    }
 
-    // 選取select時 重新設定值
-    const capacityChange = (e) => {
-        setSelect(e.target.value)
-    };
-
-    // select 改變時 找到容量一樣的資料 並設定detail為該資料
-    useEffect(() => {
-        const refresh = upDateCard.find(item => item.capacity === select);
-        if (refresh) {
-            setDetail(refresh)
-        } else {
-            setDetail(upDateCard[0])
+    const fetchOtherCapacity = async(productCode) => {
+        try {
+            const response = await axios.get('/api/updateCapacity', {
+                params: {
+                    product_code: productCode
+                }
+            })
+            return response.data
+        } catch (error) {
+            console.error(error)
         }
-    }, [select, upDateCard])
+    }
+
+    useEffect(() => {
+        const getNewProduct = async() => {
+            const newProductInfo = await fetchOtherCapacity(current)
+            if (newProductInfo) {
+                setNewProduct(newProductInfo)
+            }
+        }
+        getNewProduct()
+    }, [current])
+
+    const capacityChange = (e) => {
+        const newCapacity = e.target.value
+        setSelect(newCapacity)
+
+        const baseCode = current.slice(0,3)
+        const newY = capacityToY[newCapacity]
+        const newProductCode = `${baseCode}${newY}0${product.sort_in_type}`
+        setCurrent(newProductCode)
+    }
+
+    const handleUpdate = () => {
+        onUpdate(newProduct)
+    }
 
     return (
         <div>
             <div className='cartTop'>
                 {/* 商品資料 */}
                 <div>
-                    <a href="#" className="vertical">
-                        <span className="cartTitle">{detail.productName}</span>
-                        <span>{detail.productClass}</span>
-                    </a>
+                    <Link to = {`/product${newProduct.product_code}`} className="vertical">
+                        <span className="cartTitle">{newProduct.produc_name}</span>
+                        <span>{newProduct.main_typr_Chinese}</span>
+                    </Link>
                 </div>
                 <div>
                     <div>
-                        <p>商品編號: {detail.productNumber}</p>
-                        <p>NT$ {detail.productPrice}</p>
+                        <p>商品編號: {newProduct.product_code}</p>
+                        <p>NT$ {newProduct.price}</p>
                     </div>
                 </div>
                 <hr />
                 {/* 容量選擇 */}
                 <div>
                     <select value={select} onChange={capacityChange}>
-                        <option value='100ml'>100ml</option>
-                        <option value='50ml'>50ml</option>
+                        <option value='100'>100ml</option>
+                        <option value='50'>50ml</option>
+                        <option value='30'>30ml</option>
                     </select>
                 </div>
                 {/* 往cartOrder */}
                 <div className="vertical cartTop">
-                    <button className='cartBottom'>更新購物車</button>
+                    <button className='cartBottom' onClick={handleUpdate}>更新購物車</button>
                 </div>
             </div>
             <div className="horizontallyCenter">
-                <img src={img} alt='' className="cartImg" />
+                <img src={newProduct.img_url} alt='' className="cartImg" />
             </div>
         </div>
     );

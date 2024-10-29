@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom';
 import '../../style/Takk.css'
 
 const PopCard = ({detail}) => {
-    const {product_name, main_type_Chinese, img_url, price, capacity} = detail;
-
+    const {product_name, main_type_Chinese, img_url, price, capacity, product_code} = detail
+    console.log(detail);
+    
     return (
             <div className="horizontally">
                 <div>
@@ -10,12 +12,12 @@ const PopCard = ({detail}) => {
                 </div>
                 <div className='popCardMain'>
                     <div style={{paddingTop:'15px'}}>
-                        <a href="#" className="vertical">
+                        <Link to = {`/product/${product_code}`} className="vertical">
                             <span className='cartTitle'>{product_name}</span>
                             <span>{main_type_Chinese}</span>
-                        </a>
+                        </Link>
                         <div>
-                            <p>{capacity}</p>
+                            <p>{capacity}ml</p>
                         </div>
                     </div>
                     <div className='horizontallySpaceBetween'>

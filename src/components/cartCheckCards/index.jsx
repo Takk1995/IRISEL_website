@@ -3,27 +3,27 @@ import '../../style/Takk.css';
 import CartCheckCard from './cartCheckCard';
 
 
-const CartCheckCards = ({cartItem}) => {
+const CartCheckCards = ({cartItems, qty}) => {
     const [total, setTotal] = useState(0)
 
     // 計算總金額
     useEffect(() => {
-        const calculatedTotal = cartItem.reduce((total, item) => {
-            return total + item.productPrice * item.cartProductQty
+        const calculatedTotal = cartItems.reduce((total, item) => {
+            return total + item.price * item.qty
         }, 0);
         setTotal(calculatedTotal);
-    }, [cartItem])
+    }, [cartItems])
 
     return (
         <div>
-            {cartItem.map((c, index) => (
-                <div key={c.id}>
+            {cartItems.map((item, index) => (
+                <div key={item.id}>
                     <CartCheckCard
-                        key    = {c.id}
-                        detail = {c}
+                        detail = {item}
                         order  = {index + 1}
+                        qty    = {qty}
                     />
-                    {index < cartItem.length - 1 && <hr />}
+                    {index < cartItems.length - 1 && <hr />}
                 </div>
             ))}
             <ul className="noBullets">

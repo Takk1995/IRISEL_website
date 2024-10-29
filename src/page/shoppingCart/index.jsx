@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from '../../components/header'
 import CartProgressBar from '../../components/cartProgressBar';
 import CartFooter from '../../components/cartFooter';
@@ -6,17 +6,14 @@ import CartOrder from './cartOrder';
 import CartCheckOut from './cartCheckOut';
 import CartConfirmation from './cartConfirmation';
 
-
 const ShoppingCart = () => {
     // 0:Order 1:CheckOut 2:Confirmation
     const [cartStep, setCartStep] = useState(0)
     const [selectPackage, setSelectPackage] = useState('')
-
-    const [cartItem, setCartItem] = useState([
-        {id:1, productName: 'TK-1', productClass: 'Class-1', productPrice: 5200, capacity: '100ml', cartProductQty: '1', productNumber: '100100'},
-        {id:2, productName: 'TK-2', productClass: 'Class-2', productPrice: 5500, capacity: '50ml', cartProductQty: '1', productNumber: '100201'},
-        {id:3, productName: 'TK-3', productClass: 'Class-2', productPrice: 5300, capacity: '100ml', cartProductQty: '1', productNumber: '100300'}
-    ])
+    const [cartItems, setCartItems] = useState([])
+    const [qty, setQty] = useState({})
+    const [isMember] = useState(false)
+    
 
     // 選了哪個包裝
     const handlePackageChoose = (packageValue) => {
@@ -28,6 +25,16 @@ const ShoppingCart = () => {
     const goToConfirmation = () => setCartStep(2)
     const backToOrder = () => setCartStep(0)
 
+    useEffect(() => {
+        const key = isMember ? 'memberCart' : 'guestCart'
+        const items = JSON.parse(localStorage.getItem(key)) || [];
+        setCartItems(items);
+    }, [isMember])
+
+    const upDateQty = (id, newQty) => {
+        setQty((prevQty) => ({ ...prevQty, [id]: newQty}))
+    }
+
     return (
         <div>
             <Header/>
@@ -36,17 +43,20 @@ const ShoppingCart = () => {
             </div>
             <div>
                 {cartStep === 0 && (
-                    <CartOrder onPackage   = {handlePackageChoose}
-                               onNext      = {goToCheckOut}
-                               cartItem    = {cartItem}
-                               setCartItem = {setCartItem}
+                    <CartOrder onPackage    = {handlePackageChoose}
+                               onNext       = {goToCheckOut}
+                               cartItems    = {cartItems}
+                               setCartItems = {setCartItems}
+                               qty          = {qty}
+                               setQty       = {upDateQty}
                     />
                 )}
                 {cartStep === 1 && (
                     <CartCheckOut selectPackage = {selectPackage}
                                   onNext        = {goToConfirmation}
                                   onBack        = {backToOrder}
-                                  cartItem      = {cartItem}
+                                  cartItems     = {cartItems}
+                                  qty           = {qty}
                     />
                 )}
                 {cartStep === 2 && (

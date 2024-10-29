@@ -2,7 +2,7 @@ import '../../style/Takk.css'
 import { Link } from 'react-router-dom';
 import PopCards from '../popCards';
 
-const CartReview = () => {
+const CartReview = ({ cartItems }) => {
     return (
         <div>
             <div className="horizontallyCenter">
@@ -11,18 +11,22 @@ const CartReview = () => {
             {/* each所選商品資料 */}
             <div>
                 {/* popCards */}
-                <PopCards />
+                <PopCards items={cartItems} />
             </div>
             <div>
                 <div className="vertical">
                     {/* 往cartOrder */}
-                    <Link to = '/cart'>
-                        <button className="cartBottom">檢視購物車</button>
-                    </Link>
+                    <button className="cartBottom">
+                        <Link to="/cart">
+                            檢視購物車
+                        </Link>
+                    </button>
                     {/* 往商品頁 */}
-                    <Link to = '/product'>
-                        <button className="cartBottom">繼續購物</button>
-                    </Link>
+                    <button className="cartBottom">
+                        <Link to="/product">
+                            繼續購物
+                        </Link>
+                    </button>
                 </div>
             </div>
         </div>

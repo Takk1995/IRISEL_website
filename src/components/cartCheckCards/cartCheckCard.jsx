@@ -1,28 +1,28 @@
+import { Link } from 'react-router-dom';
 import '../../style/Takk.css'
-import img from '../../img/test.png'
 
-const CartCheckCard = ({detail}) => {
-    const {productName, productClass, productPrice, capacity, cartProductQty} = detail;
+const CartCheckCard = ({detail, qty}) => {
+    const {product_name, main_type_Chinese, img_url ,price, capacity, product_code} = detail;
     
     return (
         <div className="horizontally">
             <div>
-                <img src={img} alt='' className="cartImg" />
+                <img src={img_url} alt='' className="cartImg" />
             </div>
             <div style={{ width: '100%' }}>
                 <div className="vertical">
                     <div>
-                        <a href="#" className="vertical">
-                            <span className='cardTitle'>{productName}</span>
-                            <span>{productClass}</span>
-                        </a>
-                        <p>{capacity}</p>
+                        <Link to = {`/product/${product_code}`} className="vertical">
+                            <span className='cardTitle'>{product_name}</span>
+                            <span>{main_type_Chinese}</span>
+                        </Link>
+                        <p>{capacity}ml</p>
                     </div>
                     <div className="horizontally">
                         <div className="cartRight">
-                            <span>數量 {cartProductQty}</span>
+                            <span>數量 {qty}</span>
                         </div>
-                        <div className="cartLeft">NT$ {cartProductQty * productPrice}</div>
+                        <div className="cartLeft">NT$ {qty * price}</div>
                     </div>
                 </div>
             </div>
