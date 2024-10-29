@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import Recommend from '../../components/recommend';
-import PopAdd from '../../components/popAdd';
+import PopCart from '../../components/popCart';
 import '../../style/product.css';
 
 function Product() {
@@ -13,7 +13,6 @@ function Product() {
   const [product, setProduct] = useState(null);  // 初始化 product 為 null
   // const productId = 1; // 這裡可以根據路由動態設定產品 code
   const [price, setPrice] = useState(0); // 初始化價格狀態
-  const [showPopCart, setShowPopCart] = useState(false); // 控制 PopCart 顯示，預設為 false
   const isMember = JSON.parse(localStorage.getItem('isMember')) || false;
   const [popSwitch, setPopSwitch] = useState(false)
   const switchPop = () => setPopSwitch(!popSwitch)
@@ -83,16 +82,11 @@ function Product() {
       const cartKey = isMember ? 'memberCart' : 'guestCart';
       const cartItems = JSON.parse(localStorage.getItem(cartKey)) || [];
   
-      const newItem = { productCode: code, capacity: product.capacity, price };
+      const newItem = { product_id: product.product_id};
       cartItems.push(newItem);
       localStorage.setItem(cartKey, JSON.stringify(cartItems));
   
       setPopSwitch(true) // 顯示彈跳購物車
-    };
-  
-    const handlePopCartClose = () => {
-      console.log('Closing PopCart'); // 調試用
-      setShowPopCart(false);
     };
 
   return (
@@ -175,7 +169,7 @@ function Product() {
 
        {/* 放置 PopCart 組件 */}
       {/* <PopCart isOpen={showPopCart} onClose={handlePopCartClose} /> */}
-      {popSwitch && (<PopAdd onClose={switchPop} />)}
+      {popSwitch && (<PopCart onClose={switchPop} />)}
       <Recommend /> {/* 推薦區域 */}
       <Footer />
     </div>

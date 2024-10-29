@@ -36,8 +36,9 @@ const PopCart = ({onClose}) => {
         if (items.length === 0) {
             return
         }
+        const itemIds = items.map(item => item.product_id)
         try {
-            const response = await axios.post('http://localhost:8000/api/cartItem', {itemIds: items.map(cartItem => cartItem.product_id)})
+            const response = await axios.post('http://localhost:8000/api/cartItem', {itemIds})
             setFetchedItems(response.data)
             console.log(response.data);
             
