@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 import Header from '../../components/header'
 import CartProgressBar from '../../components/cartProgressBar';
 import CartFooter from '../../components/cartFooter';
@@ -11,8 +12,34 @@ const ShoppingCart = () => {
     const [cartStep, setCartStep] = useState(0)
     const [selectPackage, setSelectPackage] = useState('')
     const [cartItems, setCartItems] = useState([])
-    const [qty, setQty] = useState({})
+    const [fetchedItems, setFetchedItems] = useState([])
     const [isMember] = useState(false)
+
+    useEffect(() => {
+        const fetchCartItems = () => {
+            const key = isMember ? 'memberCart' : 'guestCart'
+            const items = JSON.parse(localStorage.getItem(key)) || []
+            setCartItems(items)            
+        }
+        fetchCartItems()
+    }, [isMember])
+
+    const fetchItemsData = async(items) => {   
+        if (items.length === 0) {
+            return
+        }
+        const itemIds = items.map(item => item.product_id)
+        try {
+            const response = await axios.post('http://localhost:8000/api/cartItem', {itemIds})
+            setFetchedItems(response.data)
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    useEffect(() => {
+        fetchItemsData(cartItems)
+    }, [cartItems])
     
 
     // 選了哪個包裝
@@ -25,16 +52,6 @@ const ShoppingCart = () => {
     const goToConfirmation = () => setCartStep(2)
     const backToOrder = () => setCartStep(0)
 
-    useEffect(() => {
-        const key = isMember ? 'memberCart' : 'guestCart'
-        const items = JSON.parse(localStorage.getItem(key)) || [];
-        setCartItems(items);
-    }, [isMember])
-
-    const upDateQty = (id, newQty) => {
-        setQty((prevQty) => ({ ...prevQty, [id]: newQty}))
-    }
-
     return (
         <div>
             <Header/>
@@ -45,10 +62,8 @@ const ShoppingCart = () => {
                 {cartStep === 0 && (
                     <CartOrder onPackage    = {handlePackageChoose}
                                onNext       = {goToCheckOut}
-                               cartItems    = {cartItems}
+                               cartItems    = {fetchedItems}
                                setCartItems = {setCartItems}
-                               qty          = {qty}
-                               setQty       = {upDateQty}
                     />
                 )}
                 {cartStep === 1 && (
@@ -56,7 +71,6 @@ const ShoppingCart = () => {
                                   onNext        = {goToConfirmation}
                                   onBack        = {backToOrder}
                                   cartItems     = {cartItems}
-                                  qty           = {qty}
                     />
                 )}
                 {cartStep === 2 && (

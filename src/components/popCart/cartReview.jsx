@@ -23,7 +23,7 @@ const CartReview = ({ cartItems }) => {
                     </button>
                     {/* 往商品頁 */}
                     <button className="cartBottom">
-                        <Link to="/product">
+                        <Link to="/catalog">
                             繼續購物
                         </Link>
                     </button>

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import '../../style/Takk.css'
 import CartEditCard from './cartEditCard';
 
-const CartEditCards = ({cartItems, setCartItems, qty, setQty}) => {
+const CartEditCards = ({cartItems, setCartItems}) => {
     // 總和參數與設定總和的函式
     const [total, setTotal] = useState(0)
 
@@ -12,15 +12,11 @@ const CartEditCards = ({cartItems, setCartItems, qty, setQty}) => {
     }
 
     // 更新數量時重新設定數量
-    const upDateQty = (id, newQty) => {
-        const refresh = cartItems.map(card => {
-            if (card.product_id === id) {
-                return {...card, qty: newQty}
-            }
-            return card
-        })
-        setCartItems(refresh)
-        setQty(id, newQty)
+    const upDateQty = (product_id, newQty) => {
+        const upDatedItems = cartItems.map(item =>
+            item.product_id === product_id ? {...item, cart_qty: newQty} : item
+        )
+        setCartItems(upDatedItems)
     }
 
     // 計算總金額
@@ -29,8 +25,8 @@ const CartEditCards = ({cartItems, setCartItems, qty, setQty}) => {
             console.error('ERROR');
             return
         }
-        const newTotal = cards.reduce((total, item) => {
-            return total + (item.price * (item.qty || 1))
+        const newTotal = cards.reduce((total, item) => {            
+            return total + (item.price * item.cart_qty)
         }, 0);
         setTotal(newTotal)
     }
@@ -56,7 +52,6 @@ const CartEditCards = ({cartItems, setCartItems, qty, setQty}) => {
                         detail   = {item}
                         onDel    = {() => delCard(item.product_id)}
                         onChange = {upDateQty}
-                        qty      = {qty[item.product_id] || 1}
                     />
                     {index < cartItems.length - 1 && <hr/>}
                 </div>

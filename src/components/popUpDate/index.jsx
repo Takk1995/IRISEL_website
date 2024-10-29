@@ -5,45 +5,17 @@ import '../../style/Takk.css'
 
 const PopUpDate = ({product, onUpdate}) => {
     const [newProduct, setNewProduct] = useState(product)
-    const [select, setSelect] = useState(product.capacity || '100ml')
-    const [current, setCurrent] = useState(product.product_code)
-
-    const capacityToY = {
-        '100': '1',
-        '50': '2',
-        '30': '3'
-    }
-
-    const fetchOtherCapacity = async(productCode) => {
-        try {
-            const response = await axios.get('/api/updateCapacity', {
-                params: {
-                    product_code: productCode
-                }
-            })
-            return response.data
-        } catch (error) {
-            console.error(error)
-        }
-    }
-
-    useEffect(() => {
-        const getNewProduct = async() => {
-            const newProductInfo = await fetchOtherCapacity(current)
-            if (newProductInfo) {
-                setNewProduct(newProductInfo)
-            }
-        }
-        getNewProduct()
-    }, [current])
+    const [select, setSelect] = useState(String(product.capacity))
+    const [current, setCurrent] = useState(String(product.product_code))
 
     const capacityChange = (e) => {
         const newCapacity = e.target.value
         setSelect(newCapacity)
 
         const baseCode = current.slice(0,3)
-        const newY = capacityToY[newCapacity]
-        const newProductCode = `${baseCode}${newY}0${product.sort_in_type}`
+        const newY = String(newCapacity)
+        const newSort = String(product.sort_in_type).padStart(2,'0')
+        const newProductCode = `${baseCode}${newY}0${newSort}`
         setCurrent(newProductCode)
     }
 
@@ -51,13 +23,29 @@ const PopUpDate = ({product, onUpdate}) => {
         onUpdate(newProduct)
     }
 
+    useEffect(() => {
+        const fetchProductData = async() => {
+            try {
+                const response = await axios.get('http://localhost:8000/api/updateCapacity', {
+                    params: {product_code: current}
+                })                
+                setNewProduct(response.data)
+            } catch (error) {
+                console.error(error)
+            }
+        }
+        if (current) {
+            fetchProductData()
+        }
+    }, [current])
+
     return (
         <div>
             <div className='cartTop'>
                 {/* 商品資料 */}
                 <div>
                     <Link to = {`/product${newProduct.product_code}`} className="vertical">
-                        <span className="cartTitle">{newProduct.produc_name}</span>
+                        <span className="cartTitle">{newProduct.product_name}</span>
                         <span>{newProduct.main_typr_Chinese}</span>
                     </Link>
                 </div>
@@ -71,9 +59,9 @@ const PopUpDate = ({product, onUpdate}) => {
                 {/* 容量選擇 */}
                 <div>
                     <select value={select} onChange={capacityChange}>
-                        <option value='100'>100ml</option>
-                        <option value='50'>50ml</option>
-                        <option value='30'>30ml</option>
+                        <option value='1'>30ml</option>
+                        <option value='2'>50ml</option>
+                        <option value='3'>100ml</option>
                     </select>
                 </div>
                 {/* 往cartOrder */}

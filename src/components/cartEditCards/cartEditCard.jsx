@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import '../../style/Takk.css'
 import PopUpDate from '../popUpDate';
 
-const CartEditCard =({detail, onDel, onChange, qty}) => {
+const CartEditCard =({detail, onDel, onChange}) => {
     const {product_id} = detail
     const [pop, setPop] = useState(false)
     const [currentDetail, setCurrentDetail] = useState(detail)
+    const [qty, setQty] = useState(detail.cart_qty)
+    
 
     // 移除
     const del = () => {
@@ -16,22 +18,23 @@ const CartEditCard =({detail, onDel, onChange, qty}) => {
     // select改變時 設定為新的數量
     const qtyChange = (e) => {
         const newQty = parseInt(e.target.value, 10)
-        onChange(product_id, newQty) // 傳回
+        setQty(newQty)
+        onChange(product_id, newQty)
     }
 
     // pop 顯示/隱藏
     const switchPop = () => setPop(!pop)
 
     const handleUpdate = (newProduct) => {
-        setCurrentDetail(newProduct)
-        onChange(product_id)
+        setCurrentDetail(newProduct)        
         switchPop()
     }
 
     useEffect(() => {
-        onChange(product_id, qty)
-    }, [qty, onChange, product_id])
+        setQty(1)
+    }, [currentDetail])
 
+   
     return (
         <div>
             <div className="horizontally">
@@ -46,7 +49,7 @@ const CartEditCard =({detail, onDel, onChange, qty}) => {
                                 <span className='cardTitle'>{currentDetail.product_name}</span>
                                 <span>{currentDetail.main_type_Chinese}</span>
                             </Link>
-                            <p>{currentDetail.capacity}</p>
+                            <p>{currentDetail.capacity}ml</p>
                         </div>
                         {/* qty select */}
                         <div className="horizontally cartLeft">
@@ -69,10 +72,6 @@ const CartEditCard =({detail, onDel, onChange, qty}) => {
                             </div>
                             <div className="productRevise" onClick={del}>
                                 <span className='changeLink'>移除</span>
-                            </div>
-                            <div className="productRevise">
-                                {/* 收藏/取消收藏 */}
-                                <span className='changeLink'>收藏</span>
                             </div>
                         </div>
                     </div>
