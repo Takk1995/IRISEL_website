@@ -6,8 +6,6 @@ import CartEditCards from '../../components/cartEditCards'
 
 function CartOrder({cartItems, setCartItems, onPackage, onNext}) {
     const [choose, setChoose] = useState(null)
-    const [qty, setQty] = useState({})
-
     
 
     // 把選擇哪個包裝傳遞到父元件
@@ -28,7 +26,7 @@ function CartOrder({cartItems, setCartItems, onPackage, onNext}) {
             {/* each所選商品資料 */}
             <div>
                 {/* cartEditCards */}
-                <CartEditCards cartItems={cartItems} setCartItems={setCartItems} qty={qty} setQty={setQty}/>
+                <CartEditCards cartItems={cartItems} setCartItems={setCartItems}/>
             </div>
             {/* 包裝選擇 */}
             {cartItems.length > 0 && (
@@ -80,7 +78,7 @@ function CartOrder({cartItems, setCartItems, onPackage, onNext}) {
                 </div>
                 {/* 返回商品頁 */}
                 <div className="horizontallyCenter cartBottom">
-                    <Link to = '/product'>
+                    <Link to = '/catalog'>
                         <span>繼續購物</span>
                     </Link>
                 </div>

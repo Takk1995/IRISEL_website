@@ -40,8 +40,6 @@ const PopCart = ({onClose}) => {
         try {
             const response = await axios.post('http://localhost:8000/api/cartItem', {itemIds})
             setFetchedItems(response.data)
-            console.log(response.data);
-            
         } catch (error) {
             console.error(error)
         }

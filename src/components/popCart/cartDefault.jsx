@@ -18,7 +18,7 @@ const CartDefault = () => {
                         <ul className="noBullets">
                             <li>
                                 <div>
-                                    <Link to='/product'>
+                                    <Link to='/catalog'>
                                         <p>香氛</p>
                                     </Link>
                                 </div>
