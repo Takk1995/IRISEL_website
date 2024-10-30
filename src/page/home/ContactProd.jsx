@@ -1,56 +1,35 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../../style/homepage.css';
-import carprodpic01 from '../../img/home/prpic(25).jpg';
-import carprodpic02 from '../../img/home/prpic(05).jpg';
-import carprodpic03 from '../../img/home/prpic(30).jpg';
-import carprodpic04 from '../../img/home/prpic(15).jpg';
-import carprodpic05 from '../../img/home/prpic(04).jpg';
-import carprodpic06 from '../../img/home/prpic(39).jpg';
-import carprodpic07 from '../../img/home/prpic(07).jpg';
-import carprodpic08 from '../../img/home/prpic(32).jpg';
-import carprodpic09 from '../../img/home/prpic(33).jpg';
-import carprodpic10 from '../../img/home/prpic(37).jpg';
-import carprodpic11 from '../../img/home/prpic(27).jpg';
-import carprodpic12 from '../../img/home/prpic(40).jpg';
 
-
-const images = [
-  carprodpic01,
-  carprodpic02,
-  carprodpic03,
-  carprodpic04,
-  carprodpic05,
-  carprodpic06,
-  carprodpic07,
-  carprodpic08,
-  carprodpic09,
-  carprodpic10,
-  carprodpic11,
-  carprodpic12
-];
-
-const Carousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
+function Carousel({ images, routes }) {
+  const [currpic, trantime] = useState(0);
+  const [isDragg, setDragg] = useState(false);
   
+  const navigate = useNavigate();
+
+  const BtnClick = (path) => {
+    navigate(path);
+  };
+
   useEffect(() => {
     const interval = setInterval(() => {
-      if (!isDragging) {
-        setCurrentIndex((prevIndex) => (prevIndex + 4) % images.length);
+      if (!isDragg) {
+        trantime((prevIndex) => (prevIndex + 4) % images.length);
       }
     }, 10000);
 
     return () => clearInterval(interval);
-  }, [isDragging]);
+  }, [isDragg, images.length]);
 
-  const handleScrollChange = (event) => {
-    setIsDragging(true); //true拖曳
+  const ScrollChange = (event) => {
+    setDragg(true); //true拖曳
     const value = Number(event.target.value); //當前索引值轉換數字
-    setCurrentIndex(value); //接收當前索引顯示目前圖片
+    trantime(value); //接收當前索引顯示目前圖片
   };
 
-  const handleMouseUp = () => {
-    setIsDragging(false); //false不拖曳
+  const MouseUp = () => {
+    setDragg(false); //false不拖曳
   };
 
   return (
@@ -59,15 +38,20 @@ const Carousel = () => {
         className="carimages"
         style={{
           // 圖片寬度做長度的變換
-          transform: `translateX(calc(-${(currentIndex * 295) + 9}px))`
+          transform: `translateX(calc(-${(currpic * 295) + 9}px))`
         }}
       >
               {/* 倒數第四張開始，並開始前四張置於尾端 */}
         {[...images.slice(-4), ...images, ...images.slice(0, 4)].map((image, index) => (
           <div key={index} className="imgovers">
-          <img src={image} alt={`carousel-${index}`} className="carimg imgset imgPr imgpa" />
+          <img 
+          src={image.src} 
+          alt={`carousel-${index}`} 
+          className="carimg imgset imgPr imgpa" />
           <div className="imgoverlay">
-            <button className="imgoverbtn bttnr btnhover">開始選購</button>
+            <button 
+            className="imgoverbtn bttnr btnhover"
+            onClick={() => BtnClick(image.link)} >開始選購</button>
           </div>
         </div>
         ))}
@@ -76,9 +60,9 @@ const Carousel = () => {
         type="range"
         min="0"
         max={images.length - 4}
-        value={currentIndex}
-        onChange={handleScrollChange}
-        onMouseUp={handleMouseUp}
+        value={currpic}
+        onChange={ScrollChange}
+        onMouseUp={MouseUp}
         className="scrbar"
       />
     </div>

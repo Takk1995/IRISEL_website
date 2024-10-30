@@ -1,4 +1,4 @@
-import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../../style/homepage.css';
 import Ppic01 from '../../img/home/pic700-3.png';
 import Ppic02 from '../../img/home/pic700-1.png';
@@ -7,11 +7,18 @@ import HomeFooter from '../../components/footer';
 import HomeHeader from '../../components/header';
 import Carousel from './carousel';
 import CarouselPord from './ContactProd';
+import images from '../home/carouselProdimg';
 
 
 
 
 function HomeMain() {
+    // 取獲路由
+    const navigate = useNavigate();
+    const BtnClickk = () => {
+        navigate('/catalog'); //到商店路由頁面
+      };
+
     return (
         <>
             <HomeHeader />
@@ -34,7 +41,10 @@ function HomeMain() {
                         <div className="imgovers">
                             <img className="imgoverstyle img54 imgset imgw500" src={Ppic01} alt="推薦商品" />
                             <div className="imgoverlay">
-                                <button className="imgoverbtn bttnr btnhover imgstore">網路商店</button>
+                                <button 
+                                className="imgoverbtn bttnr btnhover imgstore"
+                                onClick={BtnClickk}
+                                >網路商店</button>
                             </div>
                         </div>
                         <div className="imgovers">
@@ -55,7 +65,7 @@ function HomeMain() {
                     <img className="img576" src={Ppic07} alt="commodity" />
                     {/* <!-- 商品 --> */}
                     <div>
-                        <CarouselPord/>
+                        <CarouselPord images={images}  />
                     </div>
                 </div>
                 {/* <!-- 關於 --> */}
