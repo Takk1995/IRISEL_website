@@ -94,7 +94,7 @@ function Product() {
       <Header />
       <main className="product_container">
         <div className="product-image">
-          <img src={product.img_url || require('../../img/products/test1.jpg')} alt="Product Image" />
+          <img src={product.img_url || require('../../img/products/test1.jpg')} alt="Product Pic" />
         </div>
         <div className="product_info">
           <i className="bi bi-bookmark-star"></i>
