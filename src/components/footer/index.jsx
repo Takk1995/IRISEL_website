@@ -9,7 +9,8 @@ function HomeFooter() {
         <div className="ptabh removeborder cenVer titlebaColor">
             <div className="fixedspace cenVer arrHor horizontallySpaceBetween">
                 <ul className="noBullets arrHor noBreaks titleText">
-                    <li className="texthover rightline padR35">IRISEL品牌</li>
+                    <li className="texthover rightline padR35">
+                    <a className='cleartext' href='/'>IRISEL品牌</a></li>
                     <li className="texthover rightline padLR35">隱私條款</li>
                     <li className="texthover rightline padLR35">服務條款</li>
                     <li className="texthover rightline padLR35">COOKIES政策</li>
