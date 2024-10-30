@@ -3,37 +3,56 @@ import { Link } from 'react-router-dom';
 import '../../style/Takk.css'
 import PopUpDate from '../popUpDate';
 
-const CartEditCard =({detail, onDel, onChange}) => {
+const CartEditCard =({detail, onDel, onChange, total}) => {
     const {product_id} = detail
     const [pop, setPop] = useState(false)
     const [currentDetail, setCurrentDetail] = useState(detail)
-    const [qty, setQty] = useState(detail.cart_qty)
+    const [qty, setQty] = useState(1)    
+    // console.log('2',detail);
     
-
     // 移除
     const del = () => {
-        onDel(product_id);
-    }
-
-    // select改變時 設定為新的數量
-    const qtyChange = (e) => {
-        const newQty = parseInt(e.target.value, 10)
-        setQty(newQty)
-        onChange(product_id, newQty)
+        const updatedCart = JSON.parse(localStorage.getItem('guestCart')) || [];
+        const newCart = updatedCart.filter(item => item.product_id !== product_id)
+        localStorage.setItem('guestCart', JSON.stringify(newCart))
+        onDel(product_id)
     }
 
     // pop 顯示/隱藏
     const switchPop = () => setPop(!pop)
 
-    const handleUpdate = (newProduct) => {
-        setCurrentDetail(newProduct)        
+    const handleUpdate = (newProduct) => {        
+        const updatedCart = JSON.parse(localStorage.getItem('guestCart')) || []
+        const index = updatedCart.findIndex(item => item.product_id === currentDetail.product_id)
+        if (index !== -1) {
+            updatedCart[index] = newProduct
+            console.log('3',updatedCart)
+        } else {
+            console.log('err')
+        }
+        localStorage.setItem('guestCart', JSON.stringify(updatedCart))
+        setCurrentDetail(newProduct)
+        setQty(newProduct.cart_qty)
         switchPop()
+        total(updatedCart)
     }
 
     useEffect(() => {
-        setQty(1)
+        // console.log('2',currentDetail)
     }, [currentDetail])
 
+    // select改變時 設定為新的數量
+    const qtyChange = (e) => {
+        const newQty = parseInt(e.target.value, 10)        
+        setQty(newQty)
+        onChange(currentDetail, product_id, newQty)
+        const updatedCart = JSON.parse(localStorage.getItem('guestCart')) || [];
+        const index = updatedCart.findIndex(item => item.product_id === currentDetail.product_id);
+        if (index !== -1) {
+            updatedCart[index].cart_qty = newQty
+            localStorage.setItem('guestCart', JSON.stringify(updatedCart))
+        }
+    }
    
     return (
         <div>
@@ -56,9 +75,9 @@ const CartEditCard =({detail, onDel, onChange}) => {
                             <div className="orderRight">
                                 <span>數量</span>
                                 <select value={qty} onChange={qtyChange}>
-                                    <option value='1'>1</option>
-                                    <option value='2'>2</option>
-                                    <option value='3'>3</option>
+                                    <option value={1}>1</option>
+                                    <option value={2}>2</option>
+                                    <option value={3}>3</option>
                                 </select>
                             </div>
                             <div className="orderRight">NT$ {currentDetail.price * qty}</div>

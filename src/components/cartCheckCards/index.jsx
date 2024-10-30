@@ -3,13 +3,15 @@ import '../../style/Takk.css';
 import CartCheckCard from './cartCheckCard';
 
 
-const CartCheckCards = ({cartItems, qty}) => {
+const CartCheckCards = ({cartItems}) => {
     const [total, setTotal] = useState(0)
 
     // 計算總金額
     useEffect(() => {
+        console.log('A', cartItems);
+        
         const calculatedTotal = cartItems.reduce((total, item) => {
-            return total + item.price * item.qty
+            return total + item.price * (item.cart_qty || 1)
         }, 0);
         setTotal(calculatedTotal);
     }, [cartItems])
@@ -21,7 +23,6 @@ const CartCheckCards = ({cartItems, qty}) => {
                     <CartCheckCard
                         detail = {item}
                         order  = {index + 1}
-                        qty    = {qty}
                     />
                     {index < cartItems.length - 1 && <hr />}
                 </div>

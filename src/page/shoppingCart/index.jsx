@@ -31,7 +31,11 @@ const ShoppingCart = () => {
         const itemIds = items.map(item => item.product_id)
         try {
             const response = await axios.post('http://localhost:8000/api/cartItem', {itemIds})
-            setFetchedItems(response.data)
+            const updatedItems = response.data.map(fetchedItem => {
+                const cartItem = items.find(item => item.product_id === fetchedItem.product_id)
+                return {...fetchedItem, cart_qty: cartItem.cart_qty}
+            })
+            setFetchedItems(updatedItems)
         } catch (error) {
             console.error(error)
         }
@@ -83,3 +87,15 @@ const ShoppingCart = () => {
 }
 
 export default ShoppingCart;
+
+
+// const newItem = {
+//     product_id: product.product_id,
+//     product_name: product.product_name,
+//     main_type_Chinese: product.main_type_Chinese,
+//     product_code: product.product_code,
+//     capacity: product.capacity,
+//     cart_qty: product.cart_qty,
+//     price: product.price,
+//     quantity: product.quantity
+//   }

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import '../../style/Takk.css'
 
 const CartCheckCard = ({detail, qty}) => {
-    const {product_name, main_type_Chinese, img_url ,price, capacity, product_code} = detail;
+    const {product_name, main_type_Chinese, img_url ,price, capacity, product_code, cart_qty} = detail;
     
     return (
         <div className="horizontally">
@@ -20,9 +20,9 @@ const CartCheckCard = ({detail, qty}) => {
                     </div>
                     <div className="horizontally">
                         <div className="cartRight">
-                            <span>數量 {qty}</span>
+                            <span>數量 {cart_qty}</span>
                         </div>
-                        <div className="cartLeft">NT$ {qty * price}</div>
+                        <div className="cartLeft">NT$ {cart_qty * price}</div>
                     </div>
                 </div>
             </div>

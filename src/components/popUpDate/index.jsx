@@ -29,7 +29,7 @@ const PopUpDate = ({product, onUpdate}) => {
                 const response = await axios.get('http://localhost:8000/api/updateCapacity', {
                     params: {product_code: current}
                 })                
-                setNewProduct(response.data)
+                setNewProduct(response.data)                
             } catch (error) {
                 console.error(error)
             }

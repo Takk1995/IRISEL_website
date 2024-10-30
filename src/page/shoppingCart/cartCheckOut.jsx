@@ -21,6 +21,8 @@ const CartCheckOut = ({cartItems, selectPackage, onNext, onBack, qty}) => {
         setMoving(false)
     }
 
+    console.log('3', cartItems)
+
     return (
         <div className="horizontally cartMargin">
             <div className="cartRight deliveryWidth">
@@ -195,7 +197,7 @@ const CartCheckOut = ({cartItems, selectPackage, onNext, onBack, qty}) => {
                 </div>
                 {/* each所選商品資料 */}
                 <div>
-                    <CartCheckCards cartItems = {cartItems} qty = {qty} />
+                    <CartCheckCards cartItems = {cartItems}/>
                 </div>
                 <div>
                     <div className="horizontally">

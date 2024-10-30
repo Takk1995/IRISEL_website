@@ -4,10 +4,9 @@ import '../../style/Takk.css'
 import img from '../../img/test.png'
 import CartEditCards from '../../components/cartEditCards'
 
-function CartOrder({cartItems, setCartItems, onPackage, onNext}) {
+function CartOrder({cartItems, setCartItems, onPackage, onNext}) {    
     const [choose, setChoose] = useState(null)
     
-
     // 把選擇哪個包裝傳遞到父元件
     const chooseChange = (e) => {
         const packageValue = e.target.value === "簡約包裝";
