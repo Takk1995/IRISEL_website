@@ -9,9 +9,11 @@ function CartOrder({cartItems, setCartItems, onPackage, onNext}) {
     
     // 把選擇哪個包裝傳遞到父元件
     const chooseChange = (e) => {
-        const packageValue = e.target.value === "簡約包裝";
-        onPackage(packageValue)    
-        setChoose(1)    
+        const packageValue = e.target.value === "簡約包裝" ? 1 : 0;
+        onPackage(packageValue)
+        setChoose(1)
+
+        localStorage.setItem('package', packageValue)
     }
     
     return (

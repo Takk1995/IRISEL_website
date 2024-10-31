@@ -8,7 +8,7 @@ const CartCheckCards = ({cartItems}) => {
 
     // 計算總金額
     useEffect(() => {
-        console.log('A', cartItems);
+        // console.log('A', cartItems);
         
         const calculatedTotal = cartItems.reduce((total, item) => {
             return total + item.price * (item.cart_qty || 1)
@@ -19,7 +19,7 @@ const CartCheckCards = ({cartItems}) => {
     return (
         <div>
             {cartItems.map((item, index) => (
-                <div key={item.id}>
+                <div key={item.product_id}>
                     <CartCheckCard
                         detail = {item}
                         order  = {index + 1}

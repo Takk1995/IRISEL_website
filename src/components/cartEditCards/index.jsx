@@ -15,7 +15,7 @@ const CartEditCards = ({ cartItems, setCartItems }) => {
     // 更新數量時重新設定數量
     const upDateQty = (currentDetail, product_id, newQty) => {
         setCartItems(items => {
-            console.log('3', items)
+            // console.log('3', items)
             const updatedItems = items.map(item =>
                 item.product_id === product_id ? {
                     ...item,
@@ -28,7 +28,7 @@ const CartEditCards = ({ cartItems, setCartItems }) => {
                     cart_qty: newQty
                 } : item
             )
-            console.log('4', updatedItems);
+            // console.log('4', updatedItems);
 
             return updatedItems
         })
@@ -54,7 +54,7 @@ const CartEditCards = ({ cartItems, setCartItems }) => {
     if (!Array.isArray(cartItems) || cartItems.length === 0) {
         return <h2 className='horizontallyCenter orderNone'>您的購物車沒有任何商品</h2>
     } else {
-        console.log('1223', cartItems);
+        // console.log('1223', cartItems);
     }
 
     return (

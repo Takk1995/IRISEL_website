@@ -26,7 +26,7 @@ const CartEditCard =({detail, onDel, onChange, total}) => {
         const index = updatedCart.findIndex(item => item.product_id === currentDetail.product_id)
         if (index !== -1) {
             updatedCart[index] = newProduct
-            console.log('3',updatedCart)
+            // console.log('3',updatedCart)
         } else {
             console.log('err')
         }
