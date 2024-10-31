@@ -4,10 +4,10 @@ import '../../style/Takk.css'
 import PopUpDate from '../popUpDate';
 
 const CartEditCard =({detail, onDel, onChange, total}) => {
-    const {product_id} = detail
+    const {product_id, cart_qty} = detail
     const [pop, setPop] = useState(false)
     const [currentDetail, setCurrentDetail] = useState(detail)
-    const [qty, setQty] = useState(1)    
+    const [qty, setQty] = useState(cart_qty || 1)    
     // console.log('2',detail);
     
     // 移除
@@ -75,9 +75,9 @@ const CartEditCard =({detail, onDel, onChange, total}) => {
                             <div className="orderRight">
                                 <span>數量</span>
                                 <select value={qty} onChange={qtyChange}>
-                                    <option value={1}>1</option>
-                                    <option value={2}>2</option>
-                                    <option value={3}>3</option>
+                                {[1, 2, 3].map(num => (
+                                        <option key={num} value={num}>{num}</option>
+                                    ))}
                                 </select>
                             </div>
                             <div className="orderRight">NT$ {currentDetail.price * qty}</div>

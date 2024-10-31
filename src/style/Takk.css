@@ -260,3 +260,7 @@
 .cartFooterPaddingTop{
     padding-top: 1%;
 }
+
+.checkOutError{
+    color: red;
+}

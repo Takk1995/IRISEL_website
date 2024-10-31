@@ -268,8 +268,11 @@ const CartCheckOut = ({ cartItems, selectPackage, onNext, onBack }) => {
     const guestNext = () => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
-            setError('請輸入有效的電子郵件地址');
-            return;
+            setError('"請輸入有效的電子郵件地址"')
+            setTimeout(() => {
+                setError('')
+            }, 3000)
+            return
         }
         const guestId = Math.random().toString(36).substring(2, 10)
         const guestData = {guest_id: guestId , guest_email: email}
@@ -374,7 +377,9 @@ const CartCheckOut = ({ cartItems, selectPackage, onNext, onBack }) => {
                                                    onChange={(e) => setEmail(e.target.value)}
                                             />
                                         </div>
-                                        {error && <div className='error'>{error}</div>}
+                                        <div className='horizontallyCenter cartLoginMargin'>
+                                            {error && <div className='checkOutError'>{error}</div>}
+                                        </div>
                                         <div className="horizontallyCenter cartLoginMargin">
                                             <button onClick={guestNext}>繼續前往付款</button>
                                         </div>
