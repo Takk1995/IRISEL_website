@@ -87,15 +87,3 @@ const ShoppingCart = () => {
 }
 
 export default ShoppingCart;
-
-
-// const newItem = {
-//     product_id: product.product_id,
-//     product_name: product.product_name,
-//     main_type_Chinese: product.main_type_Chinese,
-//     product_code: product.product_code,
-//     capacity: product.capacity,
-//     cart_qty: product.cart_qty,
-//     price: product.price,
-//     quantity: product.quantity
-//   }

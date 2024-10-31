@@ -3,7 +3,6 @@ import '../../style/Takk.css'
 
 const PopCard = ({detail}) => {
     const {product_name, main_type_Chinese, img_url, price, capacity, product_code} = detail
-    console.log(detail);
     
     return (
             <div className="horizontally">

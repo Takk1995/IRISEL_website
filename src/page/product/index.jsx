@@ -82,9 +82,23 @@ function Product() {
       const cartKey = isMember ? 'memberCart' : 'guestCart';
       const cartItems = JSON.parse(localStorage.getItem(cartKey)) || [];
   
-      const newItem = { product_id: product.product_id};
-      cartItems.push(newItem);
-      localStorage.setItem(cartKey, JSON.stringify(cartItems));
+      const newItem = {
+        product_id: product.product_id,
+        product_name: product.product_name,
+        main_type_Chinese: product.main_type_Chinese,
+        product_code: product.product_code,
+        capacity: product.capacity,
+        cart_qty: product.cart_qty,
+        price: product.price,
+        img_url: product.img_url,
+        quantity: product.quantity
+      }
+
+      const itemExists = cartItems.some(item => item.product_id === newItem.product_id)
+      if (!itemExists) {
+        cartItems.push(newItem)
+        localStorage.setItem(cartKey, JSON.stringify(cartItems));
+      }
   
       setPopSwitch(true) // 顯示彈跳購物車
     };

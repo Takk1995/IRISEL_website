@@ -75,10 +75,6 @@ const CartCheckOut = ({cartItems, selectPackage, onNext, onBack, qty}) => {
                                                 <span>忘記密碼?</span>
                                             </div>
                                         </div>
-                                        <div className="horizontallyCenter cartLoginMargin">
-                                            <input type="checkbox" id="loginRember" />
-                                            <label htmlFor="loginRember">記住我(選填)</label>
-                                        </div>
                                         <div className="horizontallyCenter">
                                             <button onClick={goClick}>登入</button>
                                         </div>

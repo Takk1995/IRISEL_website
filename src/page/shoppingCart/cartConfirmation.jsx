@@ -1,13 +1,14 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../../style/Takk.css';
 import img from '../../img/check.png';
 
 const CartConfirmation = () => {
     const [orderData] = useState([
-        { orderNumber: 1205}
+        { orderNumber: 1205 }
     ])
 
-    const {orderNumber} = orderData[0]
+    const { orderNumber } = orderData[0]
 
     return (
         <div>
@@ -22,13 +23,13 @@ const CartConfirmation = () => {
             <div>
                 <ul className="noBullets horizontallyCenter">
                     <li>
-                        <span style={{marginRight: '5px'}}>訂單編號:</span>
+                        <span style={{ marginRight: '5px' }}>訂單編號:</span>
                     </li>
                     <li>
                         {/* 往訂單查詢 */}
-                        <a href="">
+                        <div>
                             <span>{orderNumber}</span>
-                        </a>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -45,9 +46,11 @@ const CartConfirmation = () => {
                     </li>
                 </ul>
             </div>
-            <div className="horizontallyCenter">
+            <div className="horizontallyCenter confirmationBottom">
                 {/* 往 Home */}
-                <button className='cartBottom'>返回首頁</button>
+                <Link to = '/'>
+                    <button className='cartBottom'>返回首頁</button>
+                </Link>
             </div>
         </div>
     );

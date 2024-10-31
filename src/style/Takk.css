@@ -247,3 +247,16 @@
 .progressBarTop {
     margin-top: 83px;
 }
+
+.confirmationBottom{
+    margin-top: 6%;
+    margin-bottom: 10%;
+}
+
+.cartFooterPaddingBottom{
+    padding-bottom: 2%;
+}
+
+.cartFooterPaddingTop{
+    padding-top: 1%;
+}
