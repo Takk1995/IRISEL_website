@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import '../../Style/QuizCard.css'; // 假設你有一個 CSS 檔案
+import '../../style/QuizCard.css'; // 假設你有一個 CSS 檔案
 
-const QuizCard = ({ initialContent, flipState, onClick }) => {
+const  QuizCard = ({ initialContent, flipState, onClick }) => {
     const [content, setContent] = useState(initialContent);
-    const [currentFlipState, setCurrentFlipState] = useState(flipState);
+    const [currentFlipState, setCurrentFlipState] = useState(flipState);    
 
     useEffect(() => {
         setCurrentFlipState(flipState);

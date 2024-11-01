@@ -26,3 +26,58 @@ body {
     background-image: url('../img/QuizPageBackgrund.jpg');
     background-size: cover;
 }
+.modal-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsla(0, 0%, 0%, 0.808);
+    pointer-events: none;
+    cursor: none;
+  }
+  
+  .modal {
+    border-radius: 5px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin: 2rem;
+    background-color: rgb(126, 119, 119);
+    width: 40rem;
+    height: 30rem;
+    cursor:none;
+    display: inline-flex;
+    border: #886531 5px solid;
+  }
+  
+  .btn-submit {
+    border-radius: 5px;
+    height: 5rem;
+    width: 15rem;
+    cursor: pointer;
+    background-color: #922e27;
+    pointer-events: auto;
+    color: white;
+    font-size: 2rem;
+  }
+  
+  .modal-content-left {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+  }
+  .modalImg{
+    width: 23rem; 
+    height: 23rem;
+    background-size: contain;
+    border-radius: 5px;
+    border: #886531 5px solid;
+  }
+  .modal-content-right {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+  

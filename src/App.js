@@ -6,6 +6,7 @@ import ContactUsForm from './page/contactUsForm';
 import FQA from './page/fqapage';
 import Product from './page/product';
 import Catalog from './page/catalog';
+import Quizpage from './page/QuizPage/QuizPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/product' element={<Product />} />
           <Route path='/product/:code' element={<Product />} />
           <Route path='/catalog' element={<Catalog/>} />
+          <Route path='/Quiz' element={<Quizpage/>} />
         </Routes>
       </div>
     </Router>

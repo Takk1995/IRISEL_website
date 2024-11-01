@@ -1,6 +1,6 @@
 import React from "react";
 import Typed from "typed.js";
-import '../../Style/QuizBox.css'; // 假設你有一個 CSS 檔案
+import '../../style/QuizBox.css'; // 假設你有一個 CSS 檔案
 
 const QuizTextBox = ({ question }) => {
     const el = React.useRef(null);

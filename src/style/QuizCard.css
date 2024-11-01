@@ -34,7 +34,7 @@
 
 .QuizCardFront{
     /*style*/
-    background-color: #ffffff;
+    background-color: #ffffffb0;
     color: #000000;
     position: absolute;
     transform: rotateY(180deg);
