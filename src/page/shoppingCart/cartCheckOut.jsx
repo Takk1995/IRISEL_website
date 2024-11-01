@@ -2,8 +2,9 @@ import { useState } from 'react';
 import '../../style/Takk.css'
 import img from '../../img/test.png'
 import CartCheckCards from '../../components/cartCheckCards';
+import axios from 'axios';
 
-const CartCheckOut = ({ cartItems, selectPackage, onNext, onBack }) => {
+const CartCheckOut = ({ cartItems, selectPackage, onNext, onBack, setOrderId }) => {
     const [status, setStatus] = useState(true) // member:true guest:false
     const memberClick = () => setStatus(true)
     const guestClick = () => setStatus(false)
@@ -296,9 +297,37 @@ const CartCheckOut = ({ cartItems, selectPackage, onNext, onBack }) => {
         setMoving(false)
     }
 
-    const onNextandCheckOut = () => {
-        onNext()
-        onCheckOut()
+    const onNextandCheckOut = async() => {
+        try {
+            onCheckOut()
+            const guestUser = JSON.parse(localStorage.getItem('guestUser')) || {}
+            const guestCart = JSON.parse(localStorage.getItem('guestCart')) || []
+            const productPackage = localStorage.getItem('productPackage')
+            const ship = JSON.parse(localStorage.getItem('ship')) || {}
+            const total = localStorage.getItem('total')
+            const orderData = {
+                guestUser,
+                guestCart,
+                productPackage,
+                ship,
+                total
+            }
+            
+            const response = await axios.post('http://localhost:8000/api/orders', orderData)  
+            const {order_id} = response.data
+
+            setOrderId(order_id)
+            
+            localStorage.removeItem('guestUser')
+            localStorage.removeItem('guestCart')
+            localStorage.removeItem('productPackage')
+            localStorage.removeItem('ship')
+            localStorage.removeItem('total')
+
+            onNext()
+        } catch (error) {
+            console.error(error)
+        }
     }
     return (
         <div className="horizontally cartMargin">

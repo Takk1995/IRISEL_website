@@ -1,15 +1,8 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../../style/Takk.css';
 import img from '../../img/check.png';
 
-const CartConfirmation = () => {
-    const [orderData] = useState([
-        { orderNumber: 1205 }
-    ])
-
-    const { orderNumber } = orderData[0]
-
+const CartConfirmation = ({orderId}) => {
     return (
         <div>
             <div>
@@ -28,7 +21,7 @@ const CartConfirmation = () => {
                     <li>
                         {/* 往訂單查詢 */}
                         <div>
-                            <span>{orderNumber}</span>
+                            <span>{orderId}</span>
                         </div>
                     </li>
                 </ul>

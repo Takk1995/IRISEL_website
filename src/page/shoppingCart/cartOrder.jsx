@@ -13,7 +13,7 @@ function CartOrder({cartItems, setCartItems, onPackage, onNext}) {
         onPackage(packageValue)
         setChoose(1)
 
-        localStorage.setItem('package', packageValue)
+        localStorage.setItem('productPackage', packageValue)
     }
     
     return (

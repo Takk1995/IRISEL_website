@@ -40,6 +40,7 @@ const CartEditCards = ({ cartItems, setCartItems }) => {
             return total + (item.price * (item.cart_qty || 1))
         }, 0)
         setTotal(totalAmount)
+        localStorage.setItem('total', totalAmount)
     }
 
     // 編輯卡片有變動時 重新計算總金額
