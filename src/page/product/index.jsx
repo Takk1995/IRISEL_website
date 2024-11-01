@@ -11,21 +11,20 @@ function Product() {
 
   const { code } = useParams(); // 從路由參數中取得商品 code
   const [product, setProduct] = useState(null);  // 初始化 product 為 null
-  // const productId = 1; // 這裡可以根據路由動態設定產品 code
   const [price, setPrice] = useState(0); // 初始化價格狀態
   const isMember = JSON.parse(localStorage.getItem('isMember')) || false;
-  const [popSwitch, setPopSwitch] = useState(false)
-  const switchPop = () => setPopSwitch(!popSwitch)
+  const [popSwitch, setPopSwitch] = useState(false);
+  const switchPop = () => setPopSwitch(!popSwitch);
 
   useEffect(() => {
-    console.log('獲取的 code:', code); // 確認 code 是否正確
-    const fetchProduct = async (productCode) => {
+    // console.log('獲取的 code:', code); // 確認 code 是否正確
+    const fetchProduct = async () => {
       try {
         const response = await axios.get(`http://localhost:8000/api/product/${code}`);
-        console.log('Fetched Product:', response.data);
+        // console.log('Fetched Product:', response.data);
         setProduct(response.data[0]);
         setPrice(response.data[0].price); // 設定初始價格
-        console.log('Product State after fetch:', response.data); // 確認狀態更新
+        // console.log('Product State after fetch:', response.data); // 確認狀態更新
       } catch (error) {
         console.error('無法獲取商品資料:', error.response ? error.response.data : error.message);
       }
@@ -41,7 +40,7 @@ function Product() {
     }
 
   // 觀察 product 狀態每次重新渲染時的值
-  console.log('Product State:', product);
+  // console.log('Product State:', product);
 
   const handleCapacityChange = async (capacity) => {
     // 提取出類別和商品號碼
@@ -59,13 +58,13 @@ function Product() {
       productCode = `10${category}30${productNum}`; // 100ml
     }
 
-    console.log(`Fetching price for product code: ${productCode}`);
+    // console.log(`Fetching price for product code: ${productCode}`);
 
     // 根據新的 product_code 獲取價格
     try {
       const response = await axios.get(`http://localhost:8000/api/product/${productCode}`);
       setPrice(response.data[0].price); // 更新價格
-      console.log('Updated Price:', response.data[0].price);
+      // console.log('Updated Price:', response.data[0].price);
     } catch (error) {
       console.error('無法獲取商品資料:', error.response ? error.response.data : error.message);
     }
@@ -78,7 +77,7 @@ function Product() {
 
     // 在 handleAddToCart 中將選擇的商品加入購物車
     const handleAddToCart = () => {
-      console.log('Adding to cart'); // 調試用
+      // console.log('Adding to cart'); // 調試用
       const cartKey = isMember ? 'memberCart' : 'guestCart';
       const cartItems = JSON.parse(localStorage.getItem(cartKey)) || [];
   
@@ -100,7 +99,7 @@ function Product() {
         localStorage.setItem(cartKey, JSON.stringify(cartItems));
       }
   
-      setPopSwitch(true) // 顯示彈跳購物車
+      setPopSwitch(true); // 顯示彈跳購物車
     };
 
   return (
