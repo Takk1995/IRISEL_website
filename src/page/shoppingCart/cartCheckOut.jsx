@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import '../../style/Takk.css'
-import img from '../../img/test.png'
+import bag from '../../img/picbag.webp'
+import box from '../../img/picbox.webp'
 import CartCheckCards from '../../components/cartCheckCards';
 import axios from 'axios';
 
@@ -504,7 +505,7 @@ const CartCheckOut = ({ cartItems, selectPackage, onNext, onBack, setOrderId }) 
                         <h2 className='cardTitle'>訂單摘要</h2>
                         <div className="verticalEnd cartLeft">
                             {/* 回到 Order */}
-                            <span onClick={onBack}>編輯</span>
+                            <span className='changeLink' onClick={onBack}>編輯</span>
                         </div>
                     </div>
                     <ul className="noBullets">
@@ -529,16 +530,16 @@ const CartCheckOut = ({ cartItems, selectPackage, onNext, onBack, setOrderId }) 
                         <ul className="noBullets">
                             {selectPackage ? (
                                 <li className="packageBorder">
-                                    <img src={img} alt='' className="cartImg" />
-                                    <div className="horizontallyCenter packageLable">
+                                    <img src={bag} alt='' className="cartImg" />
+                                    <div className="horizontallyCenter packageLable" style={{paddingLeft:'15px'}}>
                                         <p>簡約包裝</p>
                                         <p>使用可回收材質，並內含有機棉收納袋。</p>
                                     </div>
                                 </li>
                             ) : (
                                 <li className="packageBorder">
-                                    <img src={img} alt='' className="cartImg" />
-                                    <div className="horizontallyCenter packageLable">
+                                    <img src={box} alt='' className="cartImg" />
+                                    <div className="horizontallyCenter packageLable" style={{paddingLeft:'15px'}}>
                                         <p>經典包裝</p>
                                         <p>經典禮盒或禮袋。</p>
                                     </div>

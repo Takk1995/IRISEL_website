@@ -10,7 +10,7 @@ const PopCard = ({detail}) => {
                     <img src={img_url} alt='' className="cartImg" />
                 </div>
                 <div className='popCardMain'>
-                    <div style={{paddingTop:'15px'}}>
+                    <div style={{paddingTop:'15px', paddingLeft:'15px'}}>
                         <Link to = {`/product/${product_code}`} className="vertical">
                             <span className='cartTitle'>{product_name}</span>
                             <span>{main_type_Chinese}</span>
@@ -19,7 +19,7 @@ const PopCard = ({detail}) => {
                             <p>{capacity}ml</p>
                         </div>
                     </div>
-                    <div className='horizontallySpaceBetween'>
+                    <div className='horizontallySpaceBetween' style={{paddingLeft:'15px'}}>
                         <div>
                             <p>數量:1</p>
                         </div>

@@ -11,14 +11,14 @@ const CartCheckCard = ({detail, qty}) => {
             </div>
             <div style={{ width: '100%' }}>
                 <div className="vertical">
-                    <div>
+                    <div style={{paddingLeft:'15px'}}>
                         <Link to = {`/product/${product_code}`} className="vertical">
                             <span className='cardTitle'>{product_name}</span>
                             <span>{main_type_Chinese}</span>
                         </Link>
                         <p>{capacity}ml</p>
                     </div>
-                    <div className="horizontally">
+                    <div className="horizontally" style={{paddingLeft:'15px'}}>
                         <div className="cartRight">
                             <span>數量 {cart_qty}</span>
                         </div>

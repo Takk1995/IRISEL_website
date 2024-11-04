@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../../style/Takk.css'
-import img from '../../img/test.png'
+import bag from '../../img/picbag.webp'
+import box from '../../img/picbox.webp'
 import CartEditCards from '../../components/cartEditCards'
 
 function CartOrder({cartItems, setCartItems, onPackage, onNext}) {    
@@ -48,8 +49,8 @@ function CartOrder({cartItems, setCartItems, onPackage, onNext}) {
                                    value     = "簡約包裝"
                                    onChange  = {chooseChange}
                             />
-                            <img src={img} alt='' className="cartImg" />
-                            <label htmlFor="simple" className="packageLable">
+                            <img src={bag} alt='' className="cartImg" />
+                            <label htmlFor="simple" className="packageLable"  style={{paddingLeft:'15px'}}>
                                 <p>簡約包裝</p>
                                 <p>使用可回收材質，並內含有機棉收納袋。</p>
                             </label>
@@ -62,8 +63,8 @@ function CartOrder({cartItems, setCartItems, onPackage, onNext}) {
                                    value     = "經典包裝"
                                    onChange  = {chooseChange}
                             />
-                            <img src={img} alt='' className="cartImg" />
-                            <label htmlFor="classic" className="packageLable">
+                            <img src={box} alt='' className="cartImg" />
+                            <label htmlFor="classic" className="packageLable"  style={{paddingLeft:'15px'}}>
                                 <p>經典包裝</p>
                                 <p>經典禮盒或禮袋。</p>
                             </label>

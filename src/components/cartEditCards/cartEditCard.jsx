@@ -61,7 +61,7 @@ const CartEditCard =({detail, onDel, onChange, total}) => {
                     <img src={currentDetail.img_url} alt='' className="cartImg" />
                 </div>
                 <div style={{ width: '100%' }}>
-                    <div className="horizontally">
+                    <div className="horizontally" style={{paddingLeft:'15px'}}>
                         <div>
                             {/* link to productid */}
                             <Link to = {`/product/${currentDetail.product_code}`} className="vertical">
@@ -84,7 +84,7 @@ const CartEditCard =({detail, onDel, onChange, total}) => {
                         </div>
                     </div>
                     <div>
-                        <div className="horizontally">
+                        <div className="horizontally" style={{paddingLeft:'15px'}}>
                             <div className="productRevise" onClick={switchPop}>
                                 {/* 出現 popUpDate */}
                                 <span className='changeLink'>編輯</span>

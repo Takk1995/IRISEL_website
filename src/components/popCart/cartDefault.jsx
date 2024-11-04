@@ -25,7 +25,7 @@ const CartDefault = () => {
                             </li>
                             <li>
                                 <div>
-                                    <Link to='/'>
+                                    <Link to='/Quiz'>
                                         <p>測驗</p>
                                     </Link>
                                 </div>
