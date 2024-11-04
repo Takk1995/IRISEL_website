@@ -1,4 +1,8 @@
 import '../../style/Takk.css'
+import Visa from '../../img/visa.png'
+import Mastercard from '../../img/Mastercard.png'
+import AmericanExpress from '../../img/American_Express.png'
+import LinePay from '../../img/LINE_Pay.png'
 
 const CartFooter = () => {
     return (
@@ -10,16 +14,16 @@ const CartFooter = () => {
                 <div>
                     <ul className="noBullets horizontallyCenter">
                         <li className="cartFooterLi">
-                            <span>visa</span>
+                            <img src={Visa} alt="" />
                         </li>
                         <li className="cartFooterLi">
-                            <span>visa</span>
+                            <img src={Mastercard} alt="" />
                         </li>
                         <li className="cartFooterLi">
-                            <span>visa</span>
+                            <img src={AmericanExpress} alt="" />
                         </li>
                         <li className="cartFooterLi">
-                            <span>visa</span>
+                            <img src={LinePay} alt="" />
                         </li>
                     </ul>
                 </div>
