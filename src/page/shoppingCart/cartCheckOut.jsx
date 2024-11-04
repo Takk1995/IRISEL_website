@@ -5,7 +5,7 @@ import box from '../../img/picbox.webp'
 import CartCheckCards from '../../components/cartCheckCards';
 import axios from 'axios';
 
-const CartCheckOut = ({ cartItems, selectPackage, onNext, onBack, setOrderId }) => {
+const CartCheckOut = ({ cartItems, selectPackage, onNext, onBack, setOrderId, setCreatedAt }) => {
     const [status, setStatus] = useState(true) // member:true guest:false
     const memberClick = () => setStatus(true)
     const guestClick = () => setStatus(false)
@@ -298,6 +298,18 @@ const CartCheckOut = ({ cartItems, selectPackage, onNext, onBack, setOrderId }) 
         setMoving(false)
     }
 
+    const formatDate = (dateString) => {
+        const date = new Date(dateString)
+        const year = date.getFullYear()
+        const month = String(date.getMonth() + 1).padStart(2, '0')
+        const day = String(date.getDate()).padStart(2, '0')
+        const hours = String(date.getHours()).padStart(2, '0')
+        const minutes = String(date.getMinutes()).padStart(2, '0')
+        const seconds = String(date.getSeconds()).padStart(2, '0')
+    
+        return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
+    }
+
     const onNextandCheckOut = async() => {
         try {
             onCheckOut()
@@ -315,10 +327,11 @@ const CartCheckOut = ({ cartItems, selectPackage, onNext, onBack, setOrderId }) 
             }
             
             const response = await axios.post('http://localhost:8000/api/orders', orderData)  
-            const {order_id} = response.data
+            const {order_id, createdAt} = response.data
 
             setOrderId(order_id)
-            
+            setCreatedAt(formatDate(createdAt))
+
             localStorage.removeItem('guestUser')
             localStorage.removeItem('guestCart')
             localStorage.removeItem('productPackage')

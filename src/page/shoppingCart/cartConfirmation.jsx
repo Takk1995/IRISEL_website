@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import '../../style/Takk.css';
 import img from '../../img/check.png';
 
-const CartConfirmation = ({orderId}) => {
+const CartConfirmation = ({orderId, createdAt}) => {
     return (
         <div>
             <div>
@@ -35,7 +35,7 @@ const CartConfirmation = ({orderId}) => {
                         <span>付款時間:</span>
                     </li>
                     <li className="horizontallyCenter">
-                        <span>2024/09/25</span>
+                        <span>{createdAt}</span>
                     </li>
                 </ul>
             </div>

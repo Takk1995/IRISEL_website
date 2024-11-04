@@ -15,6 +15,7 @@ const ShoppingCart = () => {
     const [fetchedItems, setFetchedItems] = useState([])
     const [isMember] = useState(false)
     const [orderId, setOrderId] = useState(null)
+    const [createdAt, setCreatedAt] = useState(null)
 
     useEffect(() => {
         const fetchCartItems = () => {
@@ -77,10 +78,13 @@ const ShoppingCart = () => {
                                   onBack        = {backToOrder}
                                   cartItems     = {cartItems}
                                   setOrderId    = {setOrderId}
+                                  setCreatedAt  = {setCreatedAt}
                     />
                 )}
                 {cartStep === 2 && (
-                    <CartConfirmation orderId = {orderId} />
+                    <CartConfirmation orderId   = {orderId}
+                                      createdAt = {createdAt}
+                    />
                 )}
             </div>
             <CartFooter />
