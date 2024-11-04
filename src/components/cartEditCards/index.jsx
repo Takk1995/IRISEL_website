@@ -52,11 +52,17 @@ const CartEditCards = ({ cartItems, setCartItems }) => {
         }
     }, [cartItems])
 
-    if (!Array.isArray(cartItems) || cartItems.length === 0) {
-        return <h2 className='horizontallyCenter orderNone'>您的購物車沒有任何商品</h2>
-    } else {
-        // console.log('1223', cartItems);
+    const guestCart = JSON.parse(localStorage.getItem('guestCart'))
+
+    
+    if (!guestCart || (Array.isArray(guestCart) && guestCart.length === 0)) {
+        return (
+            <h2 className='horizontallyCenter orderNone' style={{color:'red'}}>
+                您的購物車沒有任何商品
+            </h2>
+        )
     }
+
 
     return (
         <div>

@@ -17,6 +17,8 @@ function CartOrder({cartItems, setCartItems, onPackage, onNext}) {
         localStorage.setItem('productPackage', packageValue)
     }
     
+    const guestCart = JSON.parse(localStorage.getItem('guestCart'))
+
     return (
         <div className='cartMargin'>
             <div>
@@ -31,7 +33,7 @@ function CartOrder({cartItems, setCartItems, onPackage, onNext}) {
                 <CartEditCards cartItems={cartItems} setCartItems={setCartItems}/>
             </div>
             {/* 包裝選擇 */}
-            {cartItems.length > 0 && (
+            {guestCart && Array.isArray(guestCart) && guestCart.length > 0 && (
                 <div>
                 <div>
                     <h2>包裝</h2>
