@@ -545,7 +545,7 @@ const CartCheckOut = ({ cartItems, selectPackage, onNext, onBack, setOrderId, se
                                 <li className="packageBorder">
                                     <img src={bag} alt='' className="cartImg" />
                                     <div className="horizontallyCenter packageLable" style={{paddingLeft:'15px'}}>
-                                        <p>簡約包裝</p>
+                                        <h4>簡約包裝</h4>
                                         <p>使用可回收材質，並內含有機棉收納袋。</p>
                                     </div>
                                 </li>
@@ -553,7 +553,7 @@ const CartCheckOut = ({ cartItems, selectPackage, onNext, onBack, setOrderId, se
                                 <li className="packageBorder">
                                     <img src={box} alt='' className="cartImg" />
                                     <div className="horizontallyCenter packageLable" style={{paddingLeft:'15px'}}>
-                                        <p>經典包裝</p>
+                                        <h4>經典包裝</h4>
                                         <p>經典禮盒或禮袋。</p>
                                     </div>
                                 </li>
