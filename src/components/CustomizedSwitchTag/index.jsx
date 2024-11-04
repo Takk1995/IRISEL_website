@@ -1,5 +1,5 @@
 import React from "react";
-import "../../Style/CustomizedCard.css";
+import "../../style/CustomizedCard.css";
 
 const CustomizedSwitchTag = ({ text, isSelected, onClick }) => {
     return (

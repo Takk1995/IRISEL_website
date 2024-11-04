@@ -73,7 +73,7 @@ const QuizPage = () => {
             setTimeout(() => calculateResult());
             Test();
             setFlippedCards(Array(questions[currentQuestionIndex].answers.length).fill(0));
-            const timer = setTimeout(() => {
+            setTimeout(() => {
                 setModalOpen(true);
             }, 1000);
         }

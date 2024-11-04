@@ -1,16 +1,12 @@
+
 .CustomizedCard {
     width: 10rem;
     height: 10rem;
     display: flex;
-    border-radius: 0%;
+    border-radius: 3%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #ebd8b8;
-    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
-    transition: 0.3s;
-    padding: 10px;
-    margin: 4%;
     cursor: pointer;
 }
 
@@ -20,17 +16,16 @@
     height: 10rem;
     text-align: center;
     align-items: center;
+    border: #ebd8b8 4px solid;
 }
 
 
-.CustomizedCard:hover {
-    background-color: #f0f0f0;
-    transform: scale(1.05);
+.CustomizedCard:hover .CustomizedCricle{
+    transform: scale(0.9);
+    border: #ebd8b8 4px solid;
 }
 
-.CustomizedCard:hover .CustomizedCricle {
-    /* animation: CustomizedCricle 0.9s both; */
-}
+
 
 @keyframes CustomizedCricle {
     0% {
@@ -74,6 +69,7 @@
     text-align: center;
     display: flex;
     writing-mode: vertical-rl;
+    font-family: "Noto Sans TC", sans-serif;
     font-size: 35px;
 }
 
@@ -95,31 +91,12 @@
 }
 
 .CustomizedCricleText{
-    font-size: 35px;
-    font-weight: bold;
-    color: white;
+    font-size: 38px;
+    font-weight: Heavy;
+    color: rgb(104, 74, 30);
     display: inline-flex;
     align-items: center;
-    -webkit-text-stroke: #978982 1px;
-    font-family:'oxxo', serif;
+    font-family: "Noto Sans TC", sans-serif;
+    text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.664);
     font-weight: bold;
-}
-
-.CustomizedCricleText:hover{
-    color: #ebd8b8;
-    -webkit-text-stroke: #ebd8b8 1px;
-}
-.CustomizedBuyingButton{
-    background-color: rgba(255, 255, 255, 0.089);
-    border: #ebd8b8 10px solid;
-    border-radius: 50%;
-    height: 800px;
-    width: 800px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 50px;
-    font-weight: bold;
-    color: #181818;
-    cursor: pointer;
 }

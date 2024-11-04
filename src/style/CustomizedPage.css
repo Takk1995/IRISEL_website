@@ -1,22 +1,25 @@
 .CustomizedLeft {
-    background-color :#2c2c22;
-    border: 5px solid #ebd8b8;
+    background-color :#2c2c229a;
+    border: 5px solid #c5aa7bc2;
     width: 40%;
-    height: 98%;
-    display: inline-flex;
+    height: 80%;
+    display: flex;
     flex-wrap: wrap;
+    padding-top: 2rem;
+    margin-top: 4rem;
     gap: 10px; /* 卡片之間的間距 */
     transform: translate(0,0.5%);
+    border-radius: 5px;
 }
 
 .CustomizedLeft .CustomizedCard {
-    flex: 2 4;/* 每個卡片佔 25% 減去間距 */
+    flex: 2 2;/* 每個卡片佔 25% 減去間距 */
     box-sizing: border-box; /* 包含內邊距和邊框 */
 }
 .CustomizedBackground{
     height: 100vh;
     display: flex;
-    background-color: #AE7045;
+    background-image: url("../img/CustomizedBackground.jpg");
 }
 .CustomizedBackgroundGradient {
     position: absolute;
@@ -29,18 +32,26 @@
 }
 .CustomizedRight{
     width: 30%;
+    height: 85%;
     padding: 10px;
-    display: flex;
+    margin-top:3.5rem;
     flex-direction: column;
     justify-content: center;
     gap: 10px;
+    display: flex; /* 新增這行 */
+    margin-left: 2rem;
+    background-color: #2c2c229a;
+    border: 5px solid #c5aa7bc2;
 }
 .CustomizedSwitchTagSide{
-    display: flex;
-    gap: 10px;
+    display: inline-flex;
+    gap: 20px;
     justify-content: center;
     width: 5%;
     flex-direction: column;
+    height: 80%;
+    margin-top: 5rem;
+    margin-left: 5rem;
 }
 
 @keyframes CustomizedBackgroundAnimation{
@@ -55,6 +66,34 @@
     }
 }
 body{
-    overflow: hidden;
+    overflow: hidden；
 }
 
+.CustomizedBottle {
+    width: 100%;
+    height: 86%;
+    background-image: url("../img/CustomizedBottle.png");
+    background-size: cover; /* 調整這行 */
+    background-position: center; /* 新增這行 */
+    background-repeat: no-repeat;
+    margin: auto;
+    position: relative; /* 新增這行 */
+    z-index: 3; /* 新增這行，確保瓶子在顏色上面 */
+    display: flex; /* 新增這行 */
+    justify-content: center; /* 新增這行 */
+    align-items: center; /* 新增這行 */
+}
+
+.CustomizedColor{
+    width: 400px;
+    height: 315px;
+    background-color: #aa3f3f;
+    position: absolute; /* 新增這行 */
+    z-index: 1; /* 新增這行，確保顏色在背景上面但在瓶子下面 */
+    display:inline-flex;
+    border-radius: 50%;
+    justify-content: center;
+    top: 58%; /* 新增這行 */
+    left: 68%; /* 新增這行 */
+    transform: translate(-50%, -50%); /* 新增這行，確保顏色置中 */
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import "../../Style/CustomizedCard.css";
+import "../../style/CustomizedCard.css";
 
 const CustomizedCard = ({ text, color,onClick }) => {
     return (
