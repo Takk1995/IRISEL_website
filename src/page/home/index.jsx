@@ -15,8 +15,11 @@ import images from '../home/carouselProdimg';
 function HomeMain() {
     // 取獲路由
     const navigate = useNavigate();
-    const BtnClickk = () => {
+    const BtnClickshop = () => {
         navigate('/catalog'); //到商店路由頁面
+      };
+    const BtnClickgame = () => {
+        navigate('/Quiz'); //到遊戲頁面
       };
 
     return (
@@ -43,14 +46,16 @@ function HomeMain() {
                             <div className="imgoverlay">
                                 <button 
                                 className="imgoverbtn bttnr btnhover imgstore"
-                                onClick={BtnClickk}
+                                onClick={BtnClickshop}
                                 >網路商店</button>
                             </div>
                         </div>
                         <div className="imgovers">
-                            <img className="imgoverstyle img54 imgset imgw500" src={Ppic02} alt="客製化商品" />
+                            <img className="imgoverstyle img54 imgset imgw500" src={Ppic02} alt="互動遊戲" />
                             <div className="imgoverlay">
-                                <button className="imgoverbtn bttnr btnhover imgstore">客製化商品</button>
+                                <button className="imgoverbtn bttnr btnhover imgstore"
+                                onClick={BtnClickgame}
+                                >互動遊戲</button>
                             </div>
                         </div>
 
