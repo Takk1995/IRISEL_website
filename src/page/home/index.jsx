@@ -51,11 +51,11 @@ function HomeMain() {
                             </div>
                         </div>
                         <div className="imgovers">
-                            <img className="imgoverstyle img54 imgset imgw500" src={Ppic02} alt="互動遊戲" />
+                            <img className="imgoverstyle img54 imgset imgw500" src={Ppic02} alt="個性化推薦" />
                             <div className="imgoverlay">
                                 <button className="imgoverbtn bttnr btnhover imgstore"
                                 onClick={BtnClickgame}
-                                >互動遊戲</button>
+                                >個性化推薦</button>
                             </div>
                         </div>
 

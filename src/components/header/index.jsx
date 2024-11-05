@@ -27,7 +27,7 @@ function HomeHeader() {
                     <ul className={`barlist noBullets arrHor noBreaks titleText  ${actop ? 'active' : ''}`}>
                         <li className="barlistli rightline padLR35"><a className='cleartext texthover' href="/">首頁</a></li>
                         <li className="barlistli rightline padLR35"><a className='cleartext texthover' href="/catalog">網路商店</a></li>
-                        <li className="barlistli rightline padLR35"><a className='cleartext texthover' href="/Quiz">互動遊戲</a></li>
+                        <li className="barlistli rightline padLR35"><a className='cleartext texthover' href="/Quiz">個性化推薦</a></li>
                         <li className="barlistli rightline padLR35">會員中心</li>
                         <li className="barlistli padLR35"><a className='cleartext texthover' href="/FQA">常見問題</a></li>
                     </ul>
