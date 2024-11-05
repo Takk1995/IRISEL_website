@@ -54,7 +54,7 @@ const Customized = () => {
             { color: "#9ACD32", text: "鼠尾草" }
         ],
         "後調": [
-            { color: "#D2B48CF", text: "檀香" },
+            { color: "#D2B48C", text: "檀香" },
             { color: "#556B2F", text: "香根草" },
             { color: "#A52A2A", text: "雪松" },
             { color: "#F5DEB3", text: "香草" },
@@ -111,6 +111,9 @@ const Customized = () => {
                 </div>
                 <div className="CustomizedColor" style={{ background: backgroundGradient }}>
                 </div>
+            </div>
+            <div className="CustomizedButtonSide">
+                <button className="CustomizedButton">加入購物車</button>
             </div>
         </div>
     );

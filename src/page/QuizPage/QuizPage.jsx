@@ -10,7 +10,9 @@ const QuizPage = () => {
     const questions = [
         { question: "早晨起床後的第一件事是什麼？", answers: [{ text: "喝咖啡", weight: 1 }, { text: "喝茶", weight: 3 }, { text: "喝水", weight: 2 }, { text: "運動", weight: 4 }] },
         { question: "當你想放鬆時，你最喜歡做什麼？", answers: [{ text: "閱讀", weight: 1 }, { text: "泡澡", weight: 2 }, { text: "散步", weight: 3 }, { text: "冥想", weight: 4 }] },
-
+        { question: "你最喜歡的季節是什麼？", answers: [{ text: "春天", weight: 1 }, { text: "夏天", weight: 2 }, { text: "秋天", weight: 3 }, { text: "冬天", weight: 4 }] },
+        { question: "你的個性是什麼？", answers: [{ text: "外向活潑", weight: 1 }, { text: "安靜內斂", weight: 2 }, { text: "創意十足", weight: 3 }, { text: "穩重成熟", weight: 4 }] },
+        { question: "下方選項中理想的旅行目的地？", answers: [{ text: "海灘", weight: 1 }, { text: "山區", weight: 2 }, { text: "都市", weight: 3 }, { text: "森林", weight: 4 }] },
     ];
 
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -20,7 +22,7 @@ const QuizPage = () => {
     const [productData, setProductData] = useState([]);
     const [handleButtonClick, setHandleButtonClick] = useState("");
 
-    let code = 1021001;
+    let code = 1031001;
 
     useEffect(() => {
         // 每次切換問題時，讓卡片依序翻轉
@@ -84,12 +86,12 @@ const QuizPage = () => {
             acc[weight] = (acc[weight] || 0) + 1;
             return acc;
         }, {});
-
         const mostFrequentWeight = Object.keys(weightCount).reduce((a, b) => weightCount[a] > weightCount[b] ? a : b);
         // alert(`你選擇的最多權重為：${mostFrequentWeight}`);
         if (mostFrequentWeight === "1") {
             code = 1011001;
-        } else if (mostFrequentWeight === "2") {
+        } 
+        else if (mostFrequentWeight === "2") {
             code = 1021001;
         }
         else if (mostFrequentWeight === "3") {

@@ -96,6 +96,7 @@
     color: rgb(104, 74, 30);
     display: inline-flex;
     align-items: center;
+    margin-top: 3rem;
     font-family: "Noto Sans TC", sans-serif;
     text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.664);
     font-weight: bold;
