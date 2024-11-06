@@ -190,6 +190,7 @@
 /* 圖片高度45px */
 .h45 {
     height: 40px;
+    cursor: pointer;
 }
 
 .padLR35 {
@@ -416,6 +417,7 @@
 
 .texthover:hover {
     color: #a40000;
+    cursor: pointer;
 }
 
 .btnhover:hover {
@@ -495,6 +497,7 @@
     }
     .h45 {
         height: 35px;
+
     }
 
 }
