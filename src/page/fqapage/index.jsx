@@ -45,7 +45,7 @@ function FQApage() {
           onClick={() => set('tab1')}>會員問題</li>
                             <li
           className={`FAQFormTitleli font18 texthover ${act === 'tab2' ? 'active' : ''}`}
-          onClick={() => set('tab2')}>客製化服務問題</li>
+          onClick={() => set('tab2')}>個人化推薦問題</li>
                             <li
           className={`FAQFormTitleli font18 texthover ${act === 'tab3' ? 'active' : ''}`}
           onClick={() => set('tab3')}>配送問題</li>

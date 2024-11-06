@@ -41,9 +41,9 @@ function FQAmember() {
                                 <img className="FQAIconimg" src={add} alt="+" />
                             )}
                         </span>
-                        會員有什麼好處？</div>
+                        如何查詢我的訂單？</div>
                     {actID === 'answer2' && (
-                        <div id="answer2" className="FAQA contentText lineHeight30 ">成為 Irisel 的會員，您將獲得會員專屬折扣、生日禮物、提前獲取新品資訊，以及參加會員專屬活動的資格！</div>
+                        <div id="answer2" className="FAQA contentText lineHeight30 ">您可以在會員中心的「我的訂單」頁面查詢過去的訂單紀錄。點選訂單號碼即可查看詳細資訊和訂單進度。</div>
                     )}
                 </div>
                 <div>
