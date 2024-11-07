@@ -72,7 +72,7 @@ const CartCheckOut = ({ cartItems, selectPackage, onNext, onBack, setOrderId, se
                 { name: '南區', zipcode: '402' },
                 { name: '北區', zipcode: '404' },
                 { name: '東區', zipcode: '401' },
-                { name: '南屯區', zipcode: '402' },
+                { name: '南屯區', zipcode: '408' },
                 { name: '西屯區', zipcode: '407' },
                 { name: '大里區', zipcode: '404' },
                 { name: '太平區', zipcode: '411' },
