@@ -28,7 +28,7 @@ function HomeHeader() {
                         <li className="barlistli rightline padLR35"><a className='cleartext texthover' href="/">首頁</a></li>
                         <li className="barlistli rightline padLR35"><a className='cleartext texthover' href="/catalog">網路商店</a></li>
                         <li className="barlistli rightline padLR35"><a className='cleartext texthover' href="/Quiz">個性化推薦</a></li>
-                        <li className="barlistli rightline padLR35 texthover">會員中心</li>
+                        <li className="barlistli rightline padLR35" ><a  className='cleartext texthover' href="/login">會員中心</a></li>
                         <li className="barlistli padLR35"><a className='cleartext texthover' href="/FQA">常見問題</a></li>
                     </ul>
                     <img className="h45 leanRight290"
