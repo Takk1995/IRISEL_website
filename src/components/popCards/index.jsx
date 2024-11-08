@@ -33,9 +33,9 @@ const PopCards = ({items}) => {
             <div className='deliveryBottom'>
                 <div className="horizontallySpaceBetween cartFooter popTotal">
                     <div>
-                        <p>小計</p>
+                        <h4>小計</h4>
                     </div>
-                    <p>NT$ {total}</p>
+                    <h4>NT$ {total}</h4>
                 </div>
             </div>
         </div>
