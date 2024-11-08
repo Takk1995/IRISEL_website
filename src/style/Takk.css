@@ -269,20 +269,20 @@
     margin-top: 83px;
 }
 
-.confirmationBottom{
+.confirmationBottom {
     margin-top: 6%;
     margin-bottom: 10%;
 }
 
-.cartFooterPaddingBottom{
+.cartFooterPaddingBottom {
     padding-bottom: 2%;
 }
 
-.cartFooterPaddingTop{
+.cartFooterPaddingTop {
     padding-top: 1%;
 }
 
-.checkOutError{
+.checkOutError {
     color: red;
 }
 
@@ -305,17 +305,29 @@
     background-color: #6e0000;
 }
 
-.cartBtn a{
+.cartBtn a {
     text-decoration: none;
     padding: 10px 50px;
 }
 
-.btnSpan{
+.btnSpan {
     color: white;
     font-size: 20px;
 }
 
-.cardH4{
+.cardH4 {
     color: rgb(0, 0, 0);
     
+}
+
+.cartInp {
+    border: none;
+    border-bottom: 2px solid rgb(112, 112, 112);
+    outline: none;
+    margin-top: 40px;
+}
+
+.cartInp:focus {
+    border: none;
+    border-bottom: 2px solid rgb(56, 56, 56);
 }

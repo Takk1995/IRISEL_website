@@ -380,15 +380,15 @@ const CartCheckOut = ({ cartItems, selectPackage, onNext, onBack, setOrderId, se
                             {/* 會員 */}
                             {status && (
                                 <div>
-                                    <div className="horizontallyCenter cartLoginMargin">
+                                    <div className="horizontallyCenter">
                                         <p>歡迎回來。登入並繼續完成至商品配送。</p>
                                     </div>
                                     <div>
-                                        <div className="horizontallyCenter cartLoginMargin">
-                                            <input type="email" placeholder="電子郵件或手機號碼" />
+                                        <div className="horizontallyCenter">
+                                            <input className='cartInp' type="email" placeholder="電子郵件或手機號碼" />
                                         </div>
                                         <div className="horizontallyCenter cartLoginMargin">
-                                            <input type="password" placeholder="密碼" />
+                                            <input className='cartInp' type="password" placeholder="密碼" />
                                         </div>
                                         <div className="horizontallyCenter">
                                             <button className='cartBtn' onClick={memberNext} style={{width:'230px'}}>
@@ -414,6 +414,7 @@ const CartCheckOut = ({ cartItems, selectPackage, onNext, onBack, setOrderId, se
                                     <div>
                                         <div className="horizontallyCenter cartLoginMargin">
                                             <input type="email"
+                                                   className='cartInp'
                                                    placeholder="電子郵件"
                                                    value={email}
                                                    onChange={(e) => setEmail(e.target.value)}
@@ -461,32 +462,32 @@ const CartCheckOut = ({ cartItems, selectPackage, onNext, onBack, setOrderId, se
                             <div className='vertical cartMargin deliveryBottom'>
                                 <div className='horizontallySpaceBetween'>
                                     <div className='verticalEnd deliveryWidth'>
-                                        <p>姓氏</p>
-                                        <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+                                        {/* <p>姓氏</p> */}
+                                        <input className='cartInp' type="text" placeholder='姓氏' value={lastName} onChange={(e) => setLastName(e.target.value)} />
                                     </div>
                                     <div className='verticalEnd deliveryWidth'>
-                                        <p>名字</p>
-                                        <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+                                        {/* <p>名字</p> */}
+                                        <input className='cartInp' type="text" placeholder='名字' value={firstName} onChange={(e) => setFirstName(e.target.value)} />
                                     </div>
                                 </div>
                                 <div className='verticalEnd deliveryWidth cartRight'>
-                                    <p>電話號碼</p>
-                                    <input type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
+                                    {/* <p>電話號碼</p> */}
+                                    <input className='cartInp' type="tel" placeholder='電話號碼' value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
                                 </div>
                                 <div className='horizontallySpaceBetween'>
                                     <div className='verticalEnd deliveryWidth'>
-                                        <p>縣市</p>
-                                        <select value={selectedCity} onChange={handleCityChange}>
-                                            <option value="">請選擇縣市</option>
+                                        {/* <p>縣市</p> */}
+                                        <select className='cartInp' value={selectedCity} onChange={handleCityChange}>
+                                            <option value="">縣市</option>
                                             {cities.map((city, index) => (
                                                 <option key={index} value={city.name}>{city.name}</option>
                                             ))}
                                         </select>
                                     </div>
                                     <div className='verticalEnd deliveryWidth'>
-                                        <p>鄉鎮市區</p>
-                                        <select value={selectedDistrict} onChange={handleDistrictChange} disabled={!selectedCity}>
-                                            <option value="">請選擇鄉鎮市區</option>
+                                        {/* <p>鄉鎮市區</p> */}
+                                        <select className='cartInp' value={selectedDistrict} onChange={handleDistrictChange} disabled={!selectedCity}>
+                                            <option value="">鄉鎮市區</option>
                                             {selectedCity && cities.find(city => city.name === selectedCity).districts.map((district, index) => (
                                                 <option key={index} value={district.name}>{district.name}</option>
                                             ))}
@@ -494,15 +495,22 @@ const CartCheckOut = ({ cartItems, selectPackage, onNext, onBack, setOrderId, se
                                     </div>
                                 </div>
                                 <div className='verticalEnd deliveryWidth cartRight'>
-                                    <p>郵遞區號</p>
+                                    {/* <p>郵遞區號</p> */}
                                     <input type="text"
-                                        value={zipcode}
-                                        readOnly
+                                           className='cartInp'
+                                           placeholder='郵遞區號'
+                                           value={zipcode}
+                                           readOnly
                                     />
                                 </div>
                                 <div className='verticalEnd deliveryWidth cartRight'>
-                                    <p>地址</p>
-                                    <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} />
+                                    {/* <p>地址</p> */}
+                                    <input type="text"
+                                           className='cartInp'
+                                           placeholder='地址'
+                                           value={address}
+                                           onChange={(e) => setAddress(e.target.value)}
+                                    />
                                 </div>
                             </div>
                             <div className='horizontallyCenter cartBottom'>
