@@ -83,9 +83,9 @@ const CartEditCards = ({ cartItems, setCartItems }) => {
             {/* 總金額 */}
             <div className="horizontally">
                 <div>
-                    <span>小計</span>
+                    <h4>小計</h4>
                 </div>
-                <span className="cartLeft">NT$ {total}</span>
+                <h4 className="cartLeft">NT$ {total}</h4>
             </div>
         </div>
     )
