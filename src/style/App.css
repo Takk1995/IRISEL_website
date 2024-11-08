@@ -10,6 +10,12 @@
   flex-direction: column;
 }
 
+.verticalCenter{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .verticalEnd{
   display: flex;
   flex-direction: column;

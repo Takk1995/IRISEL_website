@@ -390,13 +390,12 @@ const CartCheckOut = ({ cartItems, selectPackage, onNext, onBack, setOrderId, se
                                         <div className="horizontallyCenter cartLoginMargin">
                                             <input type="password" placeholder="密碼" />
                                         </div>
-                                        <div className="horizontallyCenter cartLoginMargin">
-                                            <div>
-                                                <span>忘記密碼?</span>
-                                            </div>
-                                        </div>
                                         <div className="horizontallyCenter">
-                                            <button onClick={memberNext}>登入</button>
+                                            <button className='cartBtn' onClick={memberNext} style={{width:'50%'}}>
+                                                <span className='btnSpan'>
+                                                    登入
+                                                </span>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -424,7 +423,11 @@ const CartCheckOut = ({ cartItems, selectPackage, onNext, onBack, setOrderId, se
                                             {error && <div className='checkOutError'>{error}</div>}
                                         </div>
                                         <div className="horizontallyCenter cartLoginMargin">
-                                            <button onClick={guestNext}>繼續前往付款</button>
+                                            <button className='cartBtn' onClick={guestNext} style={{width:'50%'}}>
+                                                <span className='btnSpan'>
+                                                    繼續前往付款
+                                                </span>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -503,10 +506,18 @@ const CartCheckOut = ({ cartItems, selectPackage, onNext, onBack, setOrderId, se
                                 </div>
                             </div>
                             <div className='horizontallyCenter cartBottom'>
-                                <button onClick={onNextandCheckOut}>前往付款</button>
+                                <button className='cartBtn' onClick={onNextandCheckOut} style={{width:'50%'}}>
+                                    <span className='btnSpan'>
+                                        前往付款
+                                    </span>
+                                </button>
                             </div>
                             <div className='horizontallyCenter cartBottom'>
-                                <button onClick={backClick}>返回</button>
+                                <button className='cartBtn' onClick={backClick} style={{width:'50%'}}>
+                                    <span className='btnSpan'>
+                                        返回
+                                    </span>
+                                </button>
                             </div>
                         </div>
                     </div>

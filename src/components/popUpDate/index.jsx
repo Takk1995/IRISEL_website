@@ -44,9 +44,9 @@ const PopUpDate = ({product, onUpdate}) => {
             <div className='cartTop'>
                 {/* 商品資料 */}
                 <div>
-                    <Link to = {`/product${newProduct.product_code}`} className="vertical">
-                        <span className="cartTitle">{newProduct.product_name}</span>
-                        <span>{newProduct.main_typr_Chinese}</span>
+                    <Link to = {`/product${newProduct.product_code}`} className="vertical" style={{textDecoration:'none'}}>
+                        <h4 className="popTitle cardH4">{newProduct.product_name}</h4>
+                        <h4 className='popTitle cardH4'>{newProduct.main_type_Chinese}</h4>
                     </Link>
                 </div>
                 <div>
@@ -65,8 +65,12 @@ const PopUpDate = ({product, onUpdate}) => {
                     </select>
                 </div>
                 {/* 往cartOrder */}
-                <div className="vertical cartTop">
-                    <button className='cartBottom' onClick={handleUpdate}>更新購物車</button>
+                <div className="verticalCenter cartTop">
+                    <button className='cartBottom cartBtn' onClick={handleUpdate}>
+                        <span className='btnSpan'>
+                            更新購物車
+                        </span>        
+                    </button>
                 </div>
             </div>
             <div className="horizontallyCenter">

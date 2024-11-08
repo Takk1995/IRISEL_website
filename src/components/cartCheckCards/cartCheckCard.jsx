@@ -12,9 +12,9 @@ const CartCheckCard = ({detail, qty}) => {
             <div style={{ width: '100%' }}>
                 <div className="vertical">
                     <div style={{paddingLeft:'15px'}}>
-                        <Link to = {`/product/${product_code}`} className="vertical">
-                            <span className='cardTitle'>{product_name}</span>
-                            <span>{main_type_Chinese}</span>
+                        <Link to = {`/product/${product_code}`} className="vertical" style={{textDecoration:'none'}}>
+                            <h4 className='cardTitle cardH4'>{product_name}</h4>
+                            <h4 className='cardTitle cardH4'>{main_type_Chinese}</h4>
                         </Link>
                         <p>{capacity}ml</p>
                     </div>

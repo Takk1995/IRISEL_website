@@ -41,9 +41,13 @@ const CartConfirmation = ({orderId, createdAt}) => {
             </div>
             <div className="horizontallyCenter confirmationBottom">
                 {/* 往 Home */}
-                <Link to = '/'>
-                    <button className='cartBottom'>返回首頁</button>
-                </Link>
+                <button className='cartBottom cartBtn' style={{width:'200px'}}>
+                    <Link to = '/'>
+                        <span className='btnSpan'>
+                            返回首頁
+                        </span>
+                    </Link>
+                </button>
             </div>
         </div>
     );

@@ -14,17 +14,21 @@ const CartReview = ({ cartItems }) => {
                 <PopCards items={cartItems} />
             </div>
             <div>
-                <div className="vertical">
+                <div className="verticalCenter">
                     {/* 往cartOrder */}
-                    <button className="cartBottom">
+                    <button className="cartBottom cartBtn">
                         <Link to="/cart">
-                            檢視購物車
+                            <span className='btnSpan'>
+                                檢視購物車
+                            </span>
                         </Link>
                     </button>
                     {/* 往商品頁 */}
-                    <button className="cartBottom">
+                    <button className="cartBottom cartBtn">
                         <Link to="/catalog">
-                            繼續購物
+                            <span className='btnSpan'>
+                                繼續購物
+                            </span>
                         </Link>
                     </button>
                 </div>

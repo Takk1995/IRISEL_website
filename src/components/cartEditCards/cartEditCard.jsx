@@ -64,9 +64,9 @@ const CartEditCard =({detail, onDel, onChange, total}) => {
                     <div className="horizontally" style={{paddingLeft:'15px'}}>
                         <div>
                             {/* link to productid */}
-                            <Link to = {`/product/${currentDetail.product_code}`} className="vertical">
-                                <span className='cardTitle'>{currentDetail.product_name}</span>
-                                <span>{currentDetail.main_type_Chinese}</span>
+                            <Link to = {`/product/${currentDetail.product_code}`} className="vertical" style={{textDecoration:'none'}}>
+                                <h4 className='cardTitle cardH4'>{currentDetail.product_name}</h4>
+                                <h4 className='popTitle cardH4'>{currentDetail.main_type_Chinese}</h4>
                             </Link>
                             <p>{currentDetail.capacity}ml</p>
                         </div>

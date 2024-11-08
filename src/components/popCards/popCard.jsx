@@ -11,9 +11,9 @@ const PopCard = ({detail}) => {
                 </div>
                 <div className='popCardMain'>
                     <div style={{paddingTop:'15px', paddingLeft:'15px'}}>
-                        <Link to = {`/product/${product_code}`} className="vertical">
-                            <span className='cartTitle'>{product_name}</span>
-                            <span>{main_type_Chinese}</span>
+                        <Link to = {`/product/${product_code}`} className="vertical" style={{textDecoration:'none'}}>
+                            <h4 className='popTitle cardH4'>{product_name}</h4>
+                            <h4 className='popTitle cardH4'>{main_type_Chinese}</h4>
                         </Link>
                         <div>
                             <p>{capacity}ml</p>

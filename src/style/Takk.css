@@ -188,7 +188,11 @@
 
 .cardTitle {
     margin-top: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.popTitle {
+    margin: 2px 0;
 }
 
 .packageBar {
@@ -217,8 +221,12 @@
 
 .changeLink {
     cursor: pointer;
-    text-decoration: underline;
-    color: rgb(94, 30, 94);
+    text-decoration: none;
+    color: rgb(112, 112, 112);
+}
+
+.changeLink:hover {
+    color: rgb(56, 56, 56);
 }
 
 .popCardMain {
@@ -276,4 +284,38 @@
 
 .checkOutError{
     color: red;
+}
+
+.cartBtn {
+    background-color: #a40000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    width: 80%;
+    height: 40px;
+}
+
+.cartBtn:hover {
+    color: white;
+    background-color: #6e0000;
+}
+
+.cartBtn:disabled {
+    background-color: #6e0000;
+}
+
+.cartBtn a{
+    text-decoration: none;
+    padding: 10px 50px;
+}
+
+.btnSpan{
+    color: white;
+    font-size: 20px;
+}
+
+.cardH4{
+    color: rgb(0, 0, 0);
+    
 }
