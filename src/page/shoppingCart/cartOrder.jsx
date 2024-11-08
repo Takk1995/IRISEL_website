@@ -77,13 +77,11 @@ function CartOrder({cartItems, setCartItems, onPackage, onNext}) {
             )}
             <div className='verticalCenter cartBottom'>
                 {/* 往cartCheckOut */}
-                <button className="cartBottom cartBtn" style={{width:'30%'}} onClick={onNext} disabled={!choose || cartItems.length === 0}>
-                    <span className='btnSpan'>
-                        前往結帳
-                    </span>
+                <button className="cartBottom cartBtn" style={{width:'230px'}} onClick={onNext} disabled={!choose || cartItems.length === 0}>
+                    <span className='btnSpan'>前往結帳</span>
                 </button>
                 {/* 返回商品頁 */}
-                <button className='cartBtn' style={{width:'30%'}}>
+                <button className='cartBtn' style={{width:'230px'}}>
                     <Link to = '/catalog' style={{textDecoration:'none'}}>
                         <span className='btnSpan'>繼續購物</span>
                     </Link>

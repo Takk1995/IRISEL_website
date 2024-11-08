@@ -391,7 +391,7 @@ const CartCheckOut = ({ cartItems, selectPackage, onNext, onBack, setOrderId, se
                                             <input type="password" placeholder="密碼" />
                                         </div>
                                         <div className="horizontallyCenter">
-                                            <button className='cartBtn' onClick={memberNext} style={{width:'50%'}}>
+                                            <button className='cartBtn' onClick={memberNext} style={{width:'230px'}}>
                                                 <span className='btnSpan'>
                                                     登入
                                                 </span>
@@ -423,7 +423,7 @@ const CartCheckOut = ({ cartItems, selectPackage, onNext, onBack, setOrderId, se
                                             {error && <div className='checkOutError'>{error}</div>}
                                         </div>
                                         <div className="horizontallyCenter cartLoginMargin">
-                                            <button className='cartBtn' onClick={guestNext} style={{width:'50%'}}>
+                                            <button className='cartBtn' onClick={guestNext} style={{width:'230px'}}>
                                                 <span className='btnSpan'>
                                                     繼續前往付款
                                                 </span>
@@ -506,14 +506,14 @@ const CartCheckOut = ({ cartItems, selectPackage, onNext, onBack, setOrderId, se
                                 </div>
                             </div>
                             <div className='horizontallyCenter cartBottom'>
-                                <button className='cartBtn' onClick={onNextandCheckOut} style={{width:'50%'}}>
+                                <button className='cartBtn' onClick={onNextandCheckOut} style={{width:'230px'}}>
                                     <span className='btnSpan'>
                                         前往付款
                                     </span>
                                 </button>
                             </div>
                             <div className='horizontallyCenter cartBottom'>
-                                <button className='cartBtn' onClick={backClick} style={{width:'50%'}}>
+                                <button className='cartBtn' onClick={backClick} style={{width:'230px'}}>
                                     <span className='btnSpan'>
                                         返回
                                     </span>

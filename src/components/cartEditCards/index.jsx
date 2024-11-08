@@ -57,7 +57,7 @@ const CartEditCards = ({ cartItems, setCartItems }) => {
     
     if (!guestCart || (Array.isArray(guestCart) && guestCart.length === 0)) {
         return (
-            <h2 className='horizontallyCenter orderNone'>
+            <h2 className='horizontallyCenter orderNone' style={{color: 'rgb(112, 112, 112)'}}>
                 您的購物車沒有任何商品
             </h2>
         )

@@ -10,7 +10,7 @@ const CartDefault = () => {
             <div className='vertical'>
                 <div className='cartDefaultMain'>
                     <div className="horizontallyCenter">
-                        <p>您的購物車沒有任何商品</p>
+                        <p style={{color: 'rgb(112, 112, 112)'}}>您的購物車沒有任何商品</p>
                     </div>
                 </div>
                 <div className='cartDefaultLink'>
@@ -18,22 +18,22 @@ const CartDefault = () => {
                         <ul className="noBullets">
                             <li>
                                 <div>
-                                    <Link to='/catalog'>
-                                        <p>香氛</p>
+                                    <Link to='/catalog' style={{textDecoration:'none'}}>
+                                        <p className='changeLink'>香氛</p>
                                     </Link>
                                 </div>
                             </li>
                             <li>
                                 <div>
-                                    <Link to='/Quiz'>
-                                        <p>測驗</p>
+                                    <Link to='/Quiz' style={{textDecoration:'none'}}>
+                                        <p className='changeLink'>測驗</p>
                                     </Link>
                                 </div>
                             </li>
                             <li>
                                 <div>
-                                    <Link to = '/'>
-                                        <p>會員</p>
+                                    <Link to = '/' style={{textDecoration:'none'}}>
+                                        <p className='changeLink'>會員</p>
                                     </Link>
                                 </div>
                             </li>
