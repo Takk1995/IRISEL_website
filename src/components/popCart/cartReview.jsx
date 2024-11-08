@@ -17,7 +17,7 @@ const CartReview = ({ cartItems }) => {
                 <div className="verticalCenter">
                     {/* 往cartOrder */}
                     <button className="cartBottom cartBtn">
-                        <Link to="/cart">
+                        <Link to="/cart" style={{textDecoration:'none'}}>
                             <span className='btnSpan'>
                                 檢視購物車
                             </span>

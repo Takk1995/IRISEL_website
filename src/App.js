@@ -9,10 +9,6 @@ import Catalog from "./page/catalog";
 import Quizpage from "./page/QuizPage/QuizPage";
 import Customized from "./page/CustomizedPage/CustomizedPage";
 
-import Member from "./page/member";
-import Login from "./page/memberLogin/login.jsx";
-import ForgetPassword from "./page/ForgetPassword/ForgetPassword.jsx";
-
 function App() {
   return (
     <Router>
@@ -27,9 +23,6 @@ function App() {
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/Quiz" element={<Quizpage />} />
           <Route path="/Customized" element={<Customized />} />
-          <Route path="/member" element={<Member />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/forgetPassword" element={<ForgetPassword />} />
         </Routes>
       </div>
     </Router>
