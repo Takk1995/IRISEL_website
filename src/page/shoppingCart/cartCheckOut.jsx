@@ -381,7 +381,7 @@ const CartCheckOut = ({ cartItems, selectPackage, onNext, onBack, setOrderId, se
                             {status && (
                                 <div>
                                     <div className="horizontallyCenter">
-                                        <p>歡迎回來。登入並繼續完成至商品配送。</p>
+                                        <p>歡迎回來，登入並繼續完成至商品配送。</p>
                                     </div>
                                     <div>
                                         <div className="horizontallyCenter">
