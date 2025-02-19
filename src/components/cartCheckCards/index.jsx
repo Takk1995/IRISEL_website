@@ -5,7 +5,8 @@ import CartCheckCard from './cartCheckCard';
 
 const CartCheckCards = ({cartItems}) => {
     const [total, setTotal] = useState(0)
-
+    console.log(cartItems);
+    
     // 計算總金額
     useEffect(() => {
         // console.log('A', cartItems);

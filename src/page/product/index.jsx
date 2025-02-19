@@ -159,14 +159,14 @@ function Product() {
 
       <div>
         <div>
-          <div class="middle-area">
-            <div class="category_text">
+          <div className="middle-area">
+            <div className="category_text">
               <span> 分類: </span>&ensp;
               {/* <span> 男香 </span>&ensp; */}
               {/* <span> / </span> */}
               <span> {product.main_type_Chinese || '類別名稱'} </span>
             </div>
-            <div class="cart">
+            <div className="cart">
               {/* 下拉選單 */}
               {/* 數量:
               <select id="quantity" name="quantity" class="quantity-select">
